@@ -1,0 +1,326 @@
+*{
+    top: 0;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    
+    background: #d5def5;  
+    overflow-x: hidden;
+    min-height: 100vh;
+    /* z-index: 1; */
+}
+body::before {
+    content: "";
+    position: fixed; /* Poori screen par fix rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://wallpapercave.com/wp/wp14777935.jpg'); /* Yahan apni image ka link dein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9; /* Is value ko kam ya zyada kar ke transparency set karein (0.1 se 0.3 best hai) */
+    z-index: -1; /* Ye image ko content ke peechay rakhega */
+}
+header{
+    /* border: 2px solid red; */
+    padding: 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    height: 50px;
+    background:  #00204a;
+
+}
+header h1{
+    font-size: 2rem;
+    color: rgb(122, 115, 115);
+    position: relative;
+    display: inline-block;
+    left: 10px;
+    padding: 2px 12px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: #ffffff40;
+    box-shadow: 0 -1px 2px 5px #ffffff20;
+    z-index: 1;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    
+    
+}
+
+
+/* before  ka  use  kiya jis me ya ha ke element ko kesy gusrna  bhar nikal na lift krna ha  back line pass */
+
+
+h1::before{
+ content: '';
+ position: absolute;
+ /* width: 100%; */
+ /* background-color: #155263; */
+ z-index: -1;
+ border-radius: 100px;
+ top: -5px;
+ left: -15px;
+ height: 100%;
+ border: 5px solid rgba(9, 174, 196, 0.5);
+ width: 100%;
+ overflow: hidden;
+ transform: scale(0);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Thora bounce effect */
+  /* transform: scaleX(0);
+  transition: all 0.3s ease; */
+}
+
+    
+header h1:hover::before{
+    
+    transform: scale(1.1);
+    transform: translateX(10px);
+    opacity: 1;
+  
+    
+}
+header h1:hover{
+   color: rgb(246, 248, 240);
+   transform: translateY(-5px);
+   transform: scale(1.05);
+    
+}
+nav ul{
+    /* border: 2px solid red; */
+    display: flex;
+    padding: 3px 3px;
+    margin: 3px 3px;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    border-radius: 100px;
+    height: 40px;
+  
+
+}
+li{
+    margin: 2px 19px;
+     list-style: none;
+    transition: all 0.3s ease;
+    
+}
+a{
+    color: aliceblue;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    /* border: 2px solid green; */
+    padding: 5px 5px;
+    transition: all 0.5s ease-in-out;
+}
+a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    /* background-color: #155263; */
+    border-radius: 25px;
+    height: 100%;
+    box-shadow: 0 0 0 px #ffffff20;
+     top: 1px;
+     right: 1px;
+     z-index: -1;
+     transform: scale(0);
+     transition: all 0.3s ease;}
+a:hover::before{
+    transform: scale(1);
+    background-color: #09aec4;
+ 
+    box-shadow: 0 1px 1px 3px #ffffff20;
+}a:hover{
+   transform: translateY(-5px);
+
+}
+main{
+    /* border: 2px solid red; */
+    display: flex;
+
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 100px;
+    height: 80vh;
+    width: 1250px;
+    color: #00204a;
+    padding: 10px 10px;
+    top: 90px;
+    z-index: 1;
+}
+
+section{
+    position: relative;
+}
+.box{
+    position: absolute;
+    top: 1px;
+    right:-100px;
+    /* border: 2px solid rgb(186, 85, 60); */
+    height: 260px;
+    width: 300px;
+    border-radius: 25px;
+    padding: 100px 100px;
+    background: rgba(181, 170, 170, 0.2); 
+    backdrop-filter: blur(10px); /* Background image ko thora dhundla kar dega */
+    z-index: 10;
+    
+   box-shadow: 
+  0 1px 5px rgba(0,0,0,0.12), 
+  0 3px 6px rgba(0,0,0,0.24),
+  0 10px 20px rgba(0,0,0,0.05);
+
+
+}
+.img{
+    position: relative;
+    /* border: 2px solid red; */
+    height: 200px;
+    width: 430px;
+    top: -70px;
+    left: -60px;
+    transition: all 0.5s ease-in-out;
+   
+}
+.img:hover{
+      box-shadow:  -3px 25px 1px rgba(0, 0, 0, 0.1) ;
+     border-radius: 25px;
+}
+
+ img{
+    /* border: 2px solid yellow; */
+    height: 200px;
+    width: 430px;
+    /* object-fit: contain; */
+    top: 0;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 15px;
+    transform: scale(1);
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+}
+img:hover{
+ transform: scale(1.05);
+ cursor: pointer;
+ opacity: 1;
+ border-radius: 25px;
+
+}
+
+.para{
+    /* border: 2px solid red; */
+    position: relative;
+    top: -65px;
+   padding: 15px;
+   height: 100px;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: flex-start;
+   left: -85px;
+   width: 490px;
+   
+}
+
+.para h3{
+
+    text-shadow: #00204a;
+    text-align: start;
+    position: absolute;
+    top:-25px;
+    font-size: 34px;
+    font-weight: 100px;
+    /* border: 2px solid red; */
+    margin: 20px;
+}
+.para p{
+    position: absolute;
+    top: 29px;
+}
+.stats-list {
+    /* border: 2px solid lightblue; */
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none; /* Dots khatam karne ke liye */
+    padding: 0 3px;
+    margin: 20px 0;
+    gap:10px 1px;
+    font-family: Arial, sans-serif;
+    max-width: 600px; /* List ki width set karne ke liye */
+}
+
+.stats-list li {
+    display: flex;
+    justify-content: space-between;
+    gap:25px 25px; /* Name left par aur Value right par */
+    padding: 8px 0;
+    /* flex-direction: column; */
+    border-bottom: 1px solid #eee; /* Har line ke neeche halki line */
+    color: #333;
+}
+
+.stats-list li span:first-child {
+    font-weight: bold; /* Label ko bold karne ke liye */
+    color: #13023c;
+ 
+}
+.buy-btn {
+    position: absolute;
+    background-color: #00204a; /* Header wala color */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 32, 74, 0.3);
+    margin-top: 20px;
+    width: 100%; /* Stats ke barabar width */
+    max-width: 300px;
+    display: block;
+    text-align: center;
+    left: 550px;
+    bottom: 10px;
+    height: 50px;
+
+}
+
+.buy-btn:hover {
+    background-color: #09aec4; /* Header hover wala light blue */
+    transform: translateY(-3px); /* Thora upar jump karega */
+    box-shadow: 0 8px 25px rgba(9, 174, 196, 0.4);
+}
+
+.buy-btn:active {
+    transform: translateY(-1px); /* Click karne par dabne wala effect */
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a2e;
+  padding: 2px 2px;
+  margin-top: 480px;
+  height: 30px;
+  width: 100%;
+  color: aliceblue;
+  font-size: 1.3rem;
+  background:  #00204a;
+
+ 
+ 
+}
+

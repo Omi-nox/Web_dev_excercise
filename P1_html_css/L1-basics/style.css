@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6e4e4;
+  color: #333;
+}
+header{
+  background-color: #1a1a2e;
+  color: white;
+  padding: 20px 40px;
+   /* 'parent pe lgta ha phr is sy child ka behaviour change hota ' */
+  display: flex; 
+  /* is sy directioon flow sb khuhc change hota ha  */
+  justify-content: space-between;
+  /* items ko beech me le ata ha   and same as for text-align*/
+  align-items: center;
+}
+
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: #e94560;
+}
+ h1{ /*taky bacha bhaer na bhagy  agr sizing length me issue arha ha to padding margim postions sb khucb chero  */
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+      padding: 0 10px;
+}
+
+h1::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: #e94560;
+    height: 52px;
+    border-radius: 30px;
+    top: -6px;
+    left: -1px;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+   
+    
+h1:hover::before{
+    transform: scaleX(1);
+}
+h1:hover{
+    color: #1a1a2e;
+   
+}
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+section p {
+  color: #555;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a2e;
+  color: white;
+  margin-top: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+label {
+  font-weight: bold;
+  color: #1a1a2e;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #e94560;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button {
+  background-color: #e94560;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1a1a2e;
+}
