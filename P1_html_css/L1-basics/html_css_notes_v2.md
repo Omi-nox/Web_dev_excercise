@@ -436,9 +436,37 @@ Jab hum likhte hain .stats-list li span:first-child, to iska matlab hai:
 Isi wajah se sirf left side wale words Bold hote hain aur right side wale numbers normal rehte hain.
 
 # body backgraounf image
+## min height & max width 
+
+Short Summary:
+Content lamba hai? min-height use karein taake scroll bar aa jaye aur content neechay tak jaye.
+
+Kahan: body { min-height: 100vh; }
+Fayda: Footer hamesha screen ke bottom par rahega.
+
+Screen bari hai? max-width use karein taake content bohot zyada phail kar ajeeb na lage.
+Ek Choti 
+
+1. min-height (Sabse zyada use hone wala)
+Ye element ko ek "kam se kam" height deta hai.
+Kaise kaam karta hai: Agar aapka content thora hai, to section utni height rakhega jo aapne specify ki hai. Lekin agar content zyada ho jaye (maslan text barh jaye), to section automatically neechay ki taraf expand ho jayega.
+Best Use Case: Hero sections ya cards ke liye. Taake agar text barhay to content box se bahar na nikle (overflow na ho).
+Example: min-height: 400px; (Matlab 400px se chota nahi hoga, par bara ho sakta hai).
+
+2. max-height
+Ye element par ek "had" (limit) laga deta hai.
+Kaise kaam karta hai: Element us height se upar nahi jayega, chahe andar jitna bhi content ho. Agar content zyada ho gaya, to wo element se bahar nikalne lagega (ya phir aapko overflow: auto; use kar ke scrollbar dena parega).
+Best Use Case: Dropdown menus, chat boxes, ya images ke liye jinhe aap ek khaas limit se bara nahi hone dena chahte.
+Example: max-height: 200px; overflow-y: auto; (200px ke baad scrollbar aa jayega).
+
+Kahan: main { max-width: 1250px; margin: 0 auto; }
+Fayda: Content hamesha screen ke beech (center) mein rahega.
+
+max-width (Flexible Limit): Ye ek upper limit set karta hai. Maslan, max-width: 1000px; ka matlab hai ke section 1000px se bada nahi hoga, lekin agar screen choti hogi to wo khud ko adjust kar lega (shrink ho jayega) bina scrollbar laye. 
 lgaon
 Body par transparent-looking background image lagane ka sab se best tareeka ::before pseudo-element hi hai. Iska faida ye hota hai ke aap image ki opacity (shafafiyat) kam kar sakte hain bina uske upar likhay hue text ko halka kiye.
 Aap apni CSS mein ye code add karein:
+
 css
 ```
 *{
@@ -477,10 +505,10 @@ body::before {
 }
 
 main { #never make it absolute or relative 
+   flex-grow: 1; /* Ye footer ko nichay push kar dega */
   max-width: 900px;
   margin: 40px auto;
-  padding: 0 20px;
-}
+  width: 100%; }
 main {
     /* position: absolute;  <-- Isay hata dein */
     /* top: 100px;        <-- Isay bhi hata dein */
@@ -490,7 +518,7 @@ main {
     align-items: center;
     
     margin: 90px auto 0; /* Top se gap dene ke liye aur center karne ke liye */
-    min-height: 80vh;    /* Content ki kam az kam height */
+    min-height: 80vh;  screen ki lmby  /* Content ki kam az kam height */
     width: 100%;         /* Width ko flexible rakhein */
     max-width: 1250px;   /* Aapki original width */
     
@@ -554,4 +582,89 @@ css.container {
 1fr means "1 fraction of available space" — so repeat(3, 1fr) = 3 equal columns automatically.
 Use Flexbox for navbars, buttons in a row, single direction layouts.
 Use Grid for cards, galleries, page layouts — anything 2D.
+```
+
+# GRid making steps
+ 1.
+ ```
+ .container {
+    display: grid;
+}
+```
+
+2. grid-template-columns: Columns ki width set karta hai.
+grid-template-rows: Rows ki height set karta hai.
+```
+.container {
+    display: grid;
+    /* 3 barabar columns banenge */
+    grid-template-columns: 200px 200px 200px; 
+    /* Beech mein gap dene ke liye */
+    gap: 20px; 
+}
+```
+
+3. Magic Unit: fr (Fractional Unit)
+Grid mein px ya % ke bajaye fr use karna sabse best hai. Ye screen ki bachi hui jagah ko barabar hisson mein baant deta hai.
+grid-template-columns: 1fr 1fr 1fr; (3 bilkul barabar columns banenge jo screen choti hone par khud ko adjust karenge).
+
+```
+.main-grid {
+    display: grid;
+    /* Ek column 2 hissay lega, baaki 2 ek-ek hissa */
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 15px;
+}
+
+.item {
+    background: #09aec4;
+    padding: 20px;
+    color: white;
+}
+```
+### Step 1: Bachon ko "Naam" dein (grid-area)\
+```
+.container {
+  display: grid;
+  gap: 15px;
+  min-height: 500px;
+  /* Hum 2 columns bana rahe hain */
+  grid-template-areas: 
+    "pehla doosra"
+    "teesra teesra"; /* Teesri box dono columns le lega */
+}
+
+.box1 { grid-area: pehla; background: red; }
+.box2 { grid-area: doosra; background: blue; }
+.box3 { grid-area: teesra; background: green; }
+
+1. Grid Columns ko Lock Karein
+Agar aap chahte hain ke columns bilkul mery marzi ki width ke hon aur flexible na hon, toh 1fr ki jagah minmax ya fixed units use karein.
+ object-fit: cover; /* Image ko stretch hone se bachane ke liye */
+  
+ card{
+   width: 100%; /* Grid cell ke mutabiq adjust hoga */
+ }
+```1. Kab Kaunsi Unit Use Karein?
+Unit	Kab use karein?	Example
+px (Fixed)	    |    Jab aap chahte hain size bilkul na badle (jaise koi icon ya logo).	       |   width: 300px;
+% (Relative)	  |    Jab element apne Parent (jis box ke andar wo hai) ka hissa gherna chahe.	 |   width: 100%; (Poori jagah le lo)
+min-width	      |    "Isse chota mat hona." (Mobile par content ko dabne se bachata hai).	     |             min-width: 200px;
+max-width	      |    "Isse bada mat hona." (Badi screens par content ko phailne se rokta hai).	max-width: 1000px;
+#### ska Faida (Responsive Design):
+BAQI CHILD KE ANDR ELEMENT FREE HA WO AZAD BSS ALWAYS WORKING WITH GRID , CALCULATE PIXELS
+Mobile par aapko sirf naksha (map) badalna parta hai, poora code nahi: you can use relative absolute but be careful
+css
+```
+@media (max-width: 600px) {
+  .container {
+    grid-template-areas: 
+      "h"
+      "n"
+      "m"
+      "s"
+      "f";
+    grid-template-columns: 1fr; /* Sab ek ke neechay ek */
+  }
+}
 ```
