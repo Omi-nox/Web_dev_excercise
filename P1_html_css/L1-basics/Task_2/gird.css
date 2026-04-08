@@ -262,3 +262,86 @@ footer {
   background:  #00204a;
  
 }
+.buy-btn {
+    position: absolute;
+    background-color: #00204a; /* Header wala color */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 32, 74, 0.3);
+    margin-top: 20px;
+    width: 100%; /* Stats ke barabar width */
+    max-width: 300px;
+    display: block;
+    text-align: center;
+    left: 4%;
+    bottom:-71px;
+    height: 50px;
+    
+
+}
+
+.buy-btn:hover {
+    background-color: #09aec4; /* Header hover wala light blue */
+    transform: translateY(-3px); /* Thora upar jump karega */
+    box-shadow: 0 8px 25px rgba(9, 174, 196, 0.4);
+}
+
+.buy-btn:active {
+    transform: translateY(-1px); /* Click karne par dabne wala effect */
+}
+@media (max-width: 600px) {
+    header {
+        height: auto; /* Content ke hisab se adjust hoga */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header h1 {
+        left: 0;
+        margin-bottom: 10px;
+        width: 90%; /* Mobile par width fit rahegi */
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* Menu items niche aa jayenge agar jagah kam hui */
+        justify-content: center;
+        height: auto;
+    }
+
+    .section1 {
+        /* Sabse important change: 3 columns ki jagah 1 column */
+        grid-template-columns: 1fr; 
+        padding: 20px;
+        margin: 0;
+        gap: 100px; /* Taki "Buy Now" button niche wale card se na takraye */
+    }
+
+    .card {
+        max-width: 100%;
+        height: auto; /* Height auto rakhein taki content fit ho jaye */
+        min-height: 550px;
+        align-items: center; /* Content center karne ke liye */
+    }
+
+    img {
+        width: 100%; /* Image responsive ho jayegi */
+        max-width: 345px;
+    }
+
+    .para {
+        left: 0;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    footer {
+        margin-top: 50px; /* Extra space ki zaroorat nahi mobile pe */
+    }
+}
