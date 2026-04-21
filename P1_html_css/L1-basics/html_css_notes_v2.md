@@ -466,7 +466,7 @@ max-width (Flexible Limit): Ye ek upper limit set karta hai. Maslan, max-width: 
 lgaon
 Body par transparent-looking background image lagane ka sab se best tareeka ::before pseudo-element hi hai. Iska faida ye hota hai ke aap image ki opacity (shafafiyat) kam kar sakte hain bina uske upar likhay hue text ko halka kiye.
 Aap apni CSS mein ye code add karein:
-
+# START FROM HERE WHEN YOU START WORK
 css
 ```
 *{
@@ -487,6 +487,9 @@ body{
     background: #d5def5;  
     overflow-x: hidden;
     /* z-index: 1; */
+      font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+      color: #f0f3fa;
+      scroll-behavior: smooth;
 }
 
 body::before {
@@ -585,6 +588,9 @@ Use Grid for cards, galleries, page layouts — anything 2D.
 ```
 
 # GRid making steps
+ 
+ Use case: Jab aapko equal ya proportional columns/rows chahiye, jaise cards ki row, ya sidebar + content.
+
  1.
  ```
  .container {
@@ -623,6 +629,9 @@ grid-template-columns: 1fr 1fr 1fr; (3 bilkul barabar columns banenge jo screen 
 }
 ```
 ### Step 1: Bachon ko "Naam" dein (grid-area)\
+
+Use case: Jab aapko complex, asimetric layout banana ho, jaise:
+
 ```
 .container {
   display: grid;
@@ -640,6 +649,9 @@ grid-template-columns: 1fr 1fr 1fr; (3 bilkul barabar columns banenge jo screen 
 
 1. Grid Columns ko Lock Karein
 Agar aap chahte hain ke columns bilkul mery marzi ki width ke hon aur flexible na hon, toh 1fr ki jagah minmax ya fixed units use karein.
+
+  grid-template-columns: repeat(3,minmax(300px,1fr));
+
  object-fit: cover; /* Image ko stretch hone se bachane ke liye */
   
  card{
