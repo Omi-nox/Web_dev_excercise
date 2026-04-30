@@ -1,47 +1,4 @@
-# 📘 HTML & CSS Notes (Clear + Practical + Examples)
 
-------------------------------------------------------------------------
-
-# 🧱 HTML STRUCTURE (Core Idea)
-
-HTML = Structure (skeleton of webpage)
-
-``` html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My Page</title>
-</head>
-<body>
-  <h1>Hello World</h1>
-</body>
-</html>
-```
-
-💡 Samajh: - HTML bina CSS = plain structure - Ye foundation hai (skip
-nahi kar sakte)
-
-------------------------------------------------------------------------
-
-# 🧠 SEMANTIC TAGS (Clean Structure)
-
-💡 WHY? Readable code + SEO + professional coding
-
-``` html
-<header>Logo</header>
-<nav>Menu</nav>
-<main>
-  <section>
-    <article>Post</article>
-  </section>
-</main>
-<footer>Footer</footer>
-```
-
-💡 Rule: \> div tab use karo jab semantic tag available na ho
-
-------------------------------------------------------------------------
 
 # 🧾 FORMS (User Input)
 
@@ -68,149 +25,6 @@ nahi kar sakte)
 
 <a href="https://google.com" target="_blank">Google</a>
 ```
-
-💡 Real use: - alt → accessibility + fallback - target → new tab
-
-------------------------------------------------------------------------
-
-# 📋 LISTS
-
-``` html
-<ul>
-  <li>Python</li>
-  <li>JS</li>
-</ul>
-
-<ol>
-  <li>Step 1</li>
-  <li>Step 2</li>
-</ol>
-```
-
-💡 Use: - ul → random items - ol → steps
-
-------------------------------------------------------------------------
-
-# 📦 DIV vs SPAN
-
-``` html
-<div class="box">Block</div>
-
-<p>Hello <span style="color:red">World</span></p>
-```
-
-💡 Samajh: - div → full width (layout) - span → text styling
-
-------------------------------------------------------------------------
-
-# 🎨 CSS BASICS
-
-``` html
-<link rel="stylesheet" href="style.css">
-```
-
-``` css
-body {
-  background-color: black;
-  color: white;
-}
-```
-
-------------------------------------------------------------------------
-
-# ⚙️ CLASS SYSTEM (MOST USED)
-
-``` html
-<div class="card">Card</div>
-```
-
-``` css
-.card {
-  padding: 20px;
-  background: gray;
-}
-```
-
-💡 Rule: \> class = reuse system
-
-------------------------------------------------------------------------
-
-# 📦 BOX MODEL (VERY IMPORTANT)
-
-Har element ek box hai:
-
-Content → actual cheez\
-Padding → andar space\
-Border → line\
-Margin → bahar space
-
-``` css
-.box {
-  padding: 20px;
-  border: 2px solid black;
-  margin: 10px;
-}
-```
-
-💡 Trick: - padding → andar breathing - margin → distance
-
-------------------------------------------------------------------------
-
-# 💪 FLEXBOX (ALIGNMENT KING)
-
-``` html
-<div class="container">
-  <div>1</div>
-  <div>2</div>
-</div>
-```
-
-``` css
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-```
-
-💡 Samajh: - horizontal → justify - vertical → align
-
-------------------------------------------------------------------------
-
-# 📍 POSITION
-
-``` css
-.box {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-```
-
-💡 Types: - relative → shift - absolute → parent ke andar move - fixed →
-screen pe fix - sticky → scroll smart
-
-------------------------------------------------------------------------
-
-# 🎬 PSEUDO ELEMENT
-
-``` css
-h1::before {
-  content: '';
-  display: block;
-  height: 3px;
-  background: red;
-}
-```
-
-💡 Use: - design effects without extra HTML
-
-------------------------------------------------------------------------
-
-# 🧠 FINAL MINDSET
-
-HTML = Structure\
-CSS = Design
 
 ------------------------------------------------------------------------
 # Peseudo element animation work
@@ -274,6 +88,7 @@ black color lekin sirf 10% opacity ke saath. Isse shadow dark ke bajaye "greyish
 
 Pro Tip: Agar aap chahte hain ke shadow andar ki taraf "gusi" hui lage (inset), toh bas inset word ka izafa kar dein:
 box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+
 #### 2 dfa
  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0, 0, 0, 0.05);
 
@@ -328,6 +143,8 @@ Property	Function	Effect
 
 transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Thora bounce effect */
 
+transition: background-color 0.3s ease-in-out;  **for background color on hover**
+
  width: 100%; /* Width full rakhen aur scale use karein */
 
 translate(x, y)	Movement	10px (Right), -10px (Left/Up)
@@ -355,7 +172,78 @@ all: Har cheez (color, size, position) smooth hogi.
 0.3s: Speed (ideal for UI).
 
 ease-in-out: Shuru aur khatam naram (smooth) hoga.
+## ANIMATION
 
+**HOVER UNDERLINE ANIMATION**
+```
+shine color
+background:#1a2a3a;
+background : linear-gradient(90deg,transparent,rgba(255,255,255,0.2))
+
+aa{
+ display: inline-block;
+ text-decoration: none;
+ text-align: center;
+ font-size: 18px;
+ color: aliceblue;
+ position: relative;
+ transition: all 0.3s ease-in-out;
+ /* border: 2px solid red; */
+ width: 59px;
+
+}
+a::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 0; /* Initial width */
+    border-bottom: 1px solid #0afff0;
+    left: 0;
+     /* Apply animation to ::before pseudo-element */
+  
+}
+
+
+
+
+a:hover::before {
+    animation: liner 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+     ;
+}
+@keyframes liner {
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 80%;
+    }
+    100%{
+        width:  100%;
+    }
+    
+}
+a:hover{
+    color: #0afff0 ;
+    position: relative;
+
+    box-shadow: 0 0 7px #0afff0;
+
+}
+
+```
+### text background color...
+
+.hero h1 span {
+      background: linear-gradient(135deg, #0affb3, #ff00c1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glow-name {
+      text-shadow: 0 0 12px #0affb3;
+      color: #c0ffee;
+    }
+```
 **3. Keyframes (The "Loop" - Auto Animation)**
 Jab kaam khud-ba-khud karwana ho (bina mouse le jaye), toh @keyframes use hota hai.
 css
@@ -368,6 +256,46 @@ css
 .moving-box {
   animation: upDown 2s infinite ease-in-out;
 }
+```
+**Animation Name:**
+   /* animation: name duration timing-function delay iteration-count direction fill-mode;;
+The name you give to your animation, used in the animation property.
+
+**iming Function:**
+
+This property controls how an animation progresses over time.
+Common timing functions include:
+linear: Animates at a constant speed throughout its duration.
+ease: Provides a smooth acceleration and deceleration effect (default).
+ease-in: Starts slow, then speeds up at the end.
+ease-out: Speeds up at the start, then slows down at the end.
+ease-in-out: Begins slow, speeds up in the middle, and slows down at the end.
+step-start/step-end: Animation occurs at certain points (start or end).
+The timing function is specified using cubic-bezier values (cubic-bezier(x1, y1, x2, y2)) for more complex animations.
+
+**Delay:**
+
+This property specifies how long to wait before the animation starts.
+It is measured in seconds or milliseconds (e.g., 0.5s).
+**Iteration Count:**
+
+Determines how many times the animation will loop.
+Common values include:
+infinite: The animation repeats indefinitely.
+A number like 3: The animation repeats a specified number of times.
+
+**Direction:**
+
+Specifies whether the animation should play forwards, backwards, or alternate between forward and backward.
+Possible values: normal (default), reverse, alternate, alternate-reverse.
+
+**Fill Mode:**
+
+Determines how the element behaves before and after the animation is applied.
+Common values include:
+none: The element retains its initial state before the animation starts and stops at the end of the animation.
+forwards: The element maintains its final state after the animation finishes (useful for creating snapshots).
+backwards: The element applies the first keyframe to all frames before it reaches its current frame (can create a "flash" effect).
 Use code with caution.
 
 **4. Pseudo-Classes vs Pseudo-Elements**
@@ -589,44 +517,12 @@ Use Grid for cards, galleries, page layouts — anything 2D.
 
 # GRid making steps
  
- Use case: Jab aapko equal ya proportional columns/rows chahiye, jaise cards ki row, ya sidebar + content.
+ 
 
- 1.
- ```
- .container {
-    display: grid;
-}
-```
-
-2. grid-template-columns: Columns ki width set karta hai.
-grid-template-rows: Rows ki height set karta hai.
-```
-.container {
-    display: grid;
-    /* 3 barabar columns banenge */
-    grid-template-columns: 200px 200px 200px; 
-    /* Beech mein gap dene ke liye */
-    gap: 20px; 
-}
-```
-
-3. Magic Unit: fr (Fractional Unit)
+Magic Unit: fr (Fractional Unit)
 Grid mein px ya % ke bajaye fr use karna sabse best hai. Ye screen ki bachi hui jagah ko barabar hisson mein baant deta hai.
 grid-template-columns: 1fr 1fr 1fr; (3 bilkul barabar columns banenge jo screen choti hone par khud ko adjust karenge).
 
-```
-.main-grid {
-    display: grid;
-    /* Ek column 2 hissay lega, baaki 2 ek-ek hissa */
-    grid-template-columns: 2fr 1fr 1fr; 
-    gap: 15px;
-}
-
-.item {
-    background: #09aec4;
-    padding: 20px;
-    color: white;
-}
 ```
 ### Step 1: Bachon ko "Naam" dein (grid-area)\
 
@@ -648,6 +544,7 @@ Use case: Jab aapko complex, asimetric layout banana ho, jaise:
 .box3 { grid-area: teesra; background: green; }
 
 1. Grid Columns ko Lock Karein
+**NOTE :** 
 Agar aap chahte hain ke columns bilkul mery marzi ki width ke hon aur flexible na hon, toh 1fr ki jagah minmax ya fixed units use karein.
 
   grid-template-columns: repeat(3,minmax(300px,1fr));
@@ -680,3 +577,99 @@ css
   }
 }
 ```
+### PROPER GRID USED
+
+```
+Creating a Grid Layout
+To create a grid layout, you need to define a container and then specify the grid lines using properties like grid-template-columns and grid-template-rows.
+
+<!-- HTML structure -->
+<div class="container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <!-- Add more items as needed -->
+</div>
+Defining Grid Lines
+You can define the number and size of columns and rows using grid-template-columns and grid-template-rows.
+
+/* CSS styles */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* Repeat three 100px columns */
+  grid-template-rows: auto; /* Rows adjust to content size */
+}
+
+.item {
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+}
+<!-- Aligning Items
+You can use justify-content and align-items to align items within the grid cells. -->
+
+.container {
+  justify-content: space-between; /* Distribute items evenly with space */
+  align-items: center; /* Center items vertically */
+}
+Spanning Grid Cells
+<!-- You can use grid-column-start, grid-column-end, grid-row-start, and grid-row-end to control the span of items. -->
+
+.item:nth-child(1) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.item:nth-child(2) {
+  grid-row-start: 2;
+}
+Responsive Design
+<!-- To make your grid responsive, you can use media queries to adjust the layout based on screen size. -->
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+<!-- This guide should help you get started with CSS Grid. If you have any specific questions or need further clarification, feel free to ask! -->
+```
+1. Height ka Golden Rule (Kab kya likhna hai?)
+
+Kabhi bhi FIX Height mat do (height: 500px): Ye sabse bari galti hai. Agar content zyada ho gaya, toh woh dabba se bahar nikal jayega (overflow).
+
+min-height use karo: Hamesha min-height: 100vh ya min-height: 400px likho. Iska matlab hai: "Kam az kam itni height ho, lekin agar dabbe zyada ho jayein toh height khud barh jaye."
+
+height: auto (Default): Grid containers ke liye ye best hai.
+
+2. Width ka Rule (Kab fix, kab flexible?)
+width: 100% vs max-width:
+
+Sirf width: 100% likhoge toh laptop par dabba bhot phela hua (stretch) nazar aayega.
+
+Hamesha max-width (maslan 1200px) do aur saath mein width: 100% rakho. Is se dabba mobile par chota ho jayega aur laptop par ek limit mein rahega.
+
+Grid Columns:
+1fr: Use karo jab aap chahte ho dabba bachi hui saari jagah le le (Responsive).
+px (e.g. 200px): Tab use karo jab aapko pata ho ke dabba hamesha aik hi size ka rehna chahiye.
+
+3. Grid ki Khas Tips
+grid-template-columns: repeat(3, 1fr);: Ye short-cut hai 3 barabar ke columns banane ka.
+gap: Margin ki bajaye hamesha gap use karo grid mein, ye columns aur rows ke beech tameez se jagah banata hai.
+
+place-items: center;: Agar container ke andar ki har cheez (text, images) bilkul beech mein chahiye, toh ye magic line hai.
+
+4. Mistakes se kaise bachein? (Pro Tips)
+position: absolute se parhez: Grid ya Flexbox ke andar kabhi absolute mat use karo jab tak aapko koi cheez ek ke upar ek charhani na ho. Ye grid ka saara system tabaah kar deta hai.
+margin: auto: Agar container screen ke beech mein nahi aa raha, toh margin: 0 auto; likh do (shart ye hai ke container ki width screen se kam ho).
+
+Inspect Element (F12): Jab phans jao, Chrome mein right-click karke "Inspect" karo. Grid par hover karoge toh neeli (blue) lines dikhayengi ke dabba kahan khatam ho raha hai.
+
+###custom height
+
+  /* Har row 200px ki hogi, chahe content chota ho ya bada */
+    grid-auto-rows: 200px;
+
+    /* Kam az kam 150px, zyada se zyada auto (jitna content) */
+    grid-auto-rows: minmax(150px, auto);
+
+    Fix height: .item { height: 100px; }
+auto pe content khud ba khud zayada hoga no worries
