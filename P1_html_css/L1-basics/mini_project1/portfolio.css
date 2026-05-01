@@ -79,7 +79,7 @@ nav {
   /* border: 2px solid red; */
   width: 59px;
 }
-a::before {
+.nav_list a::before {
   content: "";
   position: absolute;
   top: 25px;
@@ -296,7 +296,7 @@ section {
   box-shadow: 0 1px 10px rgb(14, 217, 236);
   font-family: "Press Start 2P", cursive;
   top: -100px;
-  left: 50px;
+  left: 30px;
   font-size: 1rem;
   /* opacity: 0.9; */
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -313,7 +313,7 @@ section {
 #b2 {
   position: absolute;
   top: -100px;
-  left: 250px;
+  left: 200px;
   height: 50px;
   width: 150px;
   background-color: transparent;
@@ -367,7 +367,7 @@ section {
   }
 }
 #b2:hover {
-  background-color: #0affb3;
+  background-color: #00fffb;
   color: #012e3d;
   box-shadow: inset;
   cursor: crosshair;
@@ -694,7 +694,7 @@ section {
   }
 }
 
-.container2 {
+.main4 .container2 {
   top: 150px;
   position: absolute;
   border: 2px solid green;
@@ -713,10 +713,10 @@ section {
   min-width: 200px;
   min-height: 50px;
   margin: 15px 15px;
-  padding: 20px 16px;
+  padding: 20px 15px;
   text-align: center;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 400;
   color: aliceblue;
 }
 
@@ -726,6 +726,16 @@ section {
   box-shadow: 1px 1px 25px rgb(14, 217, 236);
   cursor: pointer;
 }
+
+/* Specific icon colors on hover (optional) */
+.skill-badge:hover .fa-python { color: #3776AB; font-size: 1.8rem; }
+.skill-badge:hover .fa-brain { color: #ff44cc; font-size: 1.8rem}
+.skill-badge:hover .fa-js { color: #f7df1e; font-size: 1.8rem; }
+.skill-badge:hover .fa-database { color: #47A248; font-size: 1.8rem;}
+.skill-badge:hover .fa-node-js { color: #8CC84B; font-size: 1.8rem;}
+.skill-badge:hover .fa-html5 { color: #E34F26; font-size: 1.8rem;}
+.skill-badge:hover .fa-chart-line { color: #00aaff;font-size: 1.8rem; }
+.skill-badge:hover .fa-table { color: #2d6a4f;font-size: 1.8rem; }
 .main5 {
   position: relative;
   border: 2px solid red;
@@ -768,7 +778,7 @@ section {
   box-shadow:
     10px 15px 3px rgba(0, 0, 0, 0.52),
     0 10px 2px rgba(0, 0, 0, 0.9);
-    z-index: 20;
+    z-index: 10;
 }
 
 .main6 .para1 {
@@ -779,7 +789,7 @@ section {
   color: aliceblue;
   background-color: #0a0f1e;
   border-radius: 20px;
-  height: 480px;
+  height: 500px;
   text-align: start;
   padding: 10px 10px;
   /* background: rgba(255, 255, 255, 0.066);  */
@@ -792,7 +802,7 @@ section {
   box-shadow:
     inset 10px 10px 10px black,
     inset -10px -10px 10px black;
-    z-index: -10;
+  
 }
 
 .main6 .main_card3 form {
@@ -958,83 +968,157 @@ textarea{
     display: block;
 }
 .para1 .cardi{
-    margin: 15px 5px;
-    font-weight: 600;
-    font-size: 1.5rem;
+   /* border: 2px solid #00eeff; */
+   padding: 5px 5px;
 
 }
-footer {
+.cardi span{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.cardi .icons a{
+    display: inline-block;
     position: relative;
-  height: 50vh;
-  background-color: #0a0f1e;
-}
-footer .container2{
-    position: absolute;
-    border: 2px solid yellow;
-    top: 0;
-
-}
- footer .container2 .con p{
-    border: 2px solid green;
-    position: relative;
-  color: #a0b2d0;
-    max-width: 300px;
-    min-height: 80px;
-    margin: 10px 10px;
-    left: 10px;
- }
- footer .container2 .con2 {
-    border: 2px solid green;
-    text-decoration: none;
-    position: relative;
-    max-width: 300px;
-    min-height: 80px;
-    margin: 10px 10px;
-    left: 150px;
-    display: flex;
-    top: 20px;
-    flex-direction: column;
-}
- 
- footer .container2 .con2 h2{
-   color: aliceblue;
-   font-size: 1.4rem;
-}
- footer .container2 .con2 a{
-   color: #a0b2d0;
-   font-size: 1rem;
-   margin: 8px 1px;
-   text-decoration: none;
-}
- 
-  footer .container2 .con3 h2{
-   color: aliceblue;
-   font-size: 1.4rem;
-}
- footer .container2 .con3{
-  border: 2px solid green;
-    text-decoration: none;
-    position: relative;
-    max-width: 300px;
-    min-height: 80px;
-    margin: 10px 10px;
-    left: 350px;
-    display: flex;
-    top: 40px;
-    flex-direction: column; 
-}
-
- .f span:first-child{
-    display: block;
-    font-weight: 500;
+    margin: 12px 10px;
     color: #00eeff;
-    margin: 5px 5px;
+    font-size: 1.9rem;
+    transition: all 0.3s ease-in-out;
+
 }
-.f span:last-child{
-    color: #a0b2d0;
+.cardi .icons a:hover{
+    color: #000000;
+     /* box-shadow: 0 10px 7px #0afff0; */
+    
+   
+    background:linear-gradient(to right, #ffffff, #6dd5ed, #2193b0);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    cursor: pointer;
+    transform: translateY(-10px);
 }
-footer .fp{
-    color: #a0b2d0;
-    margin-top: 240px;
+.cardi .icons a:active{
+     transform: scale(0.9);
+}
+.cardi .icons a:nth-child(2):hover{
+     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(3):hover{
+     background: linear-gradient(45deg, #25262c, #d7d7d9, #534b58, #ece7ea, #e9d7dd, #060404);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  
+}
+
+footer {
+  background: #0a0f1e;
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(10, 255, 240, 0.2);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-col .fas.fa-envelope {
+  color: #ffc60a;
+  margin-right: 8px;
+  perspective: 1000px;
+  transition: all 0.3s ease-in-out;
+}
+.footer-col .fas.fa-envelope:hover {
+  color: #0afff0;
+  transform: rotate(360deg)
+}
+.footer-col .fas.fa-phone {
+  color: #ffc60a;
+  margin-right: 8px;
+  perspective: 1000px;
+  transition: all 0.3s ease-in-out;
+}
+.footer-col .fas.fa-phone:hover {
+  color: #0afff0;
+  transform: rotate(360deg)
+}
+.footer-col h3 {
+  color: #0afff0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-col p, .footer-col li {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col li a:hover {
+  color: #0afff0;
+  padding-left: 5px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  color: #cbd5e1;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+
+.footer-social a:hover {
+  color: #0afff0;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(10, 255, 240, 0.1);
+  font-size: 0.8rem;
+  color: #7e8ba3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-social {
+    justify-content: center;
+  }
 }
  
+
+/* <p class="fp" style="border-top: 1px solid #ccc; pt-2; margin-top: 10px;">
+  © 2025 Umar Asghar. | AI Engineer & Full Stack Warrior | Python • ML • JS • 3D | All rights reserved.
+</p> */
