@@ -124,8 +124,24 @@ section {
   margin: 0 5px;
   position: relative;
   max-width: 1400px;
+  /* z-index: 1000; */
+  overflow: hidden;
 }
-
+.main::before{
+     content: "";
+    position: absolute; /* Poori screen par fix rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), 
+              url('photos/im18.jpg'); /* Yahan apni image ka link dein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     /* Is value ko kam ya zyada kar ke transparency set karein (0.1 se 0.3 best hai) */
+    z-index: -1000; /* Ye image ko content ke peechay rakhega */
+}
 .badge {
   position: relative;
   display: inline-block;
@@ -138,7 +154,7 @@ section {
   left: 10px;
   margin: 5px 2px;
   overflow: hidden;
-
+  
   z-index: -1000;
 }
 .badge::before {
@@ -176,13 +192,15 @@ section {
   padding: 2px 2px;
   width: 300px;
   text-align: center;
-  background: #1a2a3a;
+  /* background: #1a2a3a; */
+  background: rgba(10, 255, 240, 0.05);
+    backdrop-filter: blur(8px);
   overflow: hidden;
   border-radius: 50px;
-  opacity: 0.9;
+  opacity: 1;
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.52),
-    0 1px 2px rgba(0, 0, 0, 0.9),
+    0 1px 10px rgba(0, 0, 0, 0.9),
     0 10px 20px rgba(0, 0, 0, 0.05);
   background: linear-gradient(135deg, #f8f8f8, #00eeff);
   -webkit-background-clip: text;
@@ -199,6 +217,7 @@ section {
   left: -10;
   width: 0;
   height: 100%;
+  
   /* border: 2px solid #6b7978; */
   /* border-radius: 50px; */
   height: 54px;
@@ -230,29 +249,7 @@ section {
   }
 }
 
-.liss {
-  /* border: 2px solid green; */
-  position: absolute;
-  padding: 2px 16px;
-  display: flex;
-  justify-content: space-between;
-  /* gap: 1px; */
-  width: 200px;
-  font-size: 2.4rem;
-  font-weight: 800;
-  line-height: 1.2;
-  top: 180px;
-  left: -10px;
-}
-.liss li {
-  /* border: 2px solid red; */
-  margin: 2px 10px;
-  list-style: none;
-  background: linear-gradient(135deg, #0affb3, #00fffb);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+
 /* main card working */
 .main_card {
   position: relative;
@@ -267,7 +264,9 @@ section {
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
   /* border-top: 2px solid #0ad2e8; */
-  /* background-color: #0a0f1e; */
+  background-color: #0a0f1e;
+  opacity: 0.5;
+  
   box-shadow: 0 5px 15px #0afff0;
   transform: scale(1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Thora bounce effect */
@@ -282,9 +281,14 @@ section {
 }
 .main p {
   position: relative;
-  color: #a0b2d0;
+font-size: 1.2rem;
+color: #e2e8f0;
+text-shadow: 0 0 2px rgba(0,0,0,0.3);
   max-width: 500px;
   bottom: 140px;
+  left: 30px;
+  font-weight: 600;
+  /* text-align: center; */
 }
 
 #b1 {
@@ -295,8 +299,8 @@ section {
   background-color: #00fffbdc;
   box-shadow: 0 1px 10px rgb(14, 217, 236);
   font-family: "Press Start 2P", cursive;
-  top: -100px;
-  left: 30px;
+  top: -140px;
+  left: 10px;
   font-size: 1rem;
   /* opacity: 0.9; */
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -312,8 +316,8 @@ section {
 }
 #b2 {
   position: absolute;
-  top: -100px;
-  left: 200px;
+  top: -140px;
+  left: 190px;
   height: 50px;
   width: 150px;
   background-color: transparent;
@@ -373,6 +377,35 @@ section {
   cursor: crosshair;
   font-weight: 500;
 }
+#b4{
+  border: 1px solid #00fffb;
+  height: 50px;
+  width: 150px;
+  position: absolute;
+  background-color: #00fffbdc;
+  box-shadow: 0 1px 10px rgb(14, 217, 236);
+  font-family: "Press Start 2P", cursive;
+  top: -140px;
+  left: 370px;
+  font-size: 1rem;
+  text-decoration: none;
+  /* opacity: 0.9; */
+  transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#b4 a{
+  text-decoration: none;
+  color: #012e3d;
+}
+#b4:hover {
+  cursor: crosshair;
+  cursor: pointer;
+  box-shadow: 1px 1px 25px rgb(14, 217, 236);
+}
+#b4:active {
+  transform: scale(0.9);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.457);
+}
+
 /* #b2:active{
   
 } */
@@ -383,9 +416,24 @@ section {
   border: 2px solid red;
   min-height: 110vh;
   max-width: 1400px;
-  margin: 12px 2px;
+  margin: 30px 5px;
   display: flex;
   justify-content: space-between;
+}
+.main2::before{
+   content: "";
+    position: absolute; /* Poori screen par fix rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), 
+              url('photos/im19.jpg'); /* Yahan apni image ka link dein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     /* Is value ko kam ya zyada kar ke transparency set karein (0.1 se 0.3 best hai) */
+    z-index: -1000;
 }
 
 .main_card2 {
@@ -480,9 +528,25 @@ section {
 .main3 {
   position: relative;
   border: 2px solid rgb(217, 255, 0);
-  min-height: 110vh;
+  min-height: 115vh;
   max-width: 1400px;
   margin: 10px 2px;
+  padding: 5px 5px;
+}
+.main3::before{
+  content: "";
+    position: absolute; /* Poori screen par fix rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), 
+              url('photos/im21.jpg'); /* Yahan apni image ka link dein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    z-index: -1000; 
 }
 
 .heading2 {
@@ -493,6 +557,7 @@ section {
   right: 500px;
   /* text-decoration: underline; */
   font-size: 2.6rem;
+  margin: 5px ;
 }
 .heading2 span:last-child {
   color: #00eeff;
@@ -500,7 +565,7 @@ section {
 }
 
 .m3_bar {
-  /* border: 2px solid green; */
+  /* border: 2px solid green;   */
   position: absolute;
   padding: 2px 16px;
   display: flex;
@@ -510,10 +575,11 @@ section {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.2;
-  top: 80px;
+  top: 100px;
   left: 450px;
   justify-content: space-between;
   align-items: center;
+  margin: 15px 15px;
 }
 
 .m3_bar li:first-child {
@@ -534,7 +600,7 @@ section {
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .m3_bar li {
-  margin: 2px 5px;
+  margin: 5px 5px;
   list-style: none;
   border: 1px solid #00eeff;
   padding: 15px 15px;
@@ -557,6 +623,7 @@ section {
 
 .container {
   border: 2px solid pink;
+  margin: 10px 5px;
   position: relative;
   display: grid;
   /* Ek column 2 hissay lega, baaki 2 ek-ek hissa */
@@ -656,12 +723,27 @@ section {
   max-width: 1400px;
   margin: 20px 2px;
 }
+.main4::before{
+  content: "";
+    position: absolute; /* Poori screen par fix rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+              url('photos/im20.jpg'); /* Yahan apni image ka link dein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    z-index: -1000; 
+}
 
 .heading3 {
   /* border: 2px solid yellow; */
   position: relative;
   left: 500px;
-  top: 40px;
+  top: 10px;
   width: 210px;
   height: 100px;
   font-size: 2.8rem;
@@ -695,7 +777,7 @@ section {
 }
 
 .main4 .container2 {
-  top: 150px;
+  top: 100px;
   position: absolute;
   border: 2px solid green;
   display: flex;
@@ -750,12 +832,42 @@ section {
   max-width: 1400px;
   margin: 5px 2px;
 }
+.main6::before{
+  content: "";
+    position: absolute; /* Poori screen par fix rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+              url('photos/im42.png'); /* Yahan apni image ka link dein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    z-index: -1000;
+}
+.main5::before{
+  content: "";
+    position: absolute; /* Poori screen par fix rahega */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+              url('photos/im43.png'); /* Yahan apni image ka link dein */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    z-index: -1000; 
+}
 .main6 .main_card3 {
   position: absolute;
   /* border: 2px solid #0afff0; */
   display: inline-block;
   top: 150px;
-  left: 30px;
+  left: 650px;
   height: 75vh;
   width: 550px;
   border-left: 2px solid rgb(13, 251, 255);
@@ -797,7 +909,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.189); /* Padd*/
   bottom: 40px;
   width: 600px;
-  left: 610px;
+  left:20px;
   top: 145px;
   box-shadow:
     inset 10px 10px 10px black,
@@ -858,12 +970,24 @@ label{
   /* margin: 15px 5px; */
   /* border: 2px solid blue; */
   font-weight: 800;
+  
 }
 input{
     border: 1px solid #012e3d;
     background-color: #0e274a;
     color: #00eeff;
     border-radius: 10px;
+    
+}
+input:focus{
+    outline: none;
+    border: 1px solid #00fffb;
+    box-shadow: 0 1px 10px rgb(14, 217, 236);
+}
+textarea:focus{
+    outline: none;
+    border: 1px solid #00fffb;
+    box-shadow: 0 1px 10px rgb(14, 217, 236);
 }
 textarea{
     border: 1px solid #012e3d;
@@ -902,7 +1026,7 @@ textarea{
   width: 250px;
   height: 60px;
   /* border: 2px solid firebrick; */
-
+  top: 10px;
   /* text-decoration: underline; */
   font-size: 2.2rem;
   overflow: hidden;      
@@ -943,6 +1067,7 @@ textarea{
     width: 50%;
     left: 350px;
     margin: 5px 5px;
+    font-weight: 600;
     /* white-space: wrap; */
 }
 .para1 h2{
@@ -1017,7 +1142,7 @@ textarea{
 footer {
   background: #0a0f1e;
   padding: 3rem 2rem 1rem;
-  margin-top: 4rem;
+  margin-top: 1rem;
   border-top: 1px solid rgba(10, 255, 240, 0.2);
 }
 
@@ -1118,6 +1243,102 @@ footer {
   }
 }
  
+
+/* Dynamic Typing Text Styling */
+/* ========== TYPING LINE CONTAINER ========== */
+/* ========== TYPING LINE CONTAINER ========== */
+.typing-line {
+    position: absolute;
+    text-align: center;
+    left: 20px;
+    top: 150px;
+    margin: 30px auto;
+    font-family: 'Courier New', 'Fira Code', monospace;
+    background: rgba(10, 255, 240, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 16px 28px;
+    border-radius: 100px;
+    display: inline-block;
+    width: auto;
+    min-width: 320px;
+    border: 1px solid rgba(10, 255, 240, 0.3);
+    animation: borderGlow 2s infinite alternate;
+    transition: all 0.3s ease;
+}
+
+.typing-line:hover {
+    background: rgba(10, 255, 240, 0.12);
+    transform: scale(1.01);
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(10, 255, 240, 0.2);
+        border-color: rgba(10, 255, 240, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(10, 255, 240, 0.5);
+        border-color: rgba(10, 255, 240, 0.6);
+    }
+}
+
+/* ========== STATIC TEXT ("I am ") ========== */
+.static-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ffffff, #ccffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(10, 255, 240, 0.4);
+    letter-spacing: 1px;
+    margin-right: 6px;
+    display: inline-block;
+    animation: subtleFloat 3s ease-in-out infinite;
+}
+
+/* ========== DYNAMIC TYPING TEXT ========== */
+#dyn-typ {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0afff0;
+    text-shadow: 0 0 5px #0afff0, 0 0 10px #00ffff;
+    display: inline-block;
+    animation: floatText 2s ease-in-out infinite, glowPulse 1.5s alternate infinite;
+}
+
+/* ========== CURSOR ========== */
+.cursor {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #0afff0;
+    text-shadow: 0 0 5px #0afff0;
+    animation: blink 0.8s step-end infinite;
+    margin-left: 3px;
+    display: inline-block;
+}
+
+/* ========== KEYFRAMES ========== */
+@keyframes floatText {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 2px #0afff0; }
+    100% { text-shadow: 0 0 12px #0afff0, 0 0 18px #00ffff; }
+}
+
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 
 /* <p class="fp" style="border-top: 1px solid #ccc; pt-2; margin-top: 10px;">
   © 2025 Umar Asghar. | AI Engineer & Full Stack Warrior | Python • ML • JS • 3D | All rights reserved.
