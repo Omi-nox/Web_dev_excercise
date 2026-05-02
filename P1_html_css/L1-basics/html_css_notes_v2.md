@@ -1,32 +1,4 @@
 
-
-# 🧾 FORMS (User Input)
-
-``` html
-<form>
-  <label>Email</label>
-  <input type="email" placeholder="Enter email">
-
-  <label>Password</label>
-  <input type="password">
-
-  <button>Login</button>
-</form>
-```
-
-💡 Samajh: - form = container - input = data - button = action
-
-------------------------------------------------------------------------
-
-# 🖼️ IMAGES + LINKS
-
-``` html
-<img src="img.jpg" alt="profile">
-
-<a href="https://google.com" target="_blank">Google</a>
-```
-
-------------------------------------------------------------------------
 # Peseudo element animation work
 ```
  h1{ /*taky bacha bhaer na bhagy  agr sizing length me issue arha ha to padding margim postions sb khucb chero  */
@@ -261,7 +233,7 @@ css
    /* animation: name duration timing-function delay iteration-count direction fill-mode;;
 The name you give to your animation, used in the animation property.
 
-**iming Function:**
+**Timing Function:**
 
 This property controls how an animation progresses over time.
 Common timing functions include:
