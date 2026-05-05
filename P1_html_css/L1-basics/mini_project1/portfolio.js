@@ -149,11 +149,76 @@ list.forEach(btn=>{
 })
 
 let is=document.querySelector('.like span');
-let nd=0;
-let b=document.getElementById('b5');
-b.addEventListener('click',function(e){
-  nd++;
-  is.innerText=nd;});
+// let nd=0;
 
-dynamic_typing()
+const api='http://localhost:3000';
+async function loadlikes() {
+    try{
+    const res=await fetch(`${api}/liqo`);
+    const data=await res.json();
+    is.textContent=data.l;
+    }catch(err){
+        console.error('something failed to fetch : ',err)
+    }
+   
+
+}
+async function addlike() {
+   try{
+     const res=await fetch(`${api}/liqo`,{method:'POST'});
+     const data=await res.json();
+     is.textContent=data.l;
+    //  document.getElementById('b5').disabled=true;
+    let b=document.getElementById('b5')
+    // b.style.transform = "scale(0.9)";
+    b.innerText='Liked!!! ❤️';
+    b.style.textAlign='center';
+    b.style.transition = 'transform 0.1s ease-in-out';
+    b.style.background='linear-gradient(95deg, #44fcff, #44f6ff)';
+    b.disabled=true;
+    setTimeout(()=>{
+        alert('Thanks for giving me a like') 
+    },300)
+   }catch(err){
+    console.error('system : : fault ',err);
+    alert('like can give one time only');
+   }
+
+}
+loadlikes()
+let b=document.getElementById('b5');
+b.addEventListener('click',addlike);
+const quotes = [
+  {
+    quote: "Code is like humor. When you have to explain it, it’s bad.",
+    author: "Cory House"
+  },
+  {
+    quote: "First, solve the problem. Then, write the code.",
+    author: "John Johnson"
+  },
+  {
+    quote: "Simplicity is the soul of efficiency.",
+    author: "Austin Freeman"
+  },
+  {
+    quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    author: "Martin Fowler"
+  },
+  {
+    quote: "The only way to learn a new programming language is by writing programs in it.",
+    author: "Dennis Ritchie"
+  },
+  {
+    quote: "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.",
+    author: "Dan Salomon"
+  },
+  {
+    quote: "In programming, the hard part isn’t solving problems, but deciding what problems to solve.",
+    author: "Paul Graham"
+  }
+];
+ const randomIndex = Math.floor(Math.random() * quotes.length);
+ console.log(randomIndex)
+// dynamic_typing()
 
