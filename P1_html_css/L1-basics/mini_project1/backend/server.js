@@ -22,3 +22,5 @@ app.post('/liqo',(req,res)=>{
     l++;
     res.json({l});
 })
+
+// like and load add like 
