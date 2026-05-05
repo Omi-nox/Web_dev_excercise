@@ -287,7 +287,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   max-width: 500px;
   bottom: 140px;
   left: 30px;
-  font-weight: 600;
+  font-weight: 400;
   /* text-align: center; */
 }
 
@@ -462,6 +462,142 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   box-shadow:
     10px 15px 3px rgba(0, 0, 0, 0.52),
     0 10px 2px rgba(0, 0, 0, 0.9);
+}
+
+:root {
+  --neon-cyan: #0afff0;
+  --glow: 0 0 10px #0afff0;
+}
+
+.hud-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 100px;
+  background: radial-gradient(circle, rgba(10, 255, 240, 0.05) 0%, transparent 70%);
+}
+
+.hud-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  box-shadow: var(--glow);
+  filter: drop-shadow(0 0 5px var(--neon-cyan));
+}
+
+/* Sabse Bahar Wala Segment */
+.segment-1 {
+  width: 100%;
+  height: 100%;
+  border-top-color: var(--neon-cyan);
+  border-bottom-color: var(--neon-cyan);
+  animation: rotateClockwise 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Darmiyan Wala (Tez ghoomne wala) */
+.segment-2 {
+  width: 85%;
+  height: 85%;
+  border-left-color: var(--neon-cyan);
+  border-right-color: var(--neon-cyan);
+  border-width: 2px;
+  border-style: dashed;
+  animation: rotateCounter 2.5s linear infinite;
+}
+
+/* Andar Wala (Scanning lines) */
+.segment-3 {
+  width: 70%;
+  height: 70%;
+  border-top-color: rgba(10, 255, 240, 0.5);
+  animation: rotateClockwise 8s linear infinite;
+}
+
+/* Image Container */
+.user-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(10, 255, 240, 0.4);
+  z-index: 10;
+  transition: 0.5s ease;
+}
+
+.user-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Image ko thora blue tint dene ke liye */
+  filter: brightness(1.1) contrast(1.1) sepia(20%) hue-rotate(150deg);
+}
+
+/* Hover Tilt Effect */
+.hud-container:hover .user-pic {
+  transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Scanning Line Animation */
+.scan-line {
+  position: absolute;
+  width: 200px;
+  height: 2px;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-cyan);
+  z-index: 15;
+  animation: scanMove 3s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+@keyframes scanMove {
+  0%, 100% { top: 25%; }
+  50% { top: 75%; }
+}
+
+/* Floating Data Tags */
+.data-tag {
+  position: absolute;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10px;
+  color: var(--neon-cyan);
+  text-shadow: var(--glow);
+  z-index: 20;
+  animation: flicker 1.5s infinite;
+}
+
+.top-left { top: 10%; left: 10%; }
+.bottom-right { bottom: 10%; right: 10%; }
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Hexagon Pattern (Optional: Background ke liye) */
+.hud-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--neon-cyan) 1px, transparent 1px);
+  background-size: 20px 20px; /* Dots pattern */
+  opacity: 0.1;
+  border-radius: 50%;
+ 
 }
 
 .para {
@@ -824,7 +960,113 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   min-height: 70vh;
   max-width: 1400px;
   margin: 20px 2px;
+  color: aliceblue;
 }
+.main5 .heading4{
+  position: relative;
+  left: 500px;
+  top: 10px;
+  width: 210px;
+  height: 100px;
+  font-size: 2.1rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: aliceblue;
+  overflow: hidden;
+}
+.heading4 span:last-child {
+  color: #00eeff;
+  /* margin-left: 15px; */
+}
+.heading4::before {
+  content: "";
+  position: absolute;
+  /* border: 2px solid green; */
+  left: -10;
+  top: 60px;
+  width: 40%;
+  border-bottom: 2px solid #00eeff;
+  animation: linepassing 0.9s ease-in-out infinite forwards;
+}
+.screen{
+   /* background: rgba(255, 255, 255, 0.85);  */
+    position: absolute;
+    background: rgba(181, 170, 170, 0.1); 
+    backdrop-filter: blur(20px); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    height: 200px;
+    width: 100%;
+    left: 0px;
+    top: 89px;
+}
+.vibe-quote {
+  position: absolute;
+  border-top: 1px dashed rgba(10, 255, 240, 0.3);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #e0e7ff;
+  left: 530px;
+  top: 280px;
+}
+/* .fa-quote-left {
+  color: #ffaa44;
+  margin-right: 1px;
+}
+
+.fa-quote-right{
+  color: #ffaa44;
+  position: absolute;
+  left: 300px;
+  margin-right: 1px;
+} */
+.quote-author {
+  font-size: 0.7rem;
+  display: block;
+  margin-top: 6px;
+  color: #a0b2d0;
+}
+.main5 .screen .like{
+  border: 1px solid black;
+  background-color: #0a0f1e;
+  height: 100px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 480px;
+  border-radius: 25px;
+  margin: 10px 10px;
+  box-shadow: inset 2px 2px 5px #00eeff ,inset  -2px -2px 5px #00eeff;
+}
+.main5 .screen .like span{
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #0afff0;
+  text-shadow: 0 0 8px #0afff0;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+#b5{
+  position: absolute;
+  background: linear-gradient(95deg, #ff44cc, #ffaa44);
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 60px;
+  font-weight: bold;
+  color: #0a0f1e;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 1rem 0 0.5rem;
+  left: 550px;
+  top: 220px;
+}
+#b5:hover:not(:disabled){
+   transform: scale(1.02);
+  box-shadow: 0 0 12px #ff44cc;
+}
+
 .main6 {
   position: relative;
   border: 2px solid red;
