@@ -1000,14 +1000,20 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
     top: 89px;
 }
 .vibe-quote {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   position: absolute;
   border-top: 1px dashed rgba(10, 255, 240, 0.3);
   padding-top: 1rem;
   margin-top: 0.5rem;
   font-style: italic;
   color: #e0e7ff;
-  left: 530px;
+  left: -20px;
   top: 280px;
+  text-align: center;
+  width: 100%;
+  border: 2px solid green;
 }
 /* .fa-quote-left {
   color: #ffaa44;
