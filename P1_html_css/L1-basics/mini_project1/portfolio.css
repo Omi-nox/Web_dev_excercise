@@ -154,7 +154,7 @@ section {
   left: 10px;
   margin: 5px 2px;
   overflow: hidden;
-  
+  top: -250px;
   z-index: -1000;
 }
 .badge::before {
@@ -265,9 +265,10 @@ section {
   border-bottom-right-radius: 35px;
   /* border-top: 2px solid #0ad2e8; */
   background-color: #0a0f1e;
-  opacity: 0.5;
-  
+  opacity: 0.9;
+  top: 30px;
   box-shadow: 0 5px 15px #0afff0;
+  
   transform: scale(1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Thora bounce effect */
   /* max-width: 500px; */
@@ -281,12 +282,13 @@ section {
 }
 .main p {
   position: relative;
-font-size: 1.2rem;
+  margin: 14px 5px;
+font-size: 1.0rem;
 color: #e2e8f0;
 text-shadow: 0 0 2px rgba(0,0,0,0.3);
   max-width: 500px;
   bottom: 140px;
-  left: 30px;
+  left: 20px;
   font-weight: 400;
   /* text-align: center; */
 }
@@ -1270,7 +1272,7 @@ textarea{
   font-family: Georgia, "Times New Roman", Times, serif;
   position: relative;
   color: #ffffff;
-  left:450px;
+  left:490px;
   width: 250px;
   height: 60px;
   /* border: 2px solid firebrick; */
@@ -1308,7 +1310,7 @@ textarea{
     
 .main6 .para2{
     /* border: 2px solid green; */
-    color: #a0b2d0;
+    color: #feffff;
     position: absolute;
     text-align: center;
     letter-spacing: 0.1rem;
