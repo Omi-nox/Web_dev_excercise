@@ -278,3 +278,21 @@ const quotes = [
         aboutContainer.style.transform = `rotateY(0deg) rotateX(0deg)`;
       });
     }
+
+
+    // scroll animation for progress bar  
+  window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = scrollPercent + '%';
+});
+
+// humburger snippet 
+
+const hamburger = document.getElementById('hamburger');
+const navList = document.querySelector('.nav_list');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navList.classList.toggle('open');
+});
