@@ -1,0 +1,872 @@
+/* ================================================================
+   res.css — FINAL COMPLETE FIX
+   Strategy: On mobile/tablet, reset EVERY absolute position
+   and use flex column layout instead. This is the only correct
+   way to make a portfolio built with absolute positioning responsive.
+   ================================================================ */
+
+/* ─── REMOVE DEBUG BORDERS ─── */
+
+html, body {
+  overflow-x: hidden; /* Horizontal scroll ko jarr se khatam karne ke liye */
+  width: 100%;
+  position: relative;
+}
+
+.main2, .main3, .main4,
+.main5, .main6       { border: none !important; }
+.container           { border: none !important; }
+.main4 .container2   { border: none !important; }
+.vibe-quote          { border: none !important; }
+
+/* ─── HAMBURGER BUTTON ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #0afff0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── HEADING ANIMATION FIX ───
+   Original uses translateX(220px) — a fixed value that flies off small screens.
+   translateX(200%) means "move 200% of THIS element's own width" — always correct. */
+@keyframes linepassingResponsive {
+  0%   { transform: translateX(0);    opacity: 1; }
+  80%  { transform: translateX(200%); opacity: 0.7; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+@media (max-width: 1400px) {
+  .fafa::before,
+  .heading3::before,
+  .heading4::before,
+  .main5 .heading4::before,
+  .main6 .heading4::before {
+    animation-name:            linepassingResponsive !important;
+    animation-duration:        1.2s                  !important;
+    animation-timing-function: ease-in-out           !important;
+    animation-iteration-count: infinite              !important;
+    animation-direction:       normal                !important;
+    animation-fill-mode:       forwards              !important;
+  }
+}
+
+/* ─── SECTION CENTERING ─── */
+section,
+.main, .main2, .main3,
+.main4, .main5, .main6 {
+  width: 100%;
+  max-width: 1400px;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+/* ================================================================
+   NAV — DESKTOP (1025px+)
+   Fix the left:900px hardcode by making nav a flexbox
+   ================================================================ */
+@media (min-width: 1025px) {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    min-height: 70px;
+  }
+  .port       { position: static; }
+  .nav_list   { position: static; left: auto; width: auto; height: auto; padding: 5px 0; display: flex; }
+  .nav_list a { width: auto; }
+}
+
+/* NAV — TABLET */
+@media (max-width: 1024px) {
+  header    { height: auto; min-height: 60px; }
+  nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  .port        { position: static; font-size: 1.1rem; }
+  .nav_list    { position: static; left: auto; width: auto; height: auto; display: flex; flex-wrap: wrap; gap: 4px; padding: 5px 0; justify-content: flex-end; }
+  .nav_list a  { font-size: 14px; width: auto; }
+  .nav_list li { margin: 2px 4px; }
+}
+
+/* NAV — MOBILE (<768px): hamburger */
+@media (max-width: 767px) {
+  .hamburger { display: flex; }
+  header     { min-height: 60px; height: auto; }
+  nav        { display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; }
+  .port      { position: static; font-size: 0.95rem; }
+  .nav_list  {
+    display: none; flex-direction: column;
+    position: absolute; top: 60px; left: 0; right: 0;
+    width: 100%; background-color: #0a0f1e;
+    border-bottom: 2px solid #0afff0; padding: 20px;
+    z-index: 999; gap: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  }
+  .nav_list.open { display: flex; }
+  .nav_list li   { margin: 0; }
+  .nav_list a    { font-size: 1.1rem; width: 100%; text-align: left; }
+}
+
+/* ================================================================
+   RING FIX — ring.css sets left:100px on .hero-frame
+   and left:50px on .about-wrapper — pushes rings off-screen.
+   ================================================================ */
+@media (max-width: 1024px) {
+  .hero-frame {
+    position: relative  !important;
+    left: 0   !important;
+    top:  0   !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-wrapper {
+    position: relative  !important;
+    left: 0   !important;
+    top:  0   !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ================================================================
+   MOBILE: 350px → 767px
+   THE BIG FIX — every section becomes flex column.
+   Every absolute element gets reset to relative + auto.
+   ================================================================ */
+@media (max-width: 767px) {
+/* issuees fixed by omar dev */
+  /* ── HERO ──────────────────────────────── */
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 15px 40px;
+    min-height: auto;
+    position: relative;
+    overflow: visible;
+  }
+  .badge {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    width: auto; max-width: 100%;
+    z-index: 1; margin-bottom: 12px;
+    display: flex;
+    left: auto;
+    padding: 5px 20px;
+  }
+  .hi {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    font-size: 1.5rem; 
+    margin: 10px 10px ;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid red;
+  }
+  .heading {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    font-size: 2rem; width: auto; margin: 10px 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+     border: 2px solid red;
+  }
+/* issuees fixed by omar dev */
+
+  .typing-line {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    width: 100%; box-sizing: border-box;
+    margin: 0 0 15px; text-align: left; border-radius: 12px;
+  }
+  .static-text   { font-size: 1.3rem; }
+  #dyn-typ       { font-size: 1.5rem; }
+  .cursor        { font-size: 1.5rem; }
+  /* Ring = min(350px, 75vw).
+     At 350px: 75vw=262px, card needs 262+80=342px.
+     At 480px: 75vw=360px, min=350px, card needs 430px.
+     min(430px, calc(75vw + 80px)) handles both correctly. */
+  .main_card {
+    position: relative !important;
+    left: auto !important; top: auto !important;
+    width: 100%;
+    height: min(430px, calc(75vw + 80px));
+    margin: 0 0 15px; box-sizing: border-box;
+    padding: 15px 15px;
+  }
+  .main p {
+    position: relative !important;
+    bottom: auto !important; left: auto !important;
+    max-width: 100%; margin: 0 0 15px; font-size: 0.9rem;
+  }
+  #b1, #b2, #b4 {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    display: inline-block;
+    margin: 0 6px 0 0;
+    width: 120px; height: 44px; font-size: 0.6rem;
+  }
+  #b2::before { display: none; }
+
+  /* ── ABOUT ──────────────────────────────── */
+  .main2 {
+    display: flex; flex-direction: column;
+    padding: 20px 15px; margin: 10px auto; min-height: auto;
+  }
+  .fafa {
+    position: relative !important;
+    left: auto !important; top: auto !important;
+    font-size: 1.8rem; margin-bottom: 15px;
+    display: block; width: auto; overflow: visible;
+  }
+  /* Ring = min(320px, 70vw).
+     At 350px: 70vw=245px. Card: 245+80=325px.
+     At 480px: 70vw=336px. min=320px. Card=400px. */
+
+     .v2-upgraded{
+  margin: 30px 5px;
+     }
+  .main_card2 {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    width: 100%; float: none;
+    height: min(400px, calc(70vw + 80px));
+    margin: 0 auto 20px; display: block;
+  }
+  .para {
+    position: relative !important;
+    left: auto !important; top: auto !important; bottom: auto !important;
+    width: 90%  !important; height: auto; margin: 0; float: none; font-size: 0.9rem;
+  }
+  .main2 p { font-size: 0.9rem; letter-spacing: 0; }
+
+  /* ── PROJECTS ──────────────────────────────── */
+  .main3 {
+    display: flex; flex-direction: column;
+    padding: 20px 15px; min-height: auto; overflow: visible;
+  }
+  .heading2 {
+    position: relative !important;
+    top: auto !important; right: auto !important;
+    font-size: 1.8rem; margin-bottom: 8px; display: block;
+  }
+  .main3 p[style] {
+    position: static !important; left: auto !important;
+    top: auto !important; font-size: 0.9rem !important;
+    margin: 0 0 10px !important;
+  }
+  .m3_div1 { position: static; }
+  .m3_bar  {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100%; flex-wrap: wrap; gap: 8px; margin: 0 0 15px; padding: 5px;
+  }
+  .m3_bar li:first-child {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: auto; height: auto; font-size: 0.75rem; padding: 10px 12px;
+  }
+  .m3_bar li { width: auto; min-width: 70px; height: auto; padding: 10px 12px; font-size: 0.85rem; }
+  .container {
+    position: relative !important; top: auto !important;
+    grid-template-columns: 1fr; gap: 15px;
+    margin: 0; min-height: auto; width: 100%; padding: 5px;
+  }
+  .item   { padding: 15px; }
+  .item p { font-size: 0.95rem; }
+
+  /* ── SKILLS ──────────────────────────────── */
+  .main4 {
+    display: flex; flex-direction: column;
+    min-height: auto; padding: 20px 15px; margin: 10px auto;
+  }
+  .heading3 {
+    position: relative !important; left: auto !important; top: auto !important;
+    font-size: 1.8rem; margin-bottom: 10px;
+    width: auto; height: auto; overflow: visible; display: block;
+    text-align: center;
+  }
+  .main4 .heading3::before{
+    top: 35px;
+    left: 10px;
+    width: 100px;
+    animation: linepassing 0.9s ease-in-out infinite forwards !important;
+  }
+  @keyframes linepassing {
+  0% {
+    transform: translateX(120px);
+  }
+
+  100% {
+    transform: translateX(250px);
+    opacity: 0;
+  }
+}
+/* issuees fixed by omar dev */
+  .main4 .container2 {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100%; height: auto; display: flex;
+    flex-wrap: wrap; justify-content: center; gap: 10px; padding: 10px 5px;
+  }
+  .container2 .skill-badge { min-width: 130px; min-height: 44px; padding: 12px 8px; font-size: 0.9rem; margin: 5px; }
+
+  /* ── LIKE SECTION ──────────────────────────────── */
+  .main5 {
+    display: flex; flex-direction: column; align-items: center;
+    min-height: auto; padding: 20px 15px 40px; margin: 10px auto;
+  }
+  .main5 .heading4 {
+    position: relative !important; left: auto !important; top: auto !important;
+    font-size: 1.8rem; width: auto; height: auto;
+    overflow: visible; display: block; align-self: flex-start; margin-bottom: 15px;
+      
+  }
+  .main5 .heading4::before{
+  top: 40px;
+  /* border: 2px solid red; */
+  left: 0;
+  width: 60px;
+   animation: linepassing2 0.9s ease-in-out infinite forwards !important;
+} @keyframes linepassing2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+
+  /* issuees fixed by omar dev */
+
+}
+ 
+  .screen {
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100% !important; height: 140px !important; margin: 0 0 10px !important;
+  }
+  .main5 .screen .like {
+    position: relative !important; left: auto !important;
+    transform: none !important; top: auto !important;
+    margin: 20px auto !important; display: flex !important;
+  }
+  #b5 {
+    position: relative !important; left: auto !important; top: auto !important;
+    display: block !important; margin: 0 auto 15px !important;
+  }
+  .vibe-quote {
+    position: relative !important; left: auto !important; top: auto !important;
+    width: 100% !important; text-align: center;
+    border-top: 1px dashed rgba(10,255,240,0.3); padding-top: 15px;
+  }
+
+  /* ── CONTACT ──────────────────────────────── */
+  .main6 {
+    display: flex; flex-direction: column;
+    min-height: auto; padding: 20px 15px; margin: 10px auto;
+  }
+  .main6 .heading4 {
+    position: relative !important; left: auto !important; top: auto !important;
+    font-size: 1.8rem; width: auto; height: auto;
+    overflow: visible; margin-bottom: 10px; display: block;
+  }
+
+  .main6 .heading4::before{
+    top: 40px;
+    /* border: 2px solid red; */
+    left: 0;
+    width: 60px;
+     animation: linepassing3 0.9s ease-in-out infinite forwards !important;
+  }@keyframes linepassing3 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(120px);
+    opacity: 0;
+}}
+  .main6 .para2 {
+    position: relative !important; left: auto !important;
+    width: 100%; text-align: center; margin: 0 0 15px; font-size: 0.9rem;
+  }
+  .main6 .para1 {
+    position: relative !important; top: auto !important;
+    left: auto !important; bottom: auto !important;
+    width: 100%; height: auto; margin: 0 0 15px; box-sizing: border-box;
+  }
+  .main6 .main_card3 {
+    display: flex;
+    position: relative !important; top: auto !important; left: auto !important;
+    width: 100%; height: auto; margin: 0 0 20px; box-sizing: border-box;
+    padding: 20px 10px;
+    justify-content: center;
+    align-items: center;
+  }
+.main_card3 form{
+  left: 0 !important;
+  top: 0 !important;
+}
+.cardi .icons a:nth-child(1){
+  font-size: 1.6rem;
+  background:linear-gradient(to right, #ffffff, #6dd5ed, #2193b0);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(2){
+  font-size: 1.6rem;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(3){
+  font-size: 1.6rem;
+   background: linear-gradient(45deg, #25262c, #d7d7d9, #534b58, #ece7ea, #e9d7dd, #060404);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+
+  .para1 h2 { font-size: 1.5rem; margin: 10px 10px; }
+  .para1 p  { margin: 8px 10px; font-size: 0.9rem; }
+  .main_card3 form { left: auto; width: 100%; max-width: 100%; padding: 15px 10px; box-sizing: border-box; }
+  .main_card3 form #name,
+  #email,
+  #text-area { min-width: auto; width: 100%; max-width: 100%; box-sizing: border-box; margin: 8px 5px; }
+  .main_card3 form #b3 { width: 100%; max-width: 200px; }
+
+  /* ── FOOTER ── */
+  .footer-container { flex-direction: column; text-align: center; }
+  .footer-social    { justify-content: center; }
+  .footer-bottom    { font-size: 0.7rem; }
+}
+
+/* ─── EXTRA SMALL: 350px–480px ─── */
+@media (max-width: 480px) {
+  /* issuees fixed by omar dev */
+  .port          { font-size: 0.85rem; }
+  .hi            { 
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.3rem;border: 2px solid blue; 
+    text-align: center;
+    margin: 15px 5px;
+ 
+ }
+  .heading       { font-size: 1.7rem;  display:inline-flex; left: auto!important; border: 2px solid red;
+    top: auto !important; text-align: center; justify-content: center; align-items: center;
+    margin: 15px 5px;
+  
+  }
+  .main_card     { 
+    padding: 10px 10px;
+    min-height: auto !important;
+     
+
+   }
+   /* issuees fixed by omar dev */
+
+  .static-text   { font-size: 1.1rem; }
+  #dyn-typ, .cursor { font-size: 1.3rem; }
+  .main p        { font-size: 0.85rem; }
+  #b1, #b2, #b4 { width: 105px; height: 40px; font-size: 0.55rem; margin: 0 4px 0 0; }
+
+
+  .fafa, .heading2, .heading3 { font-size: 1.5rem; }
+  .main5 .heading4, .main6 .heading4 { font-size: 1.5rem !important; }
+  .container2 .skill-badge { min-width: 110px; font-size: 0.85rem; padding: 10px 8px; }
+  .m3_bar li     { font-size: 0.8rem; padding: 8px 10px; min-width: 60px; }
+  .screen        { height: 130px !important; }
+  .item .smilo   { font-size: 0.8rem; margin: 0 6px; }
+  .footer-bottom { font-size: 0.65rem; }
+   /* issuees fixed by omar dev */
+   .fafa{
+    border: 2px solid red;
+    display: inline-block;
+   }
+   .badge{
+    margin: 0 5px;
+    display: flex;
+    padding: 2px 30px;
+    border: 1px solid red;
+  }
+  .main_card2{
+    padding: 20px 20px;
+  }
+  .v2-upgraded{
+    margin: 10px 5px;
+  }
+  .fafa::before{
+    top: 30px;
+    left: -60px;
+  }
+  .main2 .para{
+    height: auto !important;
+    width: 90% !important;
+  }
+  .main4 .heading3{
+    text-align: center;
+    /* border: 2px solid red;  */
+  
+     
+     
+  }
+  .main4 .heading3::before{
+    top: 35px;
+    left: -60px;
+    width: 100px;
+    animation: linepassing 0.9s ease-in-out infinite forwards !important;
+  }
+  @keyframes linepassing {
+  0% {
+    transform: translateX(120px);
+  }
+
+  100% {
+    transform: translateX(260px);
+    opacity: 0;
+  }
+}
+
+.main5 .heading4::before{
+  top: 30px;
+  /* border: 2px solid red; */
+  left: 0;
+  width: 60px;
+   animation: linepassing1 0.9s ease-in-out infinite forwards !important;
+} @keyframes linepassing1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  /* issuees fixed by omar dev */
+
+}
+.main6 .heading4::before{
+  top: 30px;
+  /* border: 2px solid red; */
+  left: 0;
+  width: 60px;
+   animation: linepassing3 0.9s ease-in-out infinite forwards !important;
+} @keyframes linepassing3 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(120px);
+    opacity: 0;
+}}
+.main_card3{
+  padding: 20px 20px;
+}
+.main_card3 form{
+  left: 0 !important;
+  top: 0 !important;
+}
+.cardi .icons a:nth-child(1){
+  font-size: 1.6rem;
+  background:linear-gradient(to right, #ffffff, #6dd5ed, #2193b0);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(2){
+  font-size: 1.6rem;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(3){
+  font-size: 1.6rem;
+   background: linear-gradient(45deg, #25262c, #d7d7d9, #534b58, #ece7ea, #e9d7dd, #060404);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+
+}
+/* ─── NARROWEST: 350px–375px ─── */
+@media (max-width: 375px) {
+  .port             { font-size: 0.78rem; }
+  .heading          { font-size: 1.5rem; }
+  #b1, #b2, #b4    { width: 95px; height: 38px; font-size: 0.5rem; }
+  .v1-tag, .v2-text { font-size: 0.5rem !important; padding: 2px 5px !important; }
+}
+
+/* ================================================================
+   TABLET: 768px → 1024px
+   ================================================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+ /* issued fixed by omar dev */
+  /* HERO */
+  .main { display: flex; flex-direction: column; min-height: auto; padding: 30px 20px 80px; overflow: visible; }
+  .badge { position: relative !important; top: auto !important; left: auto !important; z-index: 1; display: block; margin: 10px 0; }
+  .hi    {   position: relative !important; top: auto !important; left: auto !important; font-size: 2rem;display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start; }
+  .heading { position: relative !important; top: auto !important; left: auto !important; font-size: 2.8rem; width: auto; margin: 10px 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+     border: 2px solid red; }
+  .typing-line { position: relative !important; top: auto !important; left: auto !important; margin: 15px 0; display: inline-block; }
+
+  .main_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative !important; left: auto !important; top: auto !important; width: min(480px, 100%); height: 400px; margin: 20px 0;
+  padding: 15px 15px;
+  }
+  .main p { position: relative !important; bottom: auto !important; left: auto !important; max-width: 100%; margin: 15px 0; }
+  #b1, #b2, #b4 { position: relative !important; top: auto !important; left: auto !important; display: inline-block; margin: 10px 8px 0 0; }
+  #b2::before { display: none; }
+
+  /* ABOUT */
+  .main2 { display: flex; flex-direction: column; min-height: auto; padding: 30px 20px; margin: 10px auto; }
+  .fafa  { position: relative !important; left: auto !important; top: auto !important; font-size: 2rem; margin-bottom: 20px; display: block; overflow: visible; }
+  .main_card2 { position: relative !important; top: auto !important; left: auto !important; width: 100%; height: 400px; float: left; margin: 0 20px 20px 0; }
+
+  .main_card2 .v2-upgraded { margin: 30px 15px; }
+  .para { position: relative !important; left: auto !important; top: auto !important; bottom: auto !important; width: calc(100% - 340px); height: auto; float: right; margin: 0; }
+  .main2::after { content: ""; display: table; clear: both; }
+ 
+  /* PROJECTS */
+  .main3  { display: flex; flex-direction: column; padding: 20px 15px; min-height: auto; overflow: visible; }
+  .heading2 { position: relative !important; top: auto !important; right: auto !important; font-size: 2rem; margin-bottom: 8px; display: block; }
+  .main3 p[style] { position: static !important; left: auto !important; top: auto !important; font-size: 0.95rem !important; margin: 5px 0 10px !important; }
+  .m3_div1 { position: static; }
+  .m3_bar  { position: relative !important; top: auto !important; left: auto !important; width: 100%; flex-wrap: wrap; margin: 10px 0 20px; padding: 5px; gap: 8px; }
+  .m3_bar li:first-child { position: relative !important; top: auto !important; left: auto !important; width: auto; height: auto; padding: 12px 15px; font-size: 0.8rem; }
+  .m3_bar li { width: auto; min-width: 80px; height: auto; padding: 10px 12px; font-size: 0.9rem; }
+  .container { position: relative !important; top: auto !important; grid-template-columns: 1fr 1fr; gap: 20px; margin: 15px 0; min-height: auto; width: 100%; padding: 5px; }
+ /* issued fixed by omar dev */
+  /* SKILLS */
+  .main4  { display: flex; flex-direction: column; min-height: auto; padding: 30px 20px; margin: 10px auto; }
+  .heading3 { position: relative !important; left: auto !important; top: auto !important; font-size: 2rem; margin-bottom: 15px; width: auto; height: auto; overflow: visible; 
+  text-align: center;
+  }
+  .main4 .heading3::before{
+    top: 45px;
+    left: -60px;
+    width: 100px;
+    animation: linepassing 0.9s ease-in-out infinite forwards !important;
+  }
+  @keyframes linepassing {
+  0% {
+    transform: translateX(220px);
+  }
+
+  100% {
+    transform: translateX(560px);
+    opacity: 0;
+  }
+}
+/* issued fixed by omar dev  */
+  .main4 .container2 { position: relative !important; top: auto !important; left: auto !important; width: 100%; height: auto; padding: 10px; }
+
+  /* LIKE */
+  .main5  { display: flex; flex-direction: column; align-items: center; min-height: auto; padding: 30px 20px 60px; margin: 10px auto; }
+  .main5 .heading4 { position: relative !important; left: auto !important; top: auto !important; font-size: 1.9rem; width: auto; height: auto; overflow: visible; display: block; align-self: flex-start; margin-bottom: 15px; }
+  .main5 .heading4::before{
+  top: 40px;
+  /* border: 2px solid red; */
+  left: 0;
+  width: 60px;
+   animation: linepassing3 0.9s ease-in-out infinite forwards !important;
+} @keyframes linepassing3 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+
+  /* issuees fixed by omar dev */
+
+}
+  .screen { position: relative !important; top: auto !important; left: auto !important; width: 100% !important; height: 150px !important; margin: 0 0 15px !important; }
+  .main5 .screen .like { position: relative !important; left: auto !important; transform: none !important; top: auto !important; margin: 20px auto !important; display: flex !important; }
+  #b5 { position: relative !important; left: auto !important; top: auto !important; display: block !important; margin: 0 auto 15px !important; }
+  .vibe-quote { position: relative !important; left: auto !important; top: auto !important; width: 100% !important; text-align: center; border-top: 1px dashed rgba(10,255,240,0.3); padding-top: 15px; }
+
+  /* CONTACT */
+  .main6  { display: flex; flex-direction: column; min-height: auto; padding: 30px 20px; margin: 10px auto; }
+  .main6 .heading4 { position: relative !important; left: auto !important; top: auto !important; font-size: 2rem; width: auto; height: auto; overflow: visible; margin-bottom: 10px; display: block; }
+ .main6 .heading4::before{
+    top: 40px;
+    /* border: 2px solid red; */
+    left: 0;
+    width: 60px;
+     animation: linepassing4 0.9s ease-in-out infinite forwards !important;
+  }@keyframes linepassing4 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(180px);
+    opacity: 0;
+}}
+  .main6 .para2 { position: relative !important; left: auto !important; width: 100%; text-align: center; margin: 10px 0 20px; }
+  .main6 .main_card3 {
+    display: flex; justify-content: center; align-items: center;  
+    position: relative !important; top: auto !important; left: auto !important; width: 100%; height: auto; margin: 15px 0;
+    padding:20px 20px;
+  }
+
+.cardi .icons a:nth-child(1){
+  font-size: 1.7rem;
+  background:linear-gradient(to right, #ffffff, #6dd5ed, #2193b0);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(2){
+  font-size: 1.7rem;
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(3){
+  font-size: 1.7rem;
+   background: linear-gradient(45deg, #25262c, #d7d7d9, #534b58, #ece7ea, #e9d7dd, #060404);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+
+
+  .main6 .para1 { 
+    
+    position: relative !important; top: auto !important; left: auto !important; bottom: auto !important; width: 100%; height: auto; margin: 15px 0; box-sizing: border-box; }
+  .main_card3 form { left: auto; width: 100%; max-width: 100%; }
+  .main_card3 form #name, #email, #text-area { min-width: auto; width: 100%; max-width: 100%; box-sizing: border-box; }
+}
+
+/* ================================================================
+   MEDIUM DESKTOP: 1025px → 1279px
+   (Proportionally scale down the hardcoded pixel positions)
+   ================================================================ */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .hi            { font-size: 2.2rem; top: 90px;  left: 10px; }
+  .heading       { font-size: 3rem;   left: 155px; top: 70px; width: auto; }
+  .typing-line   { top: 150px; left: 10px; }
+  .main_card     { left: 270px; width: 500px; }
+  .main p        { font-size: 0.95rem; max-width: 450px; }
+  #b1            { top: 395px; left: 10px; }
+  #b2            { top: 395px; left: 180px; }
+  #b4            { top: 395px; left: 350px; }
+  .fafa          { left: 370px; }
+  .para          { left: 400px; width: calc(100% - 430px); }
+  .main_card2    { width: 370px; }
+  .heading2      { right: 350px; }
+  .m3_bar        { left: 300px; }
+  .heading3      { left: 380px; }
+  .main5 .heading4   { left: 380px; }
+  .screen .like      { left: 350px; }
+  #b5                { left: 420px; }
+  .main6 .heading4   { left: 360px; }
+  .main6 .para2      { left: 250px; width: 60%; }
+  .main6 .main_card3 { left: 500px; width: 500px; }
+  .main6 .para1      { left: 15px;  width: 470px; }
+}
+
+/* ================================================================
+   LARGE DESKTOP: 1280px → 1400px
+   ================================================================ */
+@media (min-width: 1280px) and (max-width: 1400px) {
+  .main_card         { left: 330px; width: 570px; }
+  .fafa              { left: 450px; }
+  .para              { left: 510px; width: calc(100% - 540px); }
+  .heading2          { right: 430px; }
+  .m3_bar            { left: 400px; }
+  .heading3          { left: 460px; }
+  .main5 .heading4   { left: 460px; }
+  .screen .like      { left: 430px; }
+  #b5                { left: 500px; }
+  .main6 .heading4   { left: 450px; }
+  .main6 .para2      { left: 320px; }
+  .main6 .main_card3 { left: 630px; width: 540px; }
+  .main6 .para1      { width: 600px; }
+}
+
+/* ================================================================
+   4K: 2560px+
+   ================================================================ */
+@media (min-width: 2560px) {
+  html { font-size: 22px; }
+  .main, .main2, .main3, .main4, .main5, .main6 { max-width: 2400px; }
+  header      { height: 110px; }
+  .port       { font-size: 2.2rem; left: 100px; }
+  nav         { min-height: 100px; padding: 0 60px; }
+  .nav_list a { font-size: 1.3rem; }
+  .hi            { font-size: 4rem;   top: 120px; left: 20px; }
+  .heading       { font-size: 5.5rem; top: 90px;  left: 280px; width: 600px; }
+  .typing-line   { top: 220px; left: 20px; }
+  .main_card     { left: 600px; width: 900px; height: 75vh; }
+  .main p        { font-size: 1.3rem; max-width: 800px; bottom: 120px; }
+  #b1            { top: 520px; left: 20px;  width: 200px; height: 65px; font-size: 1.1rem; }
+  #b2            { top: 520px; left: 250px; width: 200px; height: 65px; font-size: 1.1rem; }
+  #b4            { top: 520px; left: 480px; width: 200px; height: 65px; font-size: 1.1rem; }
+  .fafa       { left: 750px; font-size: 3.5rem; }
+  .main_card2 { width: 650px; top: 150px; }
+  .para       { left: 800px; width: 900px; top: 120px; font-size: 1.2rem; height: auto; }
+  .heading2   { right: 750px; font-size: 3.5rem; }
+  .m3_bar     { left: 700px; }
+  .heading3   { left: 800px; font-size: 3.5rem; }
+  .container2 .skill-badge { min-width: 260px; font-size: 1.4rem; padding: 28px 20px; }
+  .main5 .heading4   { left: 800px; }
+  .screen .like      { left: 800px; width: 280px; height: 140px; }
+  #b5                { left: 870px; font-size: 1.2rem; top: 235px; }
+  .main6 .heading4   { left: 750px; }
+  .main6 .para2      { left: 600px; width: 50%; }
+  .main6 .main_card3 { left: 1000px; width: 800px; }
+  .main6 .para1      { left: 30px; width: 920px; }
+  footer             { padding: 4rem 4rem 2rem; }
+  .footer-col h3     { font-size: 1.5rem; }
+  .footer-col p,
+  .footer-col li     { font-size: 1.1rem; }
+  .footer-bottom     { font-size: 1rem; }
+}
