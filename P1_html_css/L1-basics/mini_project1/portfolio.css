@@ -2,8 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  
 }
 body {
+  
+
   min-height: 100vh;
   margin: 0;
   display: flex;
@@ -13,19 +17,79 @@ body {
   background: linear-gradient(to bottom, #012e3d 0%, #0e274a 100%);
 
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+section {
+  scroll-margin-top: 80px; /* Jitni aapki navbar ki height hai utna gap dein */
+}
+/* Container bar */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #01192c;
+  box-shadow: inset 5px 0 15px rgba(0, 255, 255, 0);
+  
+  /* Ekdum dark blue/black background */
+}
+ ::-webkit-scrollbar-track{
+   background: rgba(181, 170, 170, 0); 
+    backdrop-filter: blur(10px);
+   /* border: 1px solid rgba(255, 255, 255, 0.3); */
+   border-radius: 25px;
+ }
 
+ ::-webkit-scrollbar-thumb{
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   border-radius: 25px;
+   background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 5px 10px #0afff0,
+                0 -5px 10px #0afff0;
+    
+ }
+ ::-webkit-scrollbar-thumb:hover{
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   border-radius: 25px;
+   background-color: #0afff0;
+   width: 10px;
+ }
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+ background: linear-gradient(90deg, #FF00FF, #8A2BE2);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+  /* box-shadow: 0 0 8px #0afff0; */
+  /* background-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700; */
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+@keyframes topBarAnim {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
 /* header and navbar work */
 header {
+  
   margin: 0;
   top: 0;
   /* /* border: 2px solid red; */
   height: 79px;
   padding: 0 10px;
-  position: sticky;
+  position: fixed;
   z-index: 1000;
-  opacity: 0.9;
+  opacity: 1;
   backdrop-filter: blur(10px);
+  width: 100%;
 }
 /* nav me ul ko end pe phnk dia ha meny */
 nav {
@@ -39,6 +103,7 @@ nav {
   border-top: 2px solid #0a0f1e;
   background-color: #0a0f1e;
   box-shadow: 0 1px 12px #0afff0;
+  /* position: fixed; */
 }
 .port {
   color: #00eeff;
@@ -287,8 +352,8 @@ font-size: 1.0rem;
 color: #e2e8f0;
 text-shadow: 0 0 2px rgba(0,0,0,0.3);
   max-width: 500px;
-  bottom: 140px;
-  left: 20px;
+  bottom: 100px;
+  left: 10px;
   font-weight: 400;
   /* text-align: center; */
 }
@@ -301,11 +366,14 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   background-color: #00fffbdc;
   box-shadow: 0 1px 10px rgb(14, 217, 236);
   font-family: "Press Start 2P", cursive;
-  top: -140px;
+  top: 400px;
   left: 10px;
   font-size: 1rem;
   /* opacity: 0.9; */
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}#b1 a{
+  text-decoration: none;
+  color: #012e3d;
 }
 #b1:hover {
   cursor: crosshair;
@@ -318,7 +386,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 #b2 {
   position: absolute;
-  top: -140px;
+  top: 400px;
   left: 190px;
   height: 50px;
   width: 150px;
@@ -329,6 +397,17 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   font-size: 1rem;
   font-weight: 600;
   animation: pump 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite forwards;
+}
+#b2 a {
+ text-decoration: none;
+  color: #f5f7f7;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Link pure button area me fail jaye */
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Link ko glow se upar rakhein */
+  position: relative;
 }
 #b2::before {
   content: "";
@@ -379,6 +458,14 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   cursor: crosshair;
   font-weight: 500;
 }
+#b2:hover a{
+  background-color: #00fffb;
+  color: #012e3d;
+  box-shadow: inset;
+  cursor: crosshair;
+  font-weight: 500;
+}
+
 #b4{
   border: 1px solid #00fffb;
   height: 50px;
@@ -387,7 +474,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   background-color: #00fffbdc;
   box-shadow: 0 1px 10px rgb(14, 217, 236);
   font-family: "Press Start 2P", cursive;
-  top: -140px;
+  top: 400px;
   left: 370px;
   font-size: 1rem;
   text-decoration: none;
@@ -605,7 +692,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 .para {
   border: 2px solid red;
   display: inline-block;
-  position: absolute;
+  position: absolute ;
   /* word-break: break-word; */
   color: aliceblue;
   background-color: #0a0f1e;
@@ -617,8 +704,9 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   backdrop-filter: blur(10px); /* Background image ko thora dhundla kar dega */
   border: 1px solid rgba(255, 255, 255, 0.646); /* Padd*/
   bottom: 40px;
-  width: 680px;
-  left: 550px;
+  width: 700px !important;
+  /* left: 1000px; */
+  left: 550px !important;
   top: 100px;
 }
 .main2 p {
@@ -631,7 +719,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   font-family: Georgia, "Times New Roman", Times, serif;
   position: relative;
   left: 520px;
-  top: 20px;
+  top: 1px;
   color: aliceblue;
   overflow: hidden;
   font-size: 2.6rem;
@@ -645,7 +733,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   content: "";
   position: absolute;
   left: 0;
-  top: 50px;
+  top: 47px;
   width: 50%;
   border-bottom: 2px solid #00eeff;
   animation: linepassing 0.9s ease-in-out infinite forwards;
@@ -669,7 +757,8 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   min-height: 115vh;
   max-width: 1400px;
   margin: 10px 2px;
-  padding: 5px 5px;
+  padding: 15px 10px;
+  overflow: hidden;
 }
 .main3::before{
   content: "";
@@ -691,11 +780,11 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   font-family: Georgia, "Times New Roman", Times, serif;
   position: absolute;
   color: #ffffff;
-  bottom: 560px;
+  top: 10px;
   right: 500px;
   /* text-decoration: underline; */
   font-size: 2.6rem;
-  margin: 5px ;
+  margin: 5px 5px;
 }
 .heading2 span:last-child {
   color: #00eeff;
@@ -774,7 +863,8 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   padding: 10px 10px;
   justify-content: space-between;
   align-items: center;
-  min-height: 55vh;
+  min-height: 65vh;
+  margin: 10px 5px;
 }
 
 .item {
@@ -880,6 +970,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 .heading3 {
   /* border: 2px solid yellow; */
   position: relative;
+  margin: 5px 5px;
   left: 500px;
   top: 10px;
   width: 210px;
@@ -1090,7 +1181,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
     width: 100%;
     height: 100%;
    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
-              url('photos/im42.png'); /* Yahan apni image ka link dein */
+              url('photos/im43.jpg'); /* Yahan apni image ka link dein */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1510,7 +1601,7 @@ footer {
     border-radius: 100px;
     display: inline-block;
     width: auto;
-    min-width: 320px;
+    min-width: 120px;
     border: 1px solid rgba(10, 255, 240, 0.3);
     animation: borderGlow 2s infinite alternate;
     transition: all 0.3s ease;
