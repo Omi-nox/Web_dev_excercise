@@ -7,10 +7,14 @@
 
 /* ─── REMOVE DEBUG BORDERS ─── */
 
-html, body {
-  overflow-x: hidden; /* Horizontal scroll ko jarr se khatam karne ke liye */
-  width: 100%;
-  position: relative;
+
+   html, body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+     margin: 0;
+    padding: 0;
+  
 }
 
 .main2, .main3, .main4,
@@ -73,6 +77,10 @@ section,
   max-width: 1400px;
   margin-left:  auto;
   margin-right: auto;
+
+}
+.main{
+  margin-top: 70px;
 }
 
 /* ================================================================
@@ -80,6 +88,10 @@ section,
    Fix the left:900px hardcode by making nav a flexbox
    ================================================================ */
 @media (min-width: 1025px) {
+   html, body {
+    height: auto;
+    min-height: 100vh;
+  }
   nav {
     display: flex;
     align-items: center;
@@ -464,9 +476,22 @@ section,
   .main_card3 form #b3 { width: 100%; max-width: 200px; }
 
   /* ── FOOTER ── */
-  .footer-container { flex-direction: column; text-align: center; }
+  
+  .footer-container { 
+    flex-direction: column; text-align: center; }
   .footer-social    { justify-content: center; }
   .footer-bottom    { font-size: 0.7rem; }
+
+   footer             { 
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 2rem 4rem 30rem; 
+    height: 100vh;
+    border: 2px solid red;
+  }
+  .footer-bottom p{
+    margin-bottom: 55px;
+  }
+
 }
 
 /* ─── EXTRA SMALL: 350px–480px ─── */
@@ -620,6 +645,15 @@ section,
       background-clip: text;
       color: transparent;
 }
+  footer             { 
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 2rem 4rem 30rem; 
+    height: 100vh;
+    border: 2px solid red;
+  }
+  .footer-bottom p{
+    margin-bottom: 55px;
+  }
 
 }
 /* ─── NARROWEST: 350px–375px ─── */
@@ -783,13 +817,23 @@ section,
     position: relative !important; top: auto !important; left: auto !important; bottom: auto !important; width: 100%; height: auto; margin: 15px 0; box-sizing: border-box; }
   .main_card3 form { left: auto; width: 100%; max-width: 100%; }
   .main_card3 form #name, #email, #text-area { min-width: auto; width: 100%; max-width: 100%; box-sizing: border-box; }
+
+ footer             { 
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 2rem 4rem 60rem; 
+    height: 100vh;
+    border: 2px solid red;
+  }
+  .footer-bottom p{
+    margin-bottom: 55px;
+  }
 }
 
 /* ================================================================
    MEDIUM DESKTOP: 1025px → 1279px
    (Proportionally scale down the hardcoded pixel positions)
    ================================================================ */
-@media (min-width: 1025px) and (max-width: 1279px) {
+@media (min-width: 1024px) and (max-width: 1279px) {
   .hi            { font-size: 2.2rem; top: 90px;  left: 10px; }
   .heading       { font-size: 3rem;   left: 155px; top: 70px; width: auto; }
   .typing-line   { top: 150px; left: 10px; }
@@ -811,6 +855,16 @@ section,
   .main6 .para2      { left: 250px; width: 60%; }
   .main6 .main_card3 { left: 500px; width: 500px; }
   .main6 .para1      { left: 15px;  width: 470px; }
+/* footer             { 
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 2rem 4rem 50rem; 
+    height: 100vh;
+    border: 2px solid red;
+  }
+  .footer-bottom p{
+    margin-bottom: 55px;
+  } */
+
 }
 
 /* ================================================================
@@ -830,6 +884,8 @@ section,
   .main6 .para2      { left: 320px; }
   .main6 .main_card3 { left: 630px; width: 540px; }
   .main6 .para1      { width: 600px; }
+
+
 }
 
 /* ================================================================
