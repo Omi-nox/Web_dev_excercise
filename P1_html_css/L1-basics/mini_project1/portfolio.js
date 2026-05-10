@@ -1,4 +1,4 @@
-let arr=["Student  ","Future AI Engineer  ","Learner  ","Python(Expert)","Developer  "];
+let arr=["Student","Future AI Engineer","Learner","Python(Expert)","Developer","Tech Enthusiast","Problem Solver"];
 arr_sz=arr.length;
 console.log('hi there',arr_sz);
 let i=0;
@@ -151,7 +151,7 @@ list.forEach(btn=>{
 
 
 let is = document.querySelector('.like span');
-const api = 'http://localhost:3000';   // baad mein Render ke URL se replace karna
+const api = 'https://portfolio-backend-y0io.onrender.com';   // baad mein Render ke URL se replace karna
 
 // Load likes from backend
 async function loadlikes() {
