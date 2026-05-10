@@ -148,46 +148,74 @@
 //     })
 // })
 
-// let is=document.querySelector('.like span');
-// // let nd=0;
 
-// const api='http://localhost:3000';
-// async function loadlikes() {
-//     try{
-//     const res=await fetch(`${api}/liqo`);
-//     const data=await res.json();
-//     is.textContent=data.l;
-//     }catch(err){
-//         console.error('something failed to fetch : ',err)
-//     }
-   
 
-// }
-// async function addlike() {
-//    try{
-//      const res=await fetch(`${api}/liqo`,{method:'POST'});
-//      const data=await res.json();
-//      is.textContent=data.l;
-//     //  document.getElementById('b5').disabled=true;
-//     let b=document.getElementById('b5')
-//     // b.style.transform = "scale(0.9)";
-//     b.innerText='Liked!!! ❤️';
-//     b.style.textAlign='center';
-//     b.style.transition = 'transform 0.1s ease-in-out';
-//     b.style.background='linear-gradient(95deg, #44fcff, #44f6ff)';
-//     b.disabled=true;
-//     setTimeout(()=>{
-//         alert('Thanks for giving me a like') 
-//     },300)
-//    }catch(err){
-//     console.error('system : : fault ',err);
-//     alert('like can give one time only');
-//    }
+let is = document.querySelector('.like span');
+const api = 'http://localhost:3000';   // baad mein Render ke URL se replace karna
 
-// }
-// loadlikes()
-// let b=document.getElementById('b5');
-// b.addEventListener('click',addlike);
+// Load likes from backend
+async function loadlikes() {
+    try {
+        const res = await fetch(`${api}/liqo`);
+        const data = await res.json();
+        is.textContent = data.l;
+    } catch (err) {
+        console.error('something failed to fetch : ', err);
+    }
+}
+if(localStorage.getItem('hasLiked')){
+    let b=document.getElementById('b5');
+    b.innerText='Liked!!! ❤️';
+     b.style.textAlign = 'center';
+        b.style.transition = 'transform 0.1s ease-in-out';
+        b.style.background = 'linear-gradient(95deg, #44fcff, #44f6ff)';
+        // b.disabled = true;
+}
+
+// Add like – ek hi baar per browser
+async function addlike(e) {
+  let b = document.getElementById('b5');
+  //  Page refresh stopping
+    if (e) e.preventDefault();
+
+    // . Check localStorage – agar pehle like kar chuka hai to return
+    if (localStorage.getItem('hasLiked')) {
+        alert('you gave a like already!');
+         b.innerText = 'Liked!!! ❤️';
+        return;
+    }
+
+    try {
+        const res = await fetch(`${api}/liqo`, { method: 'POST' });
+        const data = await res.json();
+        is.textContent = data.l;
+     
+        b.innerText = 'Liked!!! ❤️';
+        b.style.textAlign = 'center';
+        b.style.transition = 'transform 0.1s ease-in-out';
+        b.style.background = 'linear-gradient(95deg, #44fcff, #44f6ff)';
+        b.disabled = true;
+
+        // ✅ 4. LocalStorage mein mark kar do – taake refresh ke baad bhi yaad rahe
+        localStorage.setItem('hasLiked', 'true');
+
+        setTimeout(() => {
+            alert('Thanks for giving me a like');
+        }, 6000);
+    } catch (err) {
+        console.error('system fault: ', err);
+        alert('Like can be given only once (per browser).');
+    }
+}
+
+// Load likes on page start
+loadlikes();
+
+// Attach event listener with preventDefault
+let b = document.getElementById('b5');
+b.addEventListener('click', addlike);
+
+
 const quotes = [
   {
     quote: "Code is like humor. When you have to explain it, it’s bad.",
