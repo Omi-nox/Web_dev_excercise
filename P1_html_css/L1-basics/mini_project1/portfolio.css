@@ -783,7 +783,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   position: absolute;
   color: #ffffff;
   top: 5px;
-  right: 500px !important;
+  right: 480px !important;
   /* text-decoration: underline; */
   font-size: 2.6rem;
   margin: 5px 5px;
@@ -973,7 +973,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   /* border: 2px solid yellow; */
   position: relative;
   margin: 5px 5px;
-  left: 500px;
+  left: 520px !important;
   top: 10px;
   width: 210px;
   height: 100px;
@@ -1059,7 +1059,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 .main5 .heading4{
   position: relative;
-  left: 500px;
+  left: 510px !important;
   top: 10px;
   width: 210px;
   height: 100px;
@@ -1160,7 +1160,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   cursor: pointer;
   transition: 0.2s;
   margin: 1rem 0 0.5rem;
-  left: 550px;
+  left: 550px !important;
   top: 220px;
 }
 #b5:hover:not(:disabled){
