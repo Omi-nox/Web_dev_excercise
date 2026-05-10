@@ -536,14 +536,14 @@ section,
   .footer-bottom { font-size: 0.65rem; }
    /* issuees fixed by omar dev */
    .fafa{
-    border: 2px solid red;
+    
     display: inline-block;
    }
    .badge{
     margin: 0 5px;
     display: flex;
     padding: 2px 30px;
-    border: 1px solid red;
+    
   }
   .main_card2{
     padding: 20px 20px;
@@ -649,7 +649,7 @@ section,
     display: flex; flex-direction: column; align-items: center; text-align: center;
     padding: 2rem 4rem 30rem; 
     height: 100vh;
-    border: 2px solid red;
+    
   }
   .footer-bottom p{
     margin-bottom: 55px;
