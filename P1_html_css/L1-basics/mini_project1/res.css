@@ -200,7 +200,7 @@ section,
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
   .heading {
     position: relative !important;
@@ -209,7 +209,7 @@ section,
     display: inline-flex;
     justify-content: center;
     align-items: center;
-     border: 2px solid red;
+     /* border: 2px solid red; */
   }
 /* issuees fixed by omar dev */
 
@@ -486,7 +486,7 @@ section,
     display: flex; flex-direction: column; align-items: center; text-align: center;
     padding: 2rem 4rem 30rem; 
     height: 100vh;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
   .footer-bottom p{
     margin-bottom: 55px;
