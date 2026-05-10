@@ -503,12 +503,14 @@ section,
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    font-size: 1.3rem;border: 2px solid blue; 
+    font-size: 1.3rem;
+   
     text-align: center;
     margin: 15px 5px;
  
  }
-  .heading       { font-size: 1.7rem;  display:inline-flex; left: auto!important; border: 2px solid red;
+  .heading       { font-size: 1.7rem;  display:inline-flex; left: auto!important;
+     
     top: auto !important; text-align: center; justify-content: center; align-items: center;
     margin: 15px 5px;
   
