@@ -1337,6 +1337,10 @@ textarea{
     background-color: #0e274a;
     color: #00eeff;
     border-radius: 10px;
+    min-height: 120px;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
 }
 .main_card3 form #b3{
  border: 1px solid #00fffb;
