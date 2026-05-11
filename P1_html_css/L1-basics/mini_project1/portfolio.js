@@ -151,9 +151,10 @@ list.forEach(btn=>{
 
 
 let is = document.querySelector('.like span');
-// const api = 'https://portfolio-backend-y0io.onrender.com';
+const api = 'https://portfolio-backend-y0io.onrender.com';
 // baad mein Render ke URL se replace karna
-const api = 'http://localhost:3000'; // Localhost for development
+// const api = 'http://localhost:3000'; 
+// Localhost for development
 // Load likes from backend
 async function loadlikes() {
     try {
