@@ -41,7 +41,7 @@
 
 
     app.listen(3000,()=>{
-        console.log('server is running , buddy , on http://localhost:3000, thanks for joining')
+        console.log('server is running , buddy , on http://localhost:3000, thanks for joining or maybe runnning on live render server')
     })
     //PERSONEL WORK HERE
 
