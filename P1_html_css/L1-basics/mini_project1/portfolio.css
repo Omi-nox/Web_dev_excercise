@@ -757,10 +757,12 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   position: relative;
   border: 2px solid rgb(217, 255, 0);
   min-height: 115vh;
-  max-width: 1400px;
+  max-height: 120vh;
   margin: 10px 2px;
   padding: 15px 10px;
+  height: auto;
   overflow: hidden;
+
 }
 .main3::before{
   content: "";
@@ -795,8 +797,8 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 
 .m3_bar {
   /* border: 2px solid green;   */
-  position: absolute;
-  padding: 2px 16px;
+  position: relative;
+  padding: 10px 16px;
   display: flex;
   justify-content: space-between;
   gap: 15px;
@@ -804,7 +806,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.2;
-  top: 80px;
+  top: 90px ;
   left: 450px;
   justify-content: space-between;
   align-items: center;
@@ -851,22 +853,24 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 
 .container {
-  border: 2px solid pink;
+  border: 2px solid rgb(231, 0, 39);
   margin: 10px 5px;
-  position: relative;
+  /* position: absolute; */
+  /* position: relative; */
   display: grid;
   /* Ek column 2 hissay lega, baaki 2 ek-ek hissa */
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: minmax(150px, auto);
+  grid-template-rows: auto 1fr;
   gap: 25px;
   width: 100%;
   max-width: 1400px;
-  top: 170px;
-  padding: 10px 10px;
+margin-top: 110px; /* Top ki jagah margin use karein */
+  padding: 10px;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  min-height: 65vh;
-  margin: 10px 5px;
+  
+  min-height: 165vh; 
 }
 
 .item {
@@ -903,7 +907,13 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   /* border: 2px solid blue; */
   font-weight: 300;
 }
-
+.item img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background-position: cover;
+  margin: 8px 5px;
+}
 .item .smilo {
   display: inline-block;
   /* border: 1px solid red; */
