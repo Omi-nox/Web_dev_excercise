@@ -284,7 +284,9 @@ section,
   .main3 {
     display: flex; flex-direction: column;
     padding: 20px 15px; min-height: auto; overflow: visible;
+    max-height: 250vh;
   }
+  
   .heading2 {
     position: relative !important;
     top: auto !important; right: auto !important;
@@ -490,6 +492,7 @@ section,
   }
   .footer-bottom p{
     margin-bottom: 55px;
+    font-size: 0.9rem;
   }
 
 }
