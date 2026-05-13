@@ -1,4 +1,4 @@
-let arr=["Student","Future AI Engineer","Learner","Python(Expert)","Developer","Tech Enthusiast","Problem Solver"];
+let arr=["Student   ","Future AI Eng   ","Learner   ","Python(Expert)   ","Developer   ","Problem Solver   ",];
 arr_sz=arr.length;
 console.log('hi there',arr_sz);
 let i=0;
@@ -77,19 +77,15 @@ list.forEach(btn=>{
                     // ppr.style.backdropFilter='blur(8px)';
                     ppr.style.display = 'none'; 
                 })
-                 let ppr2=document.querySelectorAll('.item.Python.ml')
+                 let ppr2=document.querySelectorAll('.item.Pythons.ml')
                 ppr2.forEach(function(ppr){
                     //  ppr.style.backgroundColor='red';
                     ppr.style.display = 'none'; 
                 })
-                 let ppr3=document.querySelectorAll('.item.java')
-                ppr3.forEach(function(ppr){
-                    //  ppr.style.backgroundColor='red';
-                    ppr.style.display = 'none'; 
-                })
+                 
                 }
             })
-        }else if(opt=='Web_dev'){
+        }else if(opt=='Web dev'){
              con.forEach(function(con){
                 if(con.innerText=='Html-Css'){
                     console.log(con);
@@ -106,7 +102,7 @@ list.forEach(btn=>{
                     // ppr.style.backdropFilter='blur(8px)';
                        ppr.style.display = 'none'; 
                 })
-                 let ppr2=document.querySelectorAll('.item.Python.ml')
+                 let ppr2=document.querySelectorAll('.item.Pythons.ml')
                 ppr2.forEach(function(ppr){
                     // ppr.style.background='rgba(0, 0, 0, 0.65)';
                     // ppr.style.backdropFilter='blur(8px)';
@@ -119,7 +115,7 @@ list.forEach(btn=>{
              con.forEach(function(con){
                 if(con.innerText.trim()=='Sk-learn'){
                     console.log(con);
-                let ppr=document.querySelectorAll('.item.Python.ml')
+                let ppr=document.querySelectorAll('.item.Pythons.ml')
                 ppr.forEach(function(ppr){
                     // ppr.style.backgroundColor='green';
                        ppr.style.display = 'block'; 
@@ -131,6 +127,13 @@ list.forEach(btn=>{
                     // ppr.style.backdropFilter='blur(8px)';
                        ppr.style.display = 'none'; 
                 })
+                 let ppr2=document.querySelectorAll('.item.python')
+                    ppr2.forEach(function(ppr){
+                    // ppr.style.background='rgba(0, 0, 0, 0.65)';
+                    // ppr.style.backdropFilter='blur(8px)';
+                       ppr.style.display = 'none'; 
+                })
+            
                 }
             })
         }else if(opt.trim()=='All'){
