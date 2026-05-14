@@ -660,6 +660,9 @@ section,
   .footer-bottom p{
     margin-bottom: 55px;
   }
+  .main{
+    margin-top: 60px !important;
+  }
 
 }
 /* ─── NARROWEST: 350px–375px ─── */
