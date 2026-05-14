@@ -221,7 +221,7 @@ section {
   left: 10px;
   margin: 5px 2px;
   overflow: hidden;
-  top: -250px;
+  top: -230px;
   z-index: -1000;
 }
 .badge::before {
@@ -959,7 +959,9 @@ margin-top: 110px; /* Top ki jagah margin use karein */
 .main4 {
   position: relative;
   border: 2px solid red;
-  min-height: 80vh;
+  min-height: 200vh;
+  /* max-height: 150vh; */
+  height: auto;
   max-width: 1400px;
   margin: 20px 2px;
 }
@@ -971,7 +973,7 @@ margin-top: 110px; /* Top ki jagah margin use karein */
     width: 100%;
     height: 100%;
    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
-              url('photos/im20.jpg'); /* Yahan apni image ka link dein */
+              url('photos/im27.jpg'); /* Yahan apni image ka link dein */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1018,47 +1020,121 @@ margin-top: 110px; /* Top ki jagah margin use karein */
 }
 
 .main4 .container2 {
-  top: 100px;
-  position: absolute;
+  top: 40px;
+  position: absolute !important;
   border: 2px solid green;
   display: flex;
   left: 10px;
   height: 250px;
-  padding: 10px 10px;
+  padding: 30px 30px;
   flex-wrap: wrap;
-  justify-content: center;
+  
 }
 
 .container2 .skill-badge {
   border: 2px solid #00eeff;
   background-color: #0a0f1e;
-  /* width: 100%; */
+  width: 100%;
   min-width: 200px;
   min-height: 50px;
-  margin: 15px 15px;
-  padding: 20px 15px;
-  text-align: center;
+  margin: 10px 15px;
+  padding: 30px 15px;
+  /* text-align: center; */
   font-size: 1.2rem;
   font-weight: 400;
-  color: aliceblue;
+  color: #00eeff;
+ 
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 20px;
+}
+.stars1{
+ margin-left: 40px;
+ margin-top: 10px;
+}.stars1 .fa-star:nth-child(-n+4) {
+  color: #ffdd00;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}.stars1 .fa-star:last-child {
+  color: #f2f2ee;
+  font-size: 1.2rem;
+  margin-right: 5px;
 }
 
-.container2 .skill-badge:hover {
+
+.container2 .skh{
+  color: aliceblue;
+}
+.stars5{
+ margin-left: 40px;
+ margin-top: 10px;
+}.stars5 .fa-star:nth-child(-n+3) {
+  color: #ffdd00;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}.stars5 .fa-star:nth-child(4) {
+  color: #f2f2ee;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+.stars5 .fa-star:nth-child(5) {
+  color: #f2f2ee;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.stars4{
+ margin-left: 40px;
+ margin-top: 10px;
+}.stars4 .fa-star:nth-child(n) {
+  color: #ffdd00;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+.stars6{
+ margin-left: 40px;
+ margin-top: 10px;
+}.stars6 .fa-star:nth-child(-n+4) {
+  color: #ffdd00;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}.stars6 .fa-star:last-child {
+  color: #f2f2ee;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+.stars3{
+ margin-left: 40px;
+ margin-top: 10px;
+}.stars3 .fa-star:nth-child(n) {
+  color: #ffdd00;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.skill-badge .fa-python { color: #3776AB; font-size: 1.5rem; margin-right: 10px; }
+.skill-badge .fa-cube { color: #f7ef00; font-size: 1.5rem; margin-right: 10px;}
+.skill-badge .fa-node-js { color: #ffad0a; font-size: 1.9rem; margin-right: 10px;}
+.skill-badge .fa-database { color: #03f89a; font-size: 1.9rem; margin-right: 10px;}
+.skill-badge .fa-html5 { color: #E34F26; font-size: 1.9rem; margin-right: 10px;}
+.skill-badge .fa-github { color: #f9f9f8; font-size: 1.9rem; margin-right: 10px;}
+
+/* .container2 .skill-badge:hover {
   background-color: #00eeff;
   color: #0a0f1e;
   box-shadow: 1px 1px 25px rgb(14, 217, 236);
   cursor: pointer;
-}
+} */
 
 /* Specific icon colors on hover (optional) */
-.skill-badge:hover .fa-python { color: #3776AB; font-size: 1.8rem; }
+/* .skill-badge:hover .fa-python { color: #3776AB; font-size: 1.8rem; margin-right: 10px; }
 .skill-badge:hover .fa-brain { color: #ff44cc; font-size: 1.8rem}
 .skill-badge:hover .fa-js { color: #f7df1e; font-size: 1.8rem; }
 .skill-badge:hover .fa-database { color: #47A248; font-size: 1.8rem;}
 .skill-badge:hover .fa-node-js { color: #8CC84B; font-size: 1.8rem;}
 .skill-badge:hover .fa-html5 { color: #E34F26; font-size: 1.8rem;}
 .skill-badge:hover .fa-chart-line { color: #00aaff;font-size: 1.8rem; }
-.skill-badge:hover .fa-table { color: #2d6a4f;font-size: 1.8rem; }
+.skill-badge:hover .fa-table { color: #2d6a4f;font-size: 1.8rem; } */
 .main5 {
   position: relative;
   border: 2px solid red;
