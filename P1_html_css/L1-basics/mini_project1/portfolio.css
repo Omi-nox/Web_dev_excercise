@@ -23,6 +23,7 @@ body > :not(footer) {
 section {
   scroll-margin-top: 80px; /* Jitni aapki navbar ki height hai utna gap dein */
 }
+
 /* Container bar */
 ::-webkit-scrollbar {
   width: 12px;
@@ -350,13 +351,13 @@ section {
 .main p {
   position: relative;
   margin: 14px 5px;
-font-size: 1.0rem;
+font-size: 1.1rem;
 color: #e2e8f0;
 text-shadow: 0 0 2px rgba(0,0,0,0.3);
   max-width: 500px;
   bottom: 100px;
   left: 10px;
-  font-weight: 400;
+  font-weight: 600;
   /* text-align: center; */
 }
 
@@ -380,6 +381,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 #b1:hover {
   cursor: crosshair;
   cursor: pointer;
+  background-color: #ffd166;
   box-shadow: 1px 1px 25px rgb(14, 217, 236);
 }
 #b1:active {
