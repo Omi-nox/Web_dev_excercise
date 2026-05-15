@@ -40,7 +40,6 @@
   height: 2px;
   background: #0afff0;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -127,17 +126,53 @@ section,
   header     { min-height: 60px; height: auto; }
   nav        { display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; }
   .port      { position: static; font-size: 0.95rem; }
+  
   .nav_list  {
-    display: none; flex-direction: column;
+    display: flex; /* Changed from none to flex */
+    flex-direction: column;
     position: absolute; top: 60px; left: 0; right: 0;
     width: 100%; background-color: #0a0f1e;
     border-bottom: 2px solid #0afff0; padding: 20px;
     z-index: 999; gap: 12px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    
+    /* Crucial Fix: Use visibility instead of display none */
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.5s ease, visibility 0.6s ease;
   }
-  .nav_list.open { display: flex; }
-  .nav_list li   { margin: 0; }
-  .nav_list a    { font-size: 1.1rem; width: 100%; text-align: left; }
+
+  .nav_list li {
+    opacity: 0;
+    transform: translateY(20px); /* Pushes items down */
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Triggered when navbar has the .open class */
+  .nav_list.open { 
+    opacity: 1;
+    visibility: visible; /* Makes the menu interactable */
+  }
+  
+  /* Triggers the upward motion for the list items */
+  .nav_list.open li { 
+    margin: 0; 
+    opacity: 1;
+    transform: translateY(0); /* Brings them up smoothly */
+    color: #833ab4 !important;
+  }
+  
+  /* Added Stagger Delay so items pop up one by one */
+  .nav_list.open li:nth-child(1) { transition-delay: 0.1s; }
+  .nav_list.open li:nth-child(2) { transition-delay: 0.2s; }
+  .nav_list.open li:nth-child(3) { transition-delay: 0.3s; }
+  .nav_list.open li:nth-child(4) { transition-delay: 0.4s; }
+
+  .nav_list a { 
+    font-size: 1.1rem; 
+    width: 100%; 
+    text-align: left;   
+  }
 }
 
 /* ================================================================
