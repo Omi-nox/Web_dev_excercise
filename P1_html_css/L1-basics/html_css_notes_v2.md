@@ -115,6 +115,10 @@ Property	Function	Effect
 
 transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Thora bounce effect */
 
+transition: opacity 0.5s ease, visibility 0.5s ease;
+
+ ***Note*** : transition will not calculated if it happern from none to display , u have to do visibility:hidden + display : flex in humburger icon and transition and animation will always apply on original for also to come reverse original pos , not on active open 
+
 transition: background-color 0.3s ease-in-out;  **for background color on hover**
 
  width: 100%; /* Width full rakhen aur scale use karein */
