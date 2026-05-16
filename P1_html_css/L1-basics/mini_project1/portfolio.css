@@ -114,7 +114,7 @@ nav {
   top: 15px;
   font-size: 1.5rem;
   font-weight: 800;
-  /* font-family: "Roboto Slab", serif; */
+  font-family: 'Orbitron', sans-serif;
   letter-spacing: 0.15em;
   /* text-decoration: underline; */
   line-height: 1.5;
@@ -215,7 +215,7 @@ section {
   display: inline-block;
   color: #0afff0;
   background-color: #0a0f1e;
-  width: 280px;
+  width: 290px;
   height: 31px;
   padding: 5px 5px;
   text-align: right;
@@ -239,7 +239,7 @@ section {
   color: aliceblue;
   font-size: 2.5rem;
   font-weight: 500;
-  font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: 'Inter', sans-serif;
   position: absolute;
   top: 90px;
   left: 10px;
@@ -249,7 +249,7 @@ section {
   /* border: 2px solid rgb(8, 8, 35); */
   display: inline-block;
   /* font-family: 'Press Start 2P', cursive; */
-  font-family: "Roboto Slab", serif;
+   font-family: 'Orbitron', sans-serif;
   font-size: 3.5rem;
   font-weight: 900;
   font-variant: small-caps;
@@ -357,21 +357,26 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   max-width: 500px;
   bottom: 100px;
   left: 10px;
-  font-weight: 600;
+  font-weight: 500;
   /* text-align: center; */
 }
 
 #b1 {
-  border: 1px solid #00fffb;
+  /* border: 1px solid #00fffb; */
   height: 50px;
   width: 150px;
   position: absolute;
-  background-color: #00fffbdc;
-  box-shadow: 0 1px 10px rgb(14, 217, 236);
-  font-family: "Press Start 2P", cursive;
+  /* #ffc60a */
+    background-color: #ffc60a;
+     border-color: #e8b84b; 
+     
+  box-shadow: 0 2px 10px #e8b84b;
+  
+ font-family: 'Inter', sans-serif;
   top: 400px;
   left: 10px;
   font-size: 1rem;
+  border-radius: 10px ;
   /* opacity: 0.9; */
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }#b1 a{
@@ -381,8 +386,8 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 #b1:hover {
   cursor: crosshair;
   cursor: pointer;
-  background-color: #ffd166;
-  box-shadow: 1px 1px 25px rgb(14, 217, 236);
+
+  box-shadow: 1px 1px 25px #e8b84b;
 }
 #b1:active {
   transform: scale(0.9);
@@ -395,16 +400,17 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   height: 50px;
   width: 150px;
   background-color: transparent;
-  color: white;
-  font-family: "Press Start 2P", cursive;
-  border: 2px solid #00fffb;
-  font-size: 1rem;
+ border-color: #e8b84b; 
+ font-family: 'Inter', sans-serif;
+  
+  font-size: 1.1rem;
+  border-radius: 10px;
   font-weight: 600;
   animation: pump 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite forwards;
 }
 #b2 a {
  text-decoration: none;
-  color: #f5f7f7;
+  color: #e8e4d0;
   width: 100%;
   height: 100%;
   display: flex; /* Link pure button area me fail jaye */
@@ -412,6 +418,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   justify-content: center;
   z-index: 2; /* Link ko glow se upar rakhein */
   position: relative;
+  
 }
 #b2::before {
   content: "";
@@ -419,7 +426,8 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   height: 53px;
   width: 155px;
   width: 0;
-  border: 2px solid #00eeff;
+  border: 2px solid #e8b84b;
+  border-radius:10px ;
   transform: scale(0);
   left: -3px;
   top: -5px;
@@ -445,7 +453,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   50% {
     transform: scale(1.08);
     /* opacity: 0.5; */
-    border-color: #0affb3;
+    border-color: #e8b84b;
     width: 100%;
   }
   100% {
@@ -456,32 +464,37 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   }
 }
 #b2:hover {
-  background-color: #00fffb;
+  background-color: #e8b84b; 
+  /* color: #07070f; */
   color: #012e3d;
   box-shadow: inset;
   cursor: crosshair;
   font-weight: 500;
 }
 #b2:hover a{
-  background-color: #00fffb;
-  color: #012e3d;
+background-color: #e8b84b; color: #07070f;
   box-shadow: inset;
   cursor: crosshair;
-  font-weight: 500;
+  font-weight: 200;
+  border-radius: 8px;
 }
 
 #b4{
-  border: 1px solid #00fffb;
+ 
   height: 50px;
   width: 150px;
   position: absolute;
-  background-color: #00fffbdc;
-  box-shadow: 0 1px 10px rgb(14, 217, 236);
-  font-family: "Press Start 2P", cursive;
+   background-color: #ffc60a;
+     border-color: #e8b84b; 
+     
+  box-shadow: 0 2px 10px #e8b84b;
+  
+ font-family: 'Inter', sans-serif;
   top: 400px;
   left: 370px;
   font-size: 1rem;
   text-decoration: none;
+  border-radius:10px ;
   /* opacity: 0.9; */
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -492,7 +505,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 #b4:hover {
   cursor: crosshair;
   cursor: pointer;
-  box-shadow: 1px 1px 25px rgb(14, 217, 236);
+  box-shadow: 1px 1px 25px #e8b84b;
 }
 #b4:active {
   transform: scale(0.9);
@@ -720,7 +733,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   letter-spacing: 0.05em;
 }
 .fafa {
-  font-family: Georgia, "Times New Roman", Times, serif;
+   font-family: 'Orbitron', sans-serif;
   position: relative;
   left: 520px !important;
   top: 10px;
@@ -783,7 +796,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 
 .heading2 {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Orbitron', sans-serif;
   position: absolute;
   color: #ffffff;
   top: 5px;
@@ -824,8 +837,8 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   box-shadow:
     0 1px 10px rgb(14, 217, 236),
     0 12px 10px black;
-  font-family: "Press Start 2P", cursive;
-  top: 0;
+  font-family: "Press Start 2P", cursive ;
+  top: 5px;
   left: -160px;
   font-size: 1rem;
   color: black;
@@ -842,6 +855,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
   text-align: center;
   background-color: #0a0f1e;
   color: aliceblue;
+  border-radius: 10px;
 }
 .m3_bar li:hover {
   background-color: #00fffbdc;
@@ -855,7 +869,7 @@ text-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 
 .container {
-  border: 2px solid rgb(231, 0, 39);
+  /* border: 2px solid rgb(231, 0, 39); */
   margin: 10px 5px;
   /* position: absolute; */
   /* position: relative; */
@@ -898,7 +912,7 @@ margin-top: 110px; /* Top ki jagah margin use karein */
 }
 .item h2 {
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: #0affb3;
+  color:  #ffc60a;
 }
 .item p {
   color: #a0b2d0;
@@ -951,7 +965,7 @@ margin-top: 110px; /* Top ki jagah margin use karein */
   font-weight: 500;
 }
 .smilo a:hover {
-  color: #0afff0;
+  color:  #e8b84b;
   position: relative;
 
   /* box-shadow: 0 0 7px #0afff0; */
@@ -989,10 +1003,10 @@ margin-top: 110px; /* Top ki jagah margin use karein */
   margin: 5px 5px;
   left: 520px !important;
   top: 10px;
-  width: 210px;
+  width: 222px;
   height: 100px;
   font-size: 2.8rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Orbitron', sans-serif;
   color: aliceblue;
   overflow: hidden;
 }
@@ -1149,12 +1163,13 @@ margin-top: 110px; /* Top ki jagah margin use karein */
   position: relative;
   left: 510px !important;
   top: 10px;
-  width: 210px;
+  width: 240px;
   height: 100px;
   font-size: 2.1rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+   font-family: 'Orbitron', sans-serif;
   color: aliceblue;
   overflow: hidden;
+  font-weight: 800;
 }
 .heading4 span:last-child {
   color: #00eeff;
@@ -1346,6 +1361,7 @@ margin-top: 110px; /* Top ki jagah margin use karein */
     inset 10px 10px 10px black,
     inset -10px -10px 10px black;
   
+  
 }
 
 .main6 .main_card3 form {
@@ -1437,9 +1453,9 @@ textarea{
   /* position: absolute; */
   background-color: #00fffbdc;
   box-shadow: 0 1px 10px rgb(14, 217, 236);
-  font-family: "Press Start 2P", cursive;
-  margin-top: 5px;
-  
+ font-family: 'Orbitron', sans-serif;
+  margin-top: 10px;
+  border-radius: 10px;
   font-size: 1rem;
   /* opacity: 0.9; */
   transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1454,7 +1470,7 @@ textarea{
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.457);
 }
 .main6 .heading4{
-  font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: 'Orbitron', sans-serif;
   position: relative;
   color: #ffffff;
   left:490px;
@@ -1501,7 +1517,7 @@ textarea{
     letter-spacing: 0.1rem;
     width: 50%;
     left: 350px;
-    margin: 5px 5px;
+    margin: 25px 5px;
     font-weight: 600;
     /* white-space: wrap; */
 }
@@ -1779,3 +1795,16 @@ footer {
 /* <p class="fp" style="border-top: 1px solid #ccc; pt-2; margin-top: 10px;">
   © 2025 Umar Asghar. | AI Engineer & Full Stack Warrior | Python • ML • JS • 3D | All rights reserved.
 </p> */
+.heading, .heading2, .heading3,
+.fafa, h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}/* --- body font --- */
+body, p, li, a, label, button {
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- mono / code / typing --- */
+.typing-line, .v1-tag, .v2-text,
+#dyn-typ, .static-text, .cursor {
+  font-family: 'JetBrains Mono', monospace;
+}
