@@ -719,10 +719,19 @@ section,
 }
 /* ─── NARROWEST: 350px–375px ─── */
 @media (max-width: 375px) {
-  .port             { font-size: 0.78rem; }
+  .port             { font-size: 0.88rem;}
+  .badge {
+    margin: 0 5px ;
+    display: flex;
+    padding: 2px 30px;
+    width: 100%;
+    
+  }
   .heading          { font-size: 1.5rem; }
   #b1, #b2, #b4    { width: 95px; height: 38px; font-size: 0.8rem;   font-family: 'Inter', sans-serif;}
   .v1-tag, .v2-text { font-size: 0.5rem !important; padding: 2px 5px !important; }
+
+   .m3_bar li     { font-size: 0.8rem; padding: 8px 10px; min-width: 60px; margin-left: 0; margin-right: 0}
 }
 
 /* ================================================================
