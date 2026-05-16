@@ -542,7 +542,9 @@ section,
 /* ─── EXTRA SMALL: 350px–480px ─── */
 @media (max-width: 480px) {
   /* issuees fixed by omar dev */
-  .port          { font-size: 0.85rem; }
+  .port          { font-size: 0.85rem; 
+ 
+  }
   .hi            { 
     display: inline-flex;
     flex-wrap: wrap;
@@ -583,7 +585,7 @@ section,
   .fafa, .heading2, .heading3 { font-size: 1.5rem; }
   .main5 .heading4, .main6 .heading4 { font-size: 1.5rem !important; }
   .container2 .skill-badge { min-width: 110px; font-size: 0.85rem; padding: 10px 8px; }
-  .m3_bar li     { font-size: 0.8rem; padding: 8px 10px; min-width: 60px; }
+  .m3_bar li     { font-size: 0.8rem; padding: 8px 10px; min-width: 60px; margin: 2px 2px;}
   .screen        { height: 130px !important; }
   .item .smilo   { font-size: 0.8rem; margin: 0 6px; }
   .footer-bottom { font-size: 0.65rem; }
@@ -593,9 +595,12 @@ section,
     display: inline-block;
    }
    .badge{
-    margin: 0 5px;
+    margin: 0 5px !important;
     display: flex;
     padding: 2px 30px;
+    text-align: start;
+   white-space: nowrap;
+    width: 100%;
     
   }
   .main_card2{
