@@ -600,7 +600,7 @@ section,
     padding: 2px 30px;
     text-align: start;
    white-space: nowrap;
-    width: 100%;
+    
     
   }
   .main_card2{
@@ -711,8 +711,8 @@ section,
     
   }
   .footer-bottom p{
-    margin-bottom: 0;
-    font-size: 0.8rem;
+    margin-bottom: 5px;
+    font-size: 1rem;
   }
   .main{
     margin-top: 60px !important;
