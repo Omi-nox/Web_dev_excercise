@@ -76,6 +76,8 @@ list.forEach(btn=>{
                     // ppr.style.background='rgba(0, 0, 0, 0.65)';
                     // ppr.style.backdropFilter='blur(8px)';
                     ppr.style.display = 'none'; 
+                    ppr.style.visibil = ''; 
+                    
                 })
                  let ppr2=document.querySelectorAll('.item.Pythons.ml')
                 ppr2.forEach(function(ppr){

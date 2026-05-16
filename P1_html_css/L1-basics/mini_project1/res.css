@@ -570,8 +570,8 @@ section,
 
   .static-text   { font-size: 1.1rem; }
   #dyn-typ, .cursor { font-size: 1.3rem; }
-  .main p        { font-size: 0.85rem; }
-  #b1, #b2, #b4 { width: 105px; height: 40px; font-size: 0.8rem; margin: 0 4px 0 0;
+  .main p        { font-size: 0.79rem; }
+  #b1, #b2, #b4 { width: 100px; height: 40px; font-size: 0.8rem; margin: 0 4px 0 0;
       font-family: 'Inter', sans-serif;
   
   }
@@ -700,13 +700,14 @@ section,
 }
   footer             { 
     display: flex; flex-direction: column; align-items: center; text-align: center; 
-    height: 100vh;
+    height: 103vh;
     margin-top: 0 !important;
     padding: 1rem !important;
     
   }
   .footer-bottom p{
-    margin-bottom: 55px;
+    margin-bottom: 0;
+    font-size: 0.8rem;
   }
   .main{
     margin-top: 60px !important;
@@ -716,23 +717,14 @@ section,
   padding: 8px 8px;
   font-weight: 100;
  }
+   .main3 {
+    display: flex; flex-direction: column;
+    padding: 20px 15px; min-height: auto; overflow: visible;
+    max-height: 290vh;
+  }
 }
 /* ─── NARROWEST: 350px–375px ─── */
-@media (max-width: 375px) {
-  .port             { font-size: 0.88rem;}
-  .badge {
-    margin: 0 5px ;
-    display: flex;
-    padding: 2px 30px;
-    width: 100%;
-    
-  }
-  .heading          { font-size: 1.5rem; }
-  #b1, #b2, #b4    { width: 95px; height: 38px; font-size: 0.8rem;   font-family: 'Inter', sans-serif;}
-  .v1-tag, .v2-text { font-size: 0.5rem !important; padding: 2px 5px !important; }
 
-   .m3_bar li     { font-size: 0.8rem; padding: 8px 10px; min-width: 60px; margin-left: 0; margin-right: 0}
-}
 
 /* ================================================================
    TABLET: 768px → 1024px
