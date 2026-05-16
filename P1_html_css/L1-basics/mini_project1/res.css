@@ -172,6 +172,7 @@ section,
     font-size: 1.1rem; 
     width: 100%; 
     text-align: left;   
+     color: #ffc60a !important;
   }
 }
 
@@ -279,7 +280,9 @@ section,
     top: auto !important; left: auto !important;
     display: inline-block;
     margin: 0 6px 0 0;
-    width: 120px; height: 44px; font-size: 0.6rem;
+    width: 120px; height: 44px; font-size: 1.2rem;
+    font-weight: 800;
+   font-family: 'Inter', sans-serif; 
   }
   #b2::before { display: none; }
 
@@ -529,7 +532,11 @@ section,
     margin-bottom: 55px;
     font-size: 0.9rem;
   }
-
+.main6 .para2{
+  margin: 10px 0;
+  padding: 8px 8px;
+  font-weight: 100;
+ }
 }
 
 /* ─── EXTRA SMALL: 350px–480px ─── */
@@ -564,7 +571,13 @@ section,
   .static-text   { font-size: 1.1rem; }
   #dyn-typ, .cursor { font-size: 1.3rem; }
   .main p        { font-size: 0.85rem; }
-  #b1, #b2, #b4 { width: 105px; height: 40px; font-size: 0.55rem; margin: 0 4px 0 0; }
+  #b1, #b2, #b4 { width: 105px; height: 40px; font-size: 0.8rem; margin: 0 4px 0 0;
+      font-family: 'Inter', sans-serif;
+  
+  }
+  #b2{
+   background-color: #0c0c1e;
+  }
 
 
   .fafa, .heading2, .heading3 { font-size: 1.5rem; }
@@ -698,13 +711,17 @@ section,
   .main{
     margin-top: 60px !important;
   }
-
+ .main6 .para2{
+  margin: 10px 0;
+  padding: 8px 8px;
+  font-weight: 100;
+ }
 }
 /* ─── NARROWEST: 350px–375px ─── */
 @media (max-width: 375px) {
   .port             { font-size: 0.78rem; }
   .heading          { font-size: 1.5rem; }
-  #b1, #b2, #b4    { width: 95px; height: 38px; font-size: 0.5rem; }
+  #b1, #b2, #b4    { width: 95px; height: 38px; font-size: 0.8rem;   font-family: 'Inter', sans-serif;}
   .v1-tag, .v2-text { font-size: 0.5rem !important; padding: 2px 5px !important; }
 }
 
