@@ -31,18 +31,7 @@ h1:hover{
     color: #1a1a2e;
 }
 ```
-# 🚀 DEBUG RULE
-
-Agar problem aaye:
-
-1.  Structure galat? → HTML check\
-2.  Style nahi lag raha? → CSS selector check\
-3.  Center nahi ho raha? → flex use\
-4.  Element gayab? → display / position check
-
 ------------------------------------------------------------------------
-
-🔥 Goal: \> Code likho → break karo → fix karo → repeat
 
 ## box shadow
 box-shadow: [X-offset] [Y-offset] [Blur] [Spread] [Color];
@@ -84,7 +73,7 @@ CSS file ke bilkul shuru mein ye code daal dein. Yeh CSS ka sabse zaroori rule h
 css
 ```
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; !important
   margin: 0;
   padding: 0;
 }
@@ -99,9 +88,7 @@ body {
   overflow-x: hidden;
 }
 ```
-Use code with caution.
 
-(Lekin yaad rakhein, ye sirf scroll chhupata hai, asli masla fix nahi karta. Asli fix box-sizing: border-box hi hai.)
 
 
   ### TRANSLATE TRANSFORMATION
