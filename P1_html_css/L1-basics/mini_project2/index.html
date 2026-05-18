@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quix_game</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="res.css">
+</head>
+<body>
+    <header>
+        <h1 class="heading1">Quiz.Game</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#Quiz">Quiz</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Email">Email</a></li>
+            </ul>
+        </nav>
+        <button class="hm" id="hm">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+</body>
+<script>
+    let bt=document.querySelector('.hm')
+    let dc=document.querySelector('nav ul')
+    let n=document.querySelector('nav')
+    
+    console.log('hmburger class fetched',hm)
+    bt.addEventListener('click',()=>{
+        bt.classList.toggle('khulga')
+        dc.classList.toggle('khulga')
+        n.classList.toggle('khulga')
+        console.log('class chipak di ha meny')
+        console.log('class nav pe bhi  chipak di ha meny')
+    })
+
+    
+
+</script>
+</html>

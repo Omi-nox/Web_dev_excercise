@@ -1,0 +1,55 @@
+*{
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Apply this to the container (usually the body) */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Takes full height of the screen */
+  margin: 0;
+}
+header{
+    /* border: 2px solid red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 50px;
+    height: auto;
+    padding: 15px 15px 15px 0;    
+    border-bottom: 2px solid #37000A;
+    box-shadow: 5px 2px 5px #37000A;
+  
+}
+.heading1{
+    position: relative;
+    left: -100px;
+    display: inline-block;
+    /* border: 2px solid yellow; */
+    
+}
+nav{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid green; */
+}
+nav ul{
+    /* border: 1px solid blueviolet; */
+    display: flex;
+    /* flex-shrink: 1; */
+    padding: 5px 5px;
+}
+nav ul li{
+    margin: 0 14px;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+}
+.hm{
+    display: none;
+}
