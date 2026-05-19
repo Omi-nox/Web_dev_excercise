@@ -19,7 +19,35 @@
   nav ul li a{
     margin: auto;
    }
-   
+   .bulb{
+   position: relative;
+   left: auto;  
+}
+.main{
+    min-height: auto !important;
+}
+
+.card1{
+position:relative;
+width: 100%;
+max-width: 100%;
+min-width: 100px;
+top: auto;
+left: auto;
+}.card1 p{
+    font-size: clamp(1.2rem, 5vw + 0.5rem, 2.2rem); 
+}
+.about-section {
+      
+        min-height: auto !important;
+    }
+    .about-cards {
+        gap: 20px; /* Mobile par cards ke darmiyan thoda kam fasla */
+    }
+    .about-card {
+        max-width: 100%; /* Mobile screen par card full width le lega bina overlapping ke */
+    }
+
 }
 @media (max-width:480px){
 
@@ -54,6 +82,9 @@
         transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);  
 
     }
+    nav ul li a{
+        padding: 0 0;
+    }
     nav.khulga{
         visibility: visible;
     }
@@ -61,4 +92,15 @@
         /* border:2px solid yellow; */
         transform: translate(0);
     }
+  .card1 {
+        position: relative;
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .card1 p {
+        font-size: clamp(1rem, 6vw, 1.5rem); /* Phone screen ke liye perfect chota font */
+    }
+
+       
 }
