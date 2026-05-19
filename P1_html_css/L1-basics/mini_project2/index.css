@@ -28,6 +28,7 @@ header{
     position: relative;
     left: -100px;
     display: inline-block;
+      font-family: "Josefin Sans", sans-serif;
     /* border: 2px solid yellow; */
     
 }
@@ -35,6 +36,7 @@ nav{
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    
     /* border: 2px solid green; */
 }
 nav ul{
@@ -46,10 +48,346 @@ nav ul{
 nav ul li{
     margin: 0 14px;
     list-style: none;
+   
 }
 nav ul li a{
     text-decoration: none;
+      font-family: "Roboto Slab", serif;
+       padding: 5px 10px;
+       color: #070707;
+}
+nav ul li a:hover{
+    border-radius:20px;
+    box-shadow: 2px 2px 5px #272526 inset,
+     -2px -2px 5px #272525 inset;
 }
 .hm{
     display: none;
+}
+.fa-regular{
+   /* border: 2px solid red; */
+  
+   font-size: 1.6rem;
+  
+  
+}
+.bulb{
+ position: relative;
+ left: -280px;  
+ border:none;
+ outline: none;
+
+}
+
+.bulb:hover{
+    cursor: pointer;
+}
+.main{
+    /* border: 2px solid red; */
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1px 1px;
+    align-items: center;
+    gap: 10px;
+}
+.card1{
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(181, 170, 170, 0.1); 
+    backdrop-filter: blur(10px); /* Background image ko thora dhundla kar dega */
+    border-radius: 25px;
+    min-height: 50px;
+    height: auto;
+    margin-top: 10px;
+    position: relative;
+    top: -50px
+
+}
+.card1 p{
+    text-align: center;
+    font-size: 3rem;
+    margin: 10px 1px;
+    font-family: "Exo", sans-serif;
+    padding: 15px 15px;
+}
+.play{
+    display: block;
+    width: 150px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a1a2e;
+    background-color: #ffdf00;
+    border: none;
+    padding: 15px 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(255, 223, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Button Hover Animation */
+.play:hover {
+    transform: scale(1.05); /* Halka sa bada hoga */
+    box-shadow: 0 8px 25px rgba(255, 223, 0, 0.7); /* Glow barh jayega */
+    background-color: #ffffff; /* Hover par white ho jayega */
+}
+.fa-solid{
+    color: purple;
+    text-shadow:2px 2px 3px #e3b23c,
+                -1px -1px 3px #e3b23c;
+}
+
+   /* About Section Main Style */
+.about-section {
+    padding: 60px 20px;
+    background: #111116; /* Dark slate background taake text stand out kare */
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    height: auto;
+    min-height: 100vh;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading Styling */
+.about-heading {
+    font-size: clamp(2rem, 4vw, 3.5rem); /* Responsive font size */
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.about-heading .highlight {
+    color: #ffdf00; /* Aapka favorite bulb yellow color */
+    text-shadow: 0 0 15px rgba(255, 223, 0, 0.4);
+}
+
+.about-subtitle {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #a0a0a9;
+    margin-bottom: 40px;
+}
+
+/* Cards Flexbox/Grid Mix Layout */
+.about-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobile par automatic cards ek dusre ke niche chaley jayenge */
+    width: 100%;
+}
+
+/* Single Card Styling */
+.about-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 30px 20px;
+    flex: 1;
+    min-width: 280px; /* Mobile par safety network taake cards pichke nahi */
+    max-width: 350px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Card Hover Glow Animation */
+.about-card:hover {
+    transform: translateY(-10px); /* Hover par card halka sa upar uthega */
+    border-color: #ffdf00;
+    box-shadow: 0 10px 25px rgba(255, 223, 0, 0.15);
+    background: rgba(255, 223, 0, 0.02);
+}
+
+/* Icon Styling inside Card */
+.card-icon {
+    font-size: 2.5rem;
+    color: #ffdf00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
+}
+
+.about-card h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    color: #b0b0b5;
+    line-height: 1.6;
+}
+ /* Footer Main Styling */
+.quiz-footer {
+    /* background: #0d0d11;  */
+    /* Ultra dark background */
+    border-top: 1px solid rgba(255, 223, 0, 0.1); /* Halka sa yellow border top border */
+    padding: 40px 20px 20px 20px;
+    width: 100%;
+    color: #070707;
+    /* margin-top: auto; Agar page par content kam ho tab bhi footer bottom par rahega */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Mobile par stack hone ke liye */
+    gap: 30px;
+}
+
+/* Section Specific Styling */
+.footer-info, .footer-dev, .footer-socials {
+    flex: 1;
+    min-width: 250px; /* Safety grid setup */
+}
+
+/* Brand Logo */
+.footer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-logo .highlight {
+    color: #b6174b;
+    text-shadow: 0 0 10px rgba(255, 223, 0, 0.4);
+}
+
+.footer-info p {
+    color: #0d0d11;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Developer & Email Section */
+.footer-dev {
+    text-align: center;
+}
+
+.dev-text {
+    font-size: 1rem;
+    margin-bottom: 15px; 
+   
+    color: #b6174b;
+}
+
+.dev-name {
+    color: #b6174b;
+    font-weight: bold;
+}
+.dev-name a{
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+/* Heart Animation */
+.animate-heart {
+    color: #ff3366;
+    margin: 0 8px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Modern Email Button */
+.email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 223, 0, 0.1);
+    border: 1px solid #b6174b;
+    color: #b6174b;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.email-btn:hover {
+    background: #ffdf00;
+    color: #0d0d11;
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.4);
+}
+
+/* Social Media Section */
+.footer-socials {
+    text-align: right;
+}
+
+.footer-socials h4 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #b6174b;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #37000A;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #b6174b;
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #b6174b;
+    border-top: 2px solid #37000A;
+}
+
+
+
+
+
+
+
+ /* DARK KNIGHT  */
+.bulb.on{
+ background-color: #070707;
+}
+.fa-regular.on{
+   
+    color: #ddb513;
+}
+body.on{
+    background-color: #070707;
+}
+header.on{
+    /* background-color: #66666e; */
+    color: #ddb513;
+    box-shadow: 5px 5px 10px #ddb513;
+}
+nav.on a{
+    /* background-color: #66666e; */
+    color: #ddb513;
+}
+.card1.on p{
+    color: aliceblue;
+}
+.fa-solid.on{
+    color: #070707;
 }

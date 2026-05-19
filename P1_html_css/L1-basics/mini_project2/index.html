@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quix_game</title>
+   
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans+Narrow:wght@400;700&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="res.css">
 </head>
 <body>
     <header>
         <h1 class="heading1">Quiz.Game</h1>
+        <button class="bulb"><i class="fa-regular fa-lightbulb"></i></button>
+       
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -24,11 +32,90 @@
             <span></span>
         </button>
     </header>
+    <section class="main">
+        <div class="card1">
+           <p class="para">
+            LEVEL UP YOUR MIND <i class="fa-solid fa-cloud-moon"></i><br>TEST YOUR BRAIN <br>IMPORVE YOUR <i class="fa-solid fa-crown "></i> KNOWLEDGE  <br> EVERYTHING WILL DONE BY PLAYING..<i class="fa-solid fa-medal"></i>
+           </p>      
+        </div>
+        <button class="play">Play Game</button>           
+    </section>
+      <section class="about-section">
+    <div class="about-container">
+        <h2 class="about-heading">Why Play <span class="highlight">Our Quiz?</span></h2>
+        <p class="about-subtitle">Power up your mind with the ultimate trivia experience.</p>
+        
+        <!-- Feature Cards Container -->
+        <div class="about-cards">
+            <!-- Card 1 -->
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Fast & Furious</h3>
+                <p>Beat the ticking clock! Quick decisions lead to higher points and double rewards.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                <h3>Brain Booster</h3>
+                <p>Specially crafted questions to test your IQ, memory, and general knowledge limits.</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="about-card">
+                <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
+                <h3>Leaderboard King</h3>
+                <p>Compete with friends, climb the ranks, and unlock exclusive champion badges.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="quiz-footer">
+    <div class="footer-container">
+        <!-- Left Side: Game Info -->
+        <div class="footer-info">
+            <h3 class="footer-logo">Quiz.<span class="highlight">Game</span></h3>
+            <p>Test your limits, level up your mind, and conquer the leaderboard.</p>
+        </div>
+
+        <!-- Center Side: Developer Details & Direct Email -->
+        <div class="footer-dev">
+            <p class="dev-text">Crafted with <i class="fa-solid fa-heart animate-heart"></i> by <span class="dev-name"><a href="https://omi-portfolio-lake.vercel.app/" target="_blank">Omi dev</a></span></p>
+            <!-- Email Action Button -->
+            <a href="mailto:your-email@://example.com" class="email-btn">
+                <i class="fa-solid fa-envelope"></i> Email Me
+            </a>
+        </div>
+
+        <!-- Right Side: Social Connect Links -->
+        <div class="footer-socials">
+            <h4>Connect With Me</h4>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 Quiz.Game. | All Rights Reserved.</p>
+    </div>
+</footer>
 </body>
 <script>
     let bt=document.querySelector('.hm')
     let dc=document.querySelector('nav ul')
     let n=document.querySelector('nav')
+    let bt1=document.querySelector('.bulb')
+    let dc1=document.querySelector('body')
+    let dc2=document.querySelector('header')
+    let dc3=document.querySelector('.fa-regular')
+    let dc4=document.querySelector('.card1')
+    let dc5=document.querySelectorAll('.fa-solid')
+    // let d=document.querySelectorAll
+    // let dc5=document.querySelector('')
     
     console.log('hmburger class fetched',hm)
     bt.addEventListener('click',()=>{
@@ -37,6 +124,17 @@
         n.classList.toggle('khulga')
         console.log('class chipak di ha meny')
         console.log('class nav pe bhi  chipak di ha meny')
+    })
+    bt1.addEventListener('click',()=>{
+        bt1.classList.toggle('on')
+        dc1.classList.toggle('on')
+        dc2.classList.toggle('on')
+        n.classList.toggle('on')
+        dc3.classList.toggle('on')
+        dc4.classList.toggle('on')
+        dc5.forEach(i=>{
+            i.classList.toggle('on')
+        })
     })
 
     
