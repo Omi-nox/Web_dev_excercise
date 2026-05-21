@@ -3,7 +3,7 @@
    html,body{
     height: auto;
     min-height: 100vh;
-    overflow-y: auto;
+    overflow-y: auto  ;
     margin: 0;
     padding: 0;
    } header{
@@ -47,7 +47,10 @@ left: auto;
     .about-card {
         max-width: 100%; /* Mobile screen par card full width le lega bina overlapping ke */
     }
-
+ footer{
+    min-height: 75vh !important;
+    height: auto;
+ }
 }
 @media (max-width:480px){
 
