@@ -344,13 +344,13 @@ nav ul li a:hover{
 }
 
 .social-icons a {
-    color: #9f089f;
+    color: #b6174b;
     font-size: 1.3rem;
     transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #b6174b;
+    color: #0366fc;
     transform: translateY(-3px);
 }
 
