@@ -1,0 +1,206 @@
+*{
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* Apply this to the container (usually the body) */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Takes full height of the screen */
+  margin: 0;
+  
+}
+header{
+    /* border: 2px solid red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 50px;
+    height: auto;
+    padding: 15px 15px 15px 0;    
+    border-bottom: 2px solid #37000A;
+    box-shadow: 5px 2px 5px #37000A;
+  
+}
+.heading1{
+    position: relative;
+    left: -100px;
+    display: inline-block;
+      font-family: "Josefin Sans", sans-serif;
+    /* border: 2px solid yellow; */
+    
+}
+nav{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* border: 2px solid green; */
+}
+nav ul{
+    /* border: 1px solid blueviolet; */
+    display: flex;
+    /* flex-shrink: 1; */
+    padding: 5px 5px;
+}
+nav ul li{
+    margin: 0 14px;
+    list-style: none;
+   
+}
+nav ul li a{
+    text-decoration: none;
+      font-family: "Roboto Slab", serif;
+       padding: 5px 10px;
+       color: #070707;
+}
+nav ul li a:hover{
+    border-radius:20px;
+    box-shadow: 2px 2px 5px #272526 inset,
+     -2px -2px 5px #272525 inset;
+}
+.hm{
+    display: none;
+}
+.fa-regular{
+   /* border: 2px solid red; */
+  
+   font-size: 1.6rem;
+  
+  
+}
+.bulb{
+ position: relative;
+ left: -280px;  
+ border:none;
+ outline: none;
+
+}
+
+.bulb:hover{
+    cursor: pointer;
+}
+
+.main1{
+    min-height: 100vh;
+    height: auto;
+    padding: 10px 10px;
+    
+    
+}
+.card2{
+ background: rgba(15, 25, 45, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid #0afff0;
+  border-radius: 24px;
+  box-shadow: 0 0 30px rgba(10, 255, 240, 0.3);
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  width: 100%;
+  min-height: 150px;
+  height: auto  ;
+  margin-top: 10px;
+}
+.card2 h2{
+    border-bottom: 1px solid #0afff0;
+    margin: 10px 10px;
+}
+.card2 div{
+    font-size: 2rem;
+}
+.card2 button{
+    display: flex;
+    justify-content: flex-start;
+    max-width: 500px;
+    width: 100%;
+    margin: 5px 10px;
+    padding: 10px 10px;
+    
+}
+.opt{
+    position: relative;
+background: rgba(15, 25, 45, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(10, 255, 240, 0.3);
+  border-radius: 60px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  color: aliceblue;
+}
+.opt::before {
+  content: '';
+  position: absolute;
+  top:auto;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(10, 255, 240, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+.opt:hover::before {
+  left: 80px;
+}
+.opt:hover {
+  background: rgba(10, 255, 240, 0.1);
+  border-color: #0afff0;
+  transform: translateX(8px) scale(1.01);
+  box-shadow: 0 0 12px rgba(10, 255, 240, 0.4);
+  color: #ffffff;
+}
+/* Active / Click Effect */
+.opt:active {
+  transform: scale(0.98);
+  transition: 0.05s;
+}
+/* Selected State (when user picks an answer) */
+.opt.selected {
+  background: linear-gradient(95deg, rgba(10, 255, 240, 0.2), rgba(255, 68, 204, 0.2));
+  border-color: #ff44cc;
+  box-shadow: 0 0 15px rgba(255, 68, 204, 0.5);
+  color: #ffffff;
+}
+
+/* Disabled State (after answering) */
+.opt.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  filter: grayscale(0.1);
+}
+.lll span{
+    margin: 1px 100px;
+}
+
+/* dark knight */
+.bulb.on{
+ background-color: #070707;
+}
+.fa-regular.on{
+   
+    color: #ddb513;
+}
+body.on{
+    background-color: #070707;
+}
+header.on{
+    /* background-color: #66666e; */
+    color: #ddb513;
+    box-shadow: 5px 5px 10px #ddb513;
+}
+nav.on a{
+    /* background-color: #66666e; */
+    color: #ddb513;
+}
+
+
+
