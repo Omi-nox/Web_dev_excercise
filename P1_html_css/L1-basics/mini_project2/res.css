@@ -9,7 +9,7 @@
    } header{
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
    }
    .heading1{
     position:relative;
@@ -65,7 +65,7 @@ left: auto;
         background-color: transparent;
     }
     .hm span{
-        border: 4px solid #37000A;
+        border: 4px solid #ddb513;;
         border-radius: 75px;
         width: 1px;
         margin: 2px 2px;
