@@ -126,8 +126,9 @@ nav ul li a:hover{
     
 }
 .opt{
+
     position: relative;
-background: rgba(15, 25, 45, 0.65);
+    background: rgba(15, 25, 45, 0.65);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(10, 255, 240, 0.3);
   border-radius: 60px;
@@ -135,7 +136,8 @@ background: rgba(15, 25, 45, 0.65);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  color: aliceblue;
+  color:   #ddb513;;
+  gap: 10px;
 }
 .opt::before {
   content: '';
@@ -147,6 +149,7 @@ background: rgba(15, 25, 45, 0.65);
   background: linear-gradient(90deg, transparent, rgba(10, 255, 240, 0.2), transparent);
   transition: left 0.5s ease;
   z-index: -1;
+ 
 }
 .opt:hover::before {
   left: 80px;
@@ -168,9 +171,20 @@ background: rgba(15, 25, 45, 0.65);
   background: linear-gradient(95deg, rgba(10, 255, 240, 0.2), rgba(255, 68, 204, 0.2));
   border-color: #ff44cc;
   box-shadow: 0 0 15px rgba(255, 68, 204, 0.5);
-  color: #ffffff;
+  /* color: #ddb513; */
 }
-
+.opt.not-selected{
+    
+          opacity: 1;
+          cursor: pointer;
+          pointer-events: '';
+          /* color: #ddb513; */
+             
+}
+.opt.unknown{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
 /* Disabled State (after answering) */
 .opt.disabled {
   pointer-events: none;
@@ -201,6 +215,7 @@ nav.on a{
     /* background-color: #66666e; */
     color: #ddb513;
 }
+
 
 
 
