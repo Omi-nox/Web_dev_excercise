@@ -864,3 +864,264 @@ auto pe content khud ba khud zayada hoga no worries
    width: 10px;
  }
 ```
+# LOTTIE ANIMATIONS 
+```
+ <!-- Canvas element jahan animation render hogi html file me  -->
+        <canvas id="dotlottie-canvas" style="width: 300px; height:300px;"></canvas>
+         <script type="module" src="index.js" defer>  </script>
+       // CDN se direct library import karein (Bina kisi NPM install ke) index js me 
+
+import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
+
+// Animation ko configure aur start karein
+const dotLottie = new DotLottie({
+    autoplay: true,
+    loop: true,
+    canvas: document.querySelector('#dotlottie-canvas'),
+    src: "file name after downloading"
+});
+
+background body ke lia 
+ #dotlottie-canvas {
+    position: fixed;   /* viewport ke hisaab se fixed */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* barish ko stretch karega bina distortion ke, thoda crop hoga to chalega */
+    z-index: -10;
+    border: none;
+    display: block;    /* extra gap hatane ke liye */
+}
+   
+
+```
+# SOCIAL TAGS
+```
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ <a href="https://github.com/Omi-Nox" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/umarkhan_.ysfxi_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+         <i class="fas fa-coffee coffee-icon"></i>
+
+        .para1 .card{
+ border: 1px solid rgba(255, 255, 255, 0.3);
+ padding: 5px 5px;
+ margin: 5px 5px;
+}
+.para1 .card span:first-child{
+    font-weight: 800;
+}
+.para1 .card span{
+    margin: 3px 3px;
+    display: block;
+}
+.para1 .cardi{
+   /* border: 2px solid #00eeff; */
+   padding: 5px 5px;
+
+}
+.cardi span{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.cardi .icons a{
+    display: inline-block;
+    position: relative;
+    margin: 12px 10px;
+    color: #00eeff;
+    font-size: 1.9rem;
+    transition: all 0.3s ease-in-out;
+
+}
+.cardi .icons a:hover{
+    color: #000000;
+     /* box-shadow: 0 10px 7px #0afff0; */
+    
+   
+    background:linear-gradient(to right, #ffffff, #6dd5ed, #2193b0);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+.cardi .icons a:active{
+     transform: scale(0.9);
+}
+.cardi .icons a:nth-child(2):hover{
+     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.cardi .icons a:nth-child(3):hover{
+     background: linear-gradient(45deg, #25262c, #d7d7d9, #534b58, #ece7ea, #e9d7dd, #060404);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  
+}
+```
+# ANOTHER SNIPPET
+```
+<div class="footer-col">
+      <h3>Get in Touch</h3>
+      <p><i class="fas fa-envelope"></i> umarasghar508@gmail.com</p>
+      <p><i class="fas fa-phone"></i> 0310*****60</p>
+      <div class="footer-social">
+        <a href="https://github.com/Omi-Nox" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/umarkhan_.ysfxi_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+       
+      </div>
+      .footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-col .fas.fa-envelope {
+  color: #ffc60a;
+  margin-right: 8px;
+  perspective: 1000px;
+  transition: all 0.3s ease-in-out;
+}
+.footer-col .fas.fa-envelope:hover {
+  color: #0afff0;
+  transform: rotate(360deg)
+}
+.footer-col .fas.fa-phone {
+  color: #ffc60a;
+  margin-right: 8px;
+  perspective: 1000px;
+  transition: all 0.3s ease-in-out;
+}
+.footer-col .fas.fa-phone:hover {
+  color: #0afff0;
+  transform: rotate(360deg)
+}
+.footer-col h3 {
+  color: #0afff0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-col p, .footer-col li {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+```
+# FORM FREE SPACE METHOD
+```
+<form action="https://formspree.io/f/xnjworbg" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" placeholder="enter name" required>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder="enter email" required>
+    <label for="message">Message</label>
+    <textarea name="text-area" id="message" placeholder="Write yours thoughts here...." required></textarea>
+    <button type="submit" id="b3">Send me</button>
+```
+
+# loader
+```
+ <!-- Loading spinner jo aap JS se show/hide kar sakte hain -->
+        <div class="spinner" id="loadingSpinner"></div>
+
+           .spinner {
+        border: 4px solid rgba(17, 87, 64, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #115740;
+        animation: spin 1s linear infinite;
+        display: none  ; /* JS se .style.display = 'block' karne ke liye */
+      }
+      .load{
+        display: block;
+      }
+       let load=document.querySelector('.spinner')
+        btn.addEventListener('click',()=>{
+        load.classList.toggle('load')
+        setTimeout(()=>{
+            load.classList.toggle('load')
+            fet()
+        },2000)
+     
+      })
+      
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+
+
+    <!-- another one  -->
+    .spinner {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    
+    background: radial-gradient(farthest-side, #ff4e50 94%, #0000) top/6px 6px no-repeat,
+                conic-gradient(#0000 30%, #ff4e50);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 6px), #000 0);
+    
+    /* Neon glow effect */
+    box-shadow: 0 0 15px rgba(255, 78, 80, 0.5);
+    
+
+    margin: 20px auto; 
+    display: none; 
+ 
+    animation: spin 1s linear infinite, pulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Spinner active karne ki class */
+.spinner.load {
+    display: block;
+}
+
+/* Ghumne ki animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Thoda sa pulse / wave effect taake boring na lage */
+@keyframes pulse {
+    0% { transform: scale(0.9) rotate(0deg); }
+    100% { transform: scale(1.1) rotate(360deg); }
+}
+
+```
+
+# FREE API'S WHICH I USE IN MY PROJECTS..............
+```
+<!-- WEATHER API -->
+https://wttr.in/London?format=j1   
+
+<!-- PAKISTAN COUNTRY API  -->
+https://restcountries.com/v3.1/name/pakistan
+```
+## inner html
+
+```
+t.innerHTML = `
+    <h2 class="city-title">📍 ${city_name}</h2>
+    <p class="region-text">${region}</p>
+    <div class="temp-display">${temp}°C</div>
+    <p class="weather-desc">Vibe: ${weather}</p>
+```
