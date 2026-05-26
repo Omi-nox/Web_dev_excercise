@@ -626,7 +626,7 @@ margin: auto: Agar container screen ke beech mein nahi aa raha, toh margin: 0 au
 
 Inspect Element (F12): Jab phans jao, Chrome mein right-click karke "Inspect" karo. Grid par hover karoge toh neeli (blue) lines dikhayengi ke dabba kahan khatam ho raha hai.
 
-###custom height
+### custom height
 
   /* Har row 200px ki hogi, chahe content chota ho ya bada */
     grid-auto-rows: 200px;
@@ -636,3 +636,229 @@ Inspect Element (F12): Jab phans jao, Chrome mein right-click karke "Inspect" ka
 
     Fix height: .item { height: 100px; }
 auto pe content khud ba khud zayada hoga no worries
+
+### humburger code snippet
+```
+
+    /* ─── HAMBURGER BUTTON ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #9d4edd;
+  border-radius: 2px;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+   .hamburger { display: flex; }
+ 
+  nav        { display: flex; align-items: center; justify-content: space-between; padding: 10px 15px; }
+  .port      { position: static; font-size: 0.95rem; }
+  
+.nav_list  {
+    display: flex; 
+    flex-direction: column;
+    position: absolute; 
+    top: 60px; 
+    left: 0; 
+    right: 0;
+    width: 100%; 
+    
+    /* 🟢 Orange hatane ke liye transparent dark purplish background aur blur */
+    background: rgba(10, 5, 20, 0.1); 
+    backdrop-filter: blur(25px); 
+    -webkit-backdrop-filter: blur(25px); /* Safari support ke liye */
+    
+    /* 🟢 Purple Neon borders */
+    border: 1px solid rgba(157, 78, 221, 0.25);
+    border-bottom: 2px solid #9d4edd; 
+    
+    padding: 20px;
+    z-index: 999; 
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.15), 0 10px 20px rgba(0,0,0,0.6);
+    border-radius: 0 0 15px 15px;
+    margin: 0; /* Margin 0 rakhna behtar hai taake screen edges se chipka rahe */
+    overflow: hidden; 
+    
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.5s ease, visibility 0.6s ease;
+}
+
+/* ─── PURPLE GRADIENT GLOW (Replacing Orange) ─── */
+.nav_list::before {
+    content: '';
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+    /* 🟢 Deep Purple to Neon Cyber-Pinkish-Purple Gradient with opacity */
+    background: linear-gradient(135deg, rgba(157, 78, 221, 0.9), rgba(181, 23, 158, 0.5));
+    z-index: -1; /* Taake yeh background links ke text ke PEECHAY rahe */
+    pointer-events: none; /* Taake links click hone mein rukawat na bane */
+}
+
+
+  .nav_list li {
+    opacity: 0;
+    transform: translateY(20px); /* Pushes items down */
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Triggered when navbar has the .open class */
+  .nav_list.open { 
+    opacity: 1;
+    visibility: visible; /* Makes the menu interactable */
+  }
+  
+  /* Triggers the upward motion for the list items */
+  .nav_list.open li { 
+    margin: 0; 
+    opacity: 1;
+    transform: translateY(0); /* Brings them up smoothly */
+    color: #833ab4 !important;
+  }
+  
+  /* Added Stagger Delay so items pop up one by one */
+  .nav_list.open li:nth-child(1) { transition-delay: 0.1s; }
+  .nav_list.open li:nth-child(2) { transition-delay: 0.2s; }
+  .nav_list.open li:nth-child(3) { transition-delay: 0.3s; }
+  .nav_list.open li:nth-child(4) { transition-delay: 0.4s; }
+
+  .nav_list a { 
+    font-size: 1.1rem; 
+    width: 100%; 
+    text-align: left;   
+     color: #fdfdfd !important;
+  }
+```
+# preloader snippet
+```
+ <!-- Preloader (custom loading screen) -->
+<div id="preloader">
+  <div class="loader"></div>
+  <p>Loading portfolio...</p>
+</div>
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0f1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(10, 255, 240, 0.2);
+  border-top: 4px solid #0afff0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#preloader p {
+  margin-top: 15px;
+  color: #0afff0;
+  font-family: monospace;
+}
+
+```
+### PROGRESS BAR
+
+```
+  <div id="progressBar"></div>
+  #progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+ background: linear-gradient(90deg, #FF00FF, #8A2BE2);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+  /* box-shadow: 0 0 8px #0afff0; */
+  /* background-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700; */
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+@keyframes topBarAnim {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+    // scroll animation for progress bar  
+  window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = scrollPercent + '%';
+});
+```
+# sCROLL BAR 
+
+```
+/* Container bar */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #01192c;
+  box-shadow: inset 5px 0 15px rgba(0, 255, 255, 0);
+  
+  /* Ekdum dark blue/black background */
+}
+ ::-webkit-scrollbar-track{
+   background: rgba(181, 170, 170, 0); 
+    backdrop-filter: blur(10px);
+   /* border: 1px solid rgba(255, 255, 255, 0.3); */
+   border-radius: 25px;
+ }
+
+ ::-webkit-scrollbar-thumb{
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   border-radius: 25px;
+   background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 5px 10px #0afff0,
+                0 -5px 10px #0afff0;
+    
+ }
+ ::-webkit-scrollbar-thumb:hover{
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   border-radius: 25px;
+   background-color: #0afff0;
+   width: 10px;
+ }
+```
