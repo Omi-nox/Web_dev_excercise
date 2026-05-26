@@ -67,7 +67,7 @@ box-shadow:
   0 10px 20px rgba(0,0,0,0.05);
 
 
-  ## agr width screen sy bhaer nikal rhy ha to 
+## agr width screen sy bhaer nikal rhy ha to 
   1. Sabse Pehla Hal (The Universal Fix)
 CSS file ke bilkul shuru mein ye code daal dein. Yeh CSS ka sabse zaroori rule hai jo har developer use karta hai:
 css
@@ -91,7 +91,7 @@ body {
 
 
 
-  ### TRANSLATE TRANSFORMATION
+### TRANSLATE TRANSFORMATION
   🚀 CSS Motion & Animation: The Ultimate Guide
 
 **1. Transform (The "What" - Movement)**
@@ -329,7 +329,7 @@ Isi wajah se sirf left side wale words Bold hote hain aur right side wale number
 # body backgraounf image
 ## min height & max width 
 
-Short Summary:
+***Short Summary:***
 Content lamba hai? min-height use karein taake scroll bar aa jaye aur content neechay tak jaye.
 
 Kahan: body { min-height: 100vh; }
@@ -357,7 +357,7 @@ max-width (Flexible Limit): Ye ek upper limit set karta hai. Maslan, max-width: 
 lgaon
 Body par transparent-looking background image lagane ka sab se best tareeka ::before pseudo-element hi hai. Iska faida ye hota hai ke aap image ki opacity (shafafiyat) kam kar sakte hain bina uske upar likhay hue text ko halka kiye.
 Aap apni CSS mein ye code add karein:
-# START FROM HERE WHEN YOU START WORK
+# START FROM HERE WHEN YOU START WORK most important
 css
 ```
 *{
@@ -486,7 +486,7 @@ Magic Unit: fr (Fractional Unit)
 Grid mein px ya % ke bajaye fr use karna sabse best hai. Ye screen ki bachi hui jagah ko barabar hisson mein baant deta hai.
 grid-template-columns: 1fr 1fr 1fr; (3 bilkul barabar columns banenge jo screen choti hone par khud ko adjust karenge).
 
-```
+
 ### Step 1: Bachon ko "Naam" dein (grid-area)\
 
 Use case: Jab aapko complex, asimetric layout banana ho, jaise:
@@ -505,11 +505,11 @@ Use case: Jab aapko complex, asimetric layout banana ho, jaise:
 .box1 { grid-area: pehla; background: red; }
 .box2 { grid-area: doosra; background: blue; }
 .box3 { grid-area: teesra; background: green; }
-
+```
 1. Grid Columns ko Lock Karein
 **NOTE :** 
 Agar aap chahte hain ke columns bilkul mery marzi ki width ke hon aur flexible na hon, toh 1fr ki jagah minmax ya fixed units use karein.
-
+```
   grid-template-columns: repeat(3,minmax(300px,1fr));
 
  object-fit: cover; /* Image ko stretch hone se bachane ke liye */
@@ -517,6 +517,7 @@ Agar aap chahte hain ke columns bilkul mery marzi ki width ke hon aur flexible n
  card{
    width: 100%; /* Grid cell ke mutabiq adjust hoga */
  }
+ ```
 ```1. Kab Kaunsi Unit Use Karein?
 Unit	Kab use karein?	Example
 px (Fixed)	    |    Jab aap chahte hain size bilkul na badle (jaise koi icon ya logo).	       |   width: 300px;
@@ -527,6 +528,7 @@ max-width	      |    "Isse bada mat hona." (Badi screens par content ko phailne 
 BAQI CHILD KE ANDR ELEMENT FREE HA WO AZAD BSS ALWAYS WORKING WITH GRID , CALCULATE PIXELS
 Mobile par aapko sirf naksha (map) badalna parta hai, poora code nahi: you can use relative absolute but be careful
 css
+```
 ```
 @media (max-width: 600px) {
   .container {
@@ -676,12 +678,12 @@ auto pe content khud ba khud zayada hoga no worries
     right: 0;
     width: 100%; 
     
-    /* 🟢 Orange hatane ke liye transparent dark purplish background aur blur */
+    /*  Orange hatane ke liye transparent dark purplish background aur blur */
     background: rgba(10, 5, 20, 0.1); 
     backdrop-filter: blur(25px); 
     -webkit-backdrop-filter: blur(25px); /* Safari support ke liye */
     
-    /* 🟢 Purple Neon borders */
+    /*  Purple Neon borders */
     border: 1px solid rgba(157, 78, 221, 0.25);
     border-bottom: 2px solid #9d4edd; 
     
@@ -707,7 +709,7 @@ auto pe content khud ba khud zayada hoga no worries
     height: 100%;
     width: 100%;
     
-    /* 🟢 Deep Purple to Neon Cyber-Pinkish-Purple Gradient with opacity */
+    /*  Deep Purple to Neon Cyber-Pinkish-Purple Gradient with opacity */
     background: linear-gradient(135deg, rgba(157, 78, 221, 0.9), rgba(181, 23, 158, 0.5));
     z-index: -1; /* Taake yeh background links ke text ke PEECHAY rahe */
     pointer-events: none; /* Taake links click hone mein rukawat na bane */
@@ -791,7 +793,7 @@ auto pe content khud ba khud zayada hoga no worries
 }
 
 ```
-### PROGRESS BAR
+# PROGRESS BAR
 
 ```
   <div id="progressBar"></div>
