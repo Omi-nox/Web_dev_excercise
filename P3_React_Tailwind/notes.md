@@ -259,3 +259,17 @@ npm run dev
 | **Flexbox Alignment** | `flex` <br> `justify-center` <br> `items-center` | Flexbox layout shuru karne ke liye <br> Horizontally center karne ke liye <br> Vertically center karne ke liye |
 | **Fixed Width** | `w-64` | Fixed width set karne ke liye (16rem / 256px) |
 | **Shadow** | `shadow-lg` | Element ke peeche bada drop shadow (saaya) dene ke liye |
+
+
+| Tailwind Property | Syntax / Format | Description / Matlab |
+| :--- | :--- | :--- |
+| **Background Color** | `bg-{color}-{shade}` | Background color set karne ke liye (e.g., `bg-blue-500`) |
+| **Text Color** | `text-{color}-{shade}` | Text ka color badalne ke liye (e.g., `text-white`) |
+| **Font Size** | `text-{size}` | Font ka size set karne ke liye (`sm`, `lg`, `xl`, `2xl`...) |
+| **Font Weight** | `font-bold` | Text ko bold (mota) karne ke liye |
+| **Spacing** | `p-{n}` <br> `m-{n}` | Padding (andar ki space) aur Margin (bahar ki space) dene ke liye |
+| **Flexbox Layout** | `flex` <br> `gap-{n}` | Flexbox layout shuru karne aur elements ke beech gap dene ke liye |
+| **Border Radius** | `rounded-{size}` | Corners ko round karne ke liye (`md`, `lg`, `full`...) |
+| **Width / Sizing** | `w-full` <br> `max-w-{size}` | Width 100% karne aur max-width limit set karne ke liye |
+| **Shadow Effect** | `shadow-lg` | Element ke peeche drop shadow (saaya) lagane ke liye |
+| **Hover State** | `hover:bg-{color}` | Mouse upar le jaane par background color badalna |
