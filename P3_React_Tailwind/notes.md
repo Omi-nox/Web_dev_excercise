@@ -169,10 +169,15 @@ Every time setCount runs → React re-renders the UI automatically
 
 # React Concept 4 — useEffect Hook
 useState manages data. useEffect runs code when something happens — page loads, state changes, component appears.
+
 Real time change in array   in the ***backend especially*** and ofcourse for frontend jsy for example...
+
 ***NOTE***: Hooks ko hamesha kisi Component ke andar YA USKY SATH  hona chahiye: 
+
 **Khali Dabba [] tab dein: Jab aap chahte hain ki andar ka kaam sirf ek baar ho (jaise hi page open ho).Example: Website khulte hi database se user ka data ya products load karna.**
+
 **Variable wala dabba [count] tab dein: Jab aap chahte hain ki andar ka kaam har us baar dobara chale jab woh variable badle.Example: Jab user cart me item badhaye, to total bill dobara calculate ho.**
+
 ```
 useEffect(() => {
   // Jaise hi t-shirt ki quantity badle, total bill dobara calculate karo
