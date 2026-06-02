@@ -273,3 +273,7 @@ npm run dev
 | **Width / Sizing** | `w-full` <br> `max-w-{size}` | Width 100% karne aur max-width limit set karne ke liye |
 | **Shadow Effect** | `shadow-lg` | Element ke peeche drop shadow (saaya) lagane ke liye |
 | **Hover State** | `hover:bg-{color}` | Mouse upar le jaane par background color badalna |
+
+```
+          className="bg-[#475b5a] text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md border border-[#5c7574] hover:bg-[#3b4c4b] hover:scale-105 transition-all duration-200 cursor-pointer list-none"
+```
