@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  min-height: 100vh;
+  margin: 0;
+  border: 2px solid red;
+}   
+        .btn-neon {
+  background: #111;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Active State */
+.btn-neon:active {
+  background: #00f2fe;
+  box-shadow: 0 0 20px #00f2fe, 0 0 40px #4facfe;
+  color: #000;
+  transform: scale(0.98);
+}
+.active{
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  font-size: 2.5rem;
+  color: #05c8da;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  background-color: yellow;
+}
+.dark{
+    background-color: #000;
+    color: aliceblue;
+}
+#dmode{
+    display: inline-block;
+    border:2px solid rgba(255,255,255,0.2);
+    border-radius:25px ;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <h1 id="title">Hello World</h1>
+    <button class="btn-neon">Click Me</button>
+        <input type="text" id="myInput" placeholder="Yahan kuch likhein...">
+        <h1 id="dmode">switch to dark</h1>
+    <script>
+    
+//     Grab the h1 and change its text to "Hello Umar!"
+// Grab the button and change its text to "I am Ready"
+// Change the h1 color to your favourite color
+// Add a class called "active" to the h1 and in CSS make .active have a background color
+
+let h=document.getElementById('title')
+let btn=document.querySelector('.btn-neon')
+
+h.textContent='hello Umar!'
+h.style.color='purple'
+btn.textContent='i am ready'
+h.classList.add('active')
+
+// A button that changes the page background color to a random color on every click
+// An input field that logs whatever you type in real time using the input event
+// A heading that changes text to "You hovered!" on mouseover and back to "Hello Umar!" on mouseout
+
+
+let body=document.body
+let myinp=document.getElementById('myInput')
+function random_color(){
+    const randm_col='#'+Math.floor(Math.random()*16777215).toString(16)
+    body.style.backgroundColor=randm_col
+}
+// body.addEventListener('click',()=>{
+//     random_color()
+// })
+myinp.addEventListener('input', (e) => {
+    console.log(e.target.value) // logs full current value
+})
+
+h.addEventListener('mouseover',()=>{
+    h.textContent='you  mouse hovered!'
+})
+    h.addEventListener('mouseout',()=>{
+        h.textContent='you  mouse outtt!!!!'
+    })
+let h1=document.getElementById('dmode')
+h1.addEventListener('click',()=>{
+    body.classList.toggle('dark')
+    h1.textContent='switch to light mode'
+     if(body.classList.contains('dark')) {
+        h1.textContent = 'Switch to Light Mode'
+    } else {
+        h1.textContent = 'Switch to Dark Mode'
+    }
+    
+})
+</script>
+</body>
+
+</html>
