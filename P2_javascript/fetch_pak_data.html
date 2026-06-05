@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pakistan Data Card</title>
+    <style>
+      /* Base Styling */
+      /* Card Container */
+      .data-card {
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        width: 350px;
+        padding: 24px;
+        text-align: center;
+        border-top: 5px solid #115740; /* Pakistan Green Theme */
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      /* Card Text */
+      .card-title {
+        font-size: 22px;
+        color: #333333;
+        margin: 0 0 8px 0;
+      }
+
+      .card-subtitle {
+        font-size: 14px;
+        color: #666666;
+        margin: 0 0 24px 0;
+      }
+
+      /* Data Display Box */
+      .data-display {
+        background-color: #f8faf9;
+        border: 1px dashed #115740;
+        border-radius: 8px;
+        padding: 16px;
+        min-height: 120px;
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #placeholderText {
+        color: #888888;
+        margin: 0;
+        font-size: 14px;
+      }
+
+      /* Spinner (CSS Animation) */
+      .spinner {
+        border: 4px solid rgba(17, 87, 64, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #115740;
+        animation: spin 1s linear infinite;
+        display: none  ; /* JS se .style.display = 'block' karne ke liye */
+      }
+      .load{
+        display: block;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Button Base */
+      .get-data {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 15px;
+        font-weight: 600;
+        background-color: #115740;
+        color: #ffffff;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      /* Button Hover State */
+      .get-data:hover {
+        background-color: #ffffff;
+        color: #115740;
+        border-color: #115740;
+      }
+
+      /* Button Click State */
+      .get-data:active {
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="data-card">
+      <h2 class="card-title">Pakistan Insights</h2>
+      <p class="card-subtitle">Click below to fetch real-time data</p>
+
+      <!-- JavaScript se data show karne ke liye target area -->
+      <div class="data-display" id="dataDisplay">
+        <!-- Loading spinner jo aap JS se show/hide kar sakte hain -->
+        <div class="spinner" id="loadingSpinner"></div>
+        <!-- Default text jo data aane par aap JS se remove kar sakte hain -->
+        <p id="placeholderText">No data loaded yet.</p>
+      </div>
+
+      <!-- Click event lagane ke liye button -->
+      <button class="get-data" id="fetchBtn">Get Pakistan Data</button>
+    </div>
+    <script>
+      let btn = document.querySelector(".get-data");
+      let p = document.getElementById("placeholderText");
+      let load=document.querySelector('.spinner')
+      async function fet() {
+        try {
+          let response = await fetch(
+            "https://restcountries.com/v3.1/name/pakistan",
+          );
+          let data = await response.json();
+          let country = data[0];
+          //    console.log(country.name)
+          console.log(country.name.common); // Output: Pakistan
+          console.log(country.population); // Output: Population number
+          console.log(country.region);
+          console.log(country.capital)
+          p.textContent=country.name.common+'\n'+country.population+'\n'+country.region+'\n'+country.capital;
+        } catch (error) {
+          console.log("error : ", error);
+        }
+      }
+    //   fet();
+      btn.addEventListener('click',()=>{
+        load.classList.toggle('load')
+        setTimeout(()=>{
+            load.classList.toggle('load')
+            fet()
+        },2000)
+     
+      })
+    </script>
+  </body>
+</html>
