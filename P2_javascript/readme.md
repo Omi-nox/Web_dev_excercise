@@ -19,7 +19,7 @@ This file covers everyday production-level JavaScript fundamentals:
 ### 2. `index.html` (Pakistan Insights Data Card)
 A web application UI built to put JavaScript logic to work:
 * **Asynchronous Fetch:** Implements `async/await` to pull asynchronous live data from the third-party REST Countries API.
-![Alternative Text](fe.png)
+![Alternative Text](./fe.png)
 * **Dynamic DOM Manipulation:** Real-time selector updates displaying population metrics, capital coordinates, and territorial regions instantly.
 * **Interactive UI/UX State:** Implements custom CSS keyframe `@keyframes` loaders alongside `setTimeout` intervals for interactive loading spinners.
 
