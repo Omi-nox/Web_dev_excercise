@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+       <link rel="stylesheet" href="style.css">
+       <script type="module" src="index.js" defer>  </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+       <style>
+
+        /* responsive style here */
+
+    @media (max-width:768px){
+        header h1{
+            font-size: clamp(1.8rem, 10vw, 3rem);
+        }
+        #city-input,#search-btn{
+                 font-size: clamp(0.5rem, 5vw, 1rem);
+        }
+        .weather-container{
+    flex: 0;
+}
+ .app-footer {
+        /* position: relative; */
+        padding: 20px 0;
+        margin-top: 70px  !important;
+      
+       
+    }
+       
+    }
+#dotlottie-canvas {
+    position: fixed;   
+    top: -100px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill; 
+    z-index: -10;
+    border: none;
+    display: block;   
+}
+#dotlottie-canvas1 {
+    position: fixed;   
+    top: -100px;
+    left: 0;
+    width: 100vw;
+    height: 200vh;
+    object-fit: contain; 
+    z-index: -10;
+    border: none;
+    display: block;    
+}
+
+    
+    .footer-container {
+        flex-direction: column; 
+        text-align: center;
+        gap: 15px;
+        /* margin-bottom: 50px; */
+        /* margin: auto; */
+    }
+    
+    .cardi {
+        flex-direction: column;
+        gap: 8px;
+    }
+               </style>
+</head>
+<body>
+   <canvas id="dotlottie-canvas"></canvas> 
+   <canvas id="dotlottie-canvas1"></canvas> 
+   
+   
+    <header>
+        <h1>Weather Vibe App</h1>
+    </header>
+     <main class="weather-container">
+      
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+            <button id="search-btn">Get Data </button>
+        </div>
+         
+        <div class="weather-card" id="weather-info">
+         
+             <div class="spinner" id="loadingSpinner"></div>
+            <p class="placeholder-text">your weather data will load here...</p>
+            
+            
+        </div>
+    </main>
+ <footer class="app-footer">
+    <div class="footer-container">
+        <!-- Left Side: Credits -->
+        <p class="footer-text">
+            Crafted with <i class="fas fa-coffee coffee-icon"></i> by 
+            <a href="https://omi-portfolio-lake.vercel.app/" target="_blank" class="highlight">Omi Dev</a> 
+            | © 2026 Weather Vibe
+        </p>
+
+        <!-- Right Side: Social Links -->
+        <div class="cardi">
+            <h2>Get in touch:</h2>
+            <div class="social-icons">
+                <a href="https://github.com/Omi-Nox" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/umarkhan_.ysfxi_" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  
+</body>
+</html>
