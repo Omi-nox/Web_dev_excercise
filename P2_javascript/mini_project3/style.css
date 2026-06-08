@@ -1,0 +1,294 @@
+*{
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    /* height: auto; */
+    width: 100%;
+    
+    
+    background: linear-gradient(135deg, #2e3057 0%, #1e1f38 50%, #111224 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+ 
+    text-shadow: 4px 4px 10px rgb(2, 98, 133);
+}
+
+.weather-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    padding: 2px 2px;
+    box-sizing: border-box;
+    /* border: 2px solid red;    */
+    max-width: 500px;
+    width: 100%;
+    min-height: 20vh;
+    height: auto;
+}
+
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: space-evenly;
+    align-items: center;
+     width: 100%;
+    max-width: 500px; 
+}
+
+#city-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 100px;
+    width: auto;
+}
+
+#city-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+#city-input:hover {
+   box-shadow: 2px 2px 10px #f9d423;
+}
+
+
+#search-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #c02225, #dcb907); 
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 78, 80, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 100px;
+    width: auto;}
+
+#search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 78, 80, 0.6);
+}
+
+#search-btn:active {
+    transform: translateY(1px);
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 24px;
+    /* min-width: 200px; */
+    width: 100%;
+    max-width: 450px;
+    min-height: 200px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.city-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.region-text {
+    margin: 5px 0 20px 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.temp-display {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather description stylish look me */
+.weather-desc {
+    margin: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+.spinner {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    
+    background: radial-gradient(farthest-side, #ff4e50 94%, #0000) top/6px 6px no-repeat,
+                conic-gradient(#0000 30%, #ff4e50);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 6px), #000 0);
+    
+    /* Neon glow effect */
+    box-shadow: 0 0 15px rgba(255, 78, 80, 0.5);
+    
+
+    margin: 20px auto; 
+    display: none; /* JS control ke liye */
+    
+    /* Double animation: ghumne ke sath dharkan (pulse) ki tarah scale hoga */
+    animation: spin 1s linear infinite, pulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Spinner active karne ki class */
+.spinner.load {
+    display: block;
+}
+
+/* Ghumne ki animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Thoda sa pulse / wave effect taake boring na lage */
+@keyframes pulse {
+    0% { transform: scale(0.9) rotate(0deg); }
+    100% { transform: scale(1.1) rotate(360deg); }
+}
+/* Footer ki styling */
+.app-footer {
+   
+    /* margin-top: 100px; */
+    margin-top: auto;
+    width: 100%;
+    /* height: 100%; */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    z-index: 10;
+   
+}
+
+/* Flexbox container jo responsive handle karega */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 15px;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.coffee-icon {
+    color: #ff4e50;
+    font-size: 0.85rem;
+}
+
+.app-footer .highlight {
+    color: #ff4e50;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 78, 80, 0.3);
+}
+
+/* Social links styling */
+.cardi {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cardi h2 {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.social-icons a:hover {
+    color: #f9d423;
+    transform: translateY(-3px);
+}
+.social-icons a:nth-child(2):hover{
+     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+}
+.social-icons a:nth-child(3):hover{
+     background: linear-gradient(45deg, #25262c, #d7d7d9, #534b58, #ece7ea, #e9d7dd, #060404);
+       -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  
+}
