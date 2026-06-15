@@ -253,5 +253,19 @@ const quotes = [
     auth.textContent=a
 
  }
+ window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    if (loader) {
+        // Smooth fade out effect
+        // loader.style.transition = "opacity 0.5s ease";
+        // loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.transition = "opacity 0.5s ease";
+          loader.style.opacity = "0";
+            loader.style.display = "none";
+        }, 6000); // 0.5 second baad screen se hat jayega
+    }
+});
+
  rand()
  setInterval(rand,5000)

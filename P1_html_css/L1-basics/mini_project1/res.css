@@ -149,7 +149,7 @@ header{
             /* max-height: 50px; */
     }
     .heading{
-          font-size: clamp(0.9rem, 6vw, 1.5rem);
+          font-size: clamp(0.6rem, 8vw, 2rem);
           /* text-align: left; */
           text-align: center;
           min-width: 80px;
@@ -168,7 +168,7 @@ header{
          
     }
     #dyn-typ,.static-text{
-         font-size: clamp(0.5rem, 6vw, 1.2rem);
+         font-size: clamp(0.5rem, 8vw, 1.7rem);
     }
     .main p,.main_card2 .para{
          font-size: clamp(0.5rem, 6vw, 1.1rem);

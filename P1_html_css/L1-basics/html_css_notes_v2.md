@@ -755,6 +755,7 @@ Use Grid for cards, galleries, page layouts — anything 2D.
  }
 ```
 # LOTTIE ANIMATIONS 
+### from js 
 ```
  <!-- Canvas element jahan animation render hogi html file me  -->
         <canvas id="dotlottie-canvas" style="width: 300px; height:300px;"></canvas>
@@ -785,6 +786,28 @@ background body ke lia
 }
    
 
+```
+### from CONTENT DELIVER NETWORKK HTML/CSS
+```
+     /* dotlottie-wc{
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 99999;
+} *
+/<!-- Updated Portfolio Loader Container -->
+  <script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js"
+  type="module"
+></script>
+<div style="display:flex;justify-content:center;">
+    <dotlottie-wc
+  src="https://lottie.host/dc723e64-4464-4987-9c02-ecd20dbd3b02/aB7S9cKwKu.lottie"
+  style="width: 300px;height: 300px ;"
+  autoplay
+  loop
+></dotlottie-wc>
+</div>
 ```
 # SOCIAL TAGS
 ```

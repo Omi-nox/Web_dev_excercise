@@ -29,9 +29,49 @@
         --card-bg: #160930;
         --nav-bg: #0a0514;
       }
+   /* 1. Main Background Container (Jo sab kuch chhupaye rakhega) */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Puri window ki height */
+    width: 100vw;  /* Puri window ki width */
+    background-color: #0a0514; /* Aapka portfolio dark theme color */
+    z-index: 99999; /* Sab cheezon ke upar rahega */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Lottie ko screen ke bilkul center mein laane ke liye */
+    color: #9d4edd;
+    /* Agar aapko screen ke chaaron taraf golden border chahiye toh: */
+    box-sizing: border-box;
+    /* border: 2px solid goldenrod;  */
+}
+      dotlottie-wc{
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    z-index: 99999;
+    
+}
     </style>
   </head>
   <body>
+
+ <!-- Updated Portfolio Loader Container -->
+  <script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js"
+  type="module"
+></script>
+<div style="display:flex;justify-content:center;" class="loader">
+    <dotlottie-wc
+  src="https://lottie.host/dc723e64-4464-4987-9c02-ecd20dbd3b02/aB7S9cKwKu.lottie"
+  style="width: 300px;height: 300px ;"
+  autoplay
+  loop
+></dotlottie-wc>
+</div>
+
+
      <div id="progressBar"></div>
     <header>
       <span class="port">OMi Portfolio</span>
