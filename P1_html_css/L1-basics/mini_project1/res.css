@@ -167,13 +167,14 @@ header{
          height: auto;
          
     }
-    #dyn-typ,.static-text{
-         font-size: clamp(0.5rem, 6vw, 1.5rem);
-    }
-    .main p,.main_card2 .para{
-         font-size: clamp(0.5rem, 8vw, 1rem);
-        margin: 0 15px;
-    }
+    #dyn-typ, .static-text {
+     font-size: clamp(0.8rem, 4vw + 1rem, 1.5rem);
+}
+
+    .main p, .main_card2 .para {
+     font-size: clamp(0.85rem, 2.5vw + 0.5rem, 1.2rem);
+     margin: 0 15px;
+}
   .main2 .fafa span:first-child{
   /* Min: 1.8rem (~28px), Preferred: 5vw, Max: 4rem (~64px) */
   font-size: clamp(0.8rem, 5vw + 1rem, 2rem); 
