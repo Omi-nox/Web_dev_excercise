@@ -1,93 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="portfolio.css">
-    
-    <link rel="stylesheet" href="ring.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omi Portfolio</title>
+    <!-- font link  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      <!-- AOS LIBRARY SCRIPT ... --> 
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script> 
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- style css link  -->
+    <link rel="stylesheet" href="portfolio.css" />
+    <link rel="stylesheet" href="ring.css" />
+    <link rel="stylesheet" href="res.css" />
     <script src="portfolio.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="res.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
-
-    <title>Omi_portfolio</title>
     <style>
-      /* Preloader Styles */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0a0f1e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
-
-.loader {
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(10, 255, 240, 0.2);
-  border-top: 4px solid #0afff0;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-#preloader p {
-  margin-top: 15px;
-  color: #0afff0;
-  font-family: monospace;
-}
+      :root {
+        --bg-dark: #0a0514;
+        --bg-mid: #130825;
+        --accent: #9d4edd;
+        --accent-light: #c77dff;
+        --text-main: #e2d9f3;
+        --text-muted: #9b8bb4;
+        --card-bg: #160930;
+        --nav-bg: #0a0514;
+      }
     </style>
-
-    <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-</head>
-<body>
-  <!-- Preloader (custom loading screen) -->
-<div id="preloader">
-  <div class="loader"></div>
-  <p>Loading portfolio...</p>
-</div>
-<div id="main-content" style="display: none;">
-  <header>
-    <div id="progressBar"></div>
-    <nav>
-        <span class="port">OMi_Portfolio....</span>
-     
-          <button class="hamburger" id="hamburger" >
+  </head>
+  <body>
+     <div id="progressBar"></div>
+    <header>
+      <span class="port">OMi Portfolio</span>
+      <nav>
+           <button class="hamburger" id="hamburger" >
   <span></span>
   <span></span>
   <span></span>
 </button>
-        
         <ul class="nav_list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
-  </header>
-  <section id="#" class="main">
-  <div data-aos="fade-up"data-aos-duration="1000">
-    <span class="badge">Future AI Engineer - Full Stack Ninja</span>
-    <span class="hi">Hi, I am</span>
-    <h1 class="heading">M.Umar</h1>
-    <!-- <div data-aos="zoom-in-right"></div> -->
-    <div class="main_card"> <div class="hero-frame" id="heroFrame">
+      </nav>
+    </header>
+    <section id="#" class="main">
+      <div class="leftc1">
+        <span class="badge">Future AI Engineer - Full Stack Ninja</span>
+        <span class="hi">Hi, I am</span>
+        <h1 class="heading">M.Umar</h1>
+        <div class="typing-line">
+          <span class="static-text">I am </span>
+          <span id="dyn-typ"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p>
+          Machine Learning • Python • JavaScript • 3D Web • I build epic digital
+          battlegrounds and AI-powered platforms. Ready to intern & conquer!
+        </p>
+        <div class="btns">
+            <button id="b1"><a href="#projects">View Projects</a></button>
+        <button id="b2"><a href="#contact">Hire me</a></button>
+        <button id="b3">
+          <a href="Umar-CV.pdf" download="Umar CV">Download CV</a>
+        </button>
+        </div>
+        
+      </div>
+      <div class="rightc1">
+  <!-- JavaScript ke liye id="heroFrame" yahan add ki hai -->
+ <div class="main_card"> <div class="hero-frame" id="heroFrame">
     <div class="v1-upgraded" id="v1Tilt">
       <!-- Rings -->
       <div class="v1-ring ring-outer"></div>
@@ -97,145 +84,311 @@
       <div class="v1-tag tag-top"> CODEX: 94%</div>
       <div class="v1-tag tag-bottom"> NEXUS: ACTIVE</div>
       <div class="v1-image">
-        <img src="photos/w1.jpeg" alt="Hero Photo">
+        <img src="w1.jpeg" alt="Hero Photo">
       </div>
     </div>
-  </div></div>
-    <div class="typing-line">
-        <span class="static-text">I am </span>
-        <span id="dyn-typ"></span>
-        <span class="cursor">|</span>
-    </div>
-  <p >Machine Learning • Python • JavaScript • 3D Web • I build epic digital battlegrounds and AI-powered platforms. Ready to intern & conquer!</p>
-<button id="b1"><a href="#projects">View Projects</a></button>
-<button id="b2"><a href="#contact">Hire me</a></button>
-<button id="b4"><a href="Umar-CV.pdf" download="Umar CV">Download CV</a></button>
+  </div>
 </div>
 
-
-    
-  </section>
-  <section id="about" class="main2">
-    <div data-aos="fade-up-right" data-aos-duration="800"> <h1 class="fafa"><span>About</span><span>Me</span></h1>
-    <div class="main_card2"> <div class="about-wrapper" id="aboutWrapper">
-    <div class="v2-upgraded" id="v2Tilt">
-      <div class="v2-dash-ring"></div>
-      <div class="v2-solid-ring"></div>
-      <div class="v2-bracket bracket-tl"></div>
-      <div class="v2-bracket bracket-tr"></div>
-      <div class="v2-bracket bracket-bl"></div>
-      <div class="v2-bracket bracket-br"></div>
-      <div class="v2-scan"></div>
-      <div class="v2-text text-status">AI CORE: ONLINE</div>
-      <div class="v2-text text-coord">X-1024 / Y-768</div>
-      <div class="v2-image">
-        <img src="photos/w5.jpeg" alt="About Photo">
+      
+    </section>
+    <section id="about" class="main2">
+      
+     <h1 class="fafa" data-aos="fade-down" data-aos-duration="1000"><span>About</span><span>Me</span></h1>
+ 
+      <div class="main_card2"> 
+   <!-- What I Do Points Section -->
+<div class="what-i-do-section" data-aos="fade-right" data-aos-duration="1000">
+  <h2>What I Do</h2>
+  <ul class="skills-list">
+    <li>
+      <span class="bullet"></span>
+      <div>
+        <strong>AI & Machine Learning:</strong> 
+        Developing predictive models and leveraging AI tools for smart automation.
       </div>
-    </div>
-  </div> </div>
-     <div class="para"><p>A passionate and self-motivated AI student <br> with a genuine love for 
+    </li>
+    <li>
+      <span class="bullet"></span>
+      <div>
+        <strong>Full-Stack Web Dev:</strong> 
+        Building interactive frontends and solid backend structures with modern JS tech.
+      </div>
+    </li>
+    <li>
+      <span class="bullet"></span>
+      <div>
+        <strong>Python Automation:</strong> 
+        Writing highly optimized scripts for data analysis, parsing, and complex workflows.
+      </div>
+    </li>
+  </ul>
+  <div class="stats-grid">
+  <!-- Experience Badge -->
+  <div class="stat-card">
+    <i class="fas fa-code-branch"></i>
+    <h3>2+ Years</h3>
+    <p>Coding Experience</p>
+  </div>
+  
+  <!-- Clean Code Badge -->
+  <div class="stat-card">
+    <i class="fas fa-laptop-code"></i>
+    <h3>Clean Code</h3>
+    <p>Best Practices</p>
+  </div>
+</div>
+</div>
+
+<!-- Quick Stats Badges Grid -->
+    <div class="para" data-aos="fade-left" data-aos-duration="1000"><p>A passionate and self-motivated AI student <br> with a genuine love for 
 programming, ML and AI tools. <br> A beginner full-stack 
 web developer seeking internship opportunities to <br>apply and enhance 
 technical skills.Besides that,I have full hand on  <b>Python</b>. Quick learner with strong problem-solving <br>abilities 
 and dedicated to continuous learning in technology. <br><br>My passion for coding extends beyond web development into programming languages like Python and JavaScript, allowing me to tackle complex projects involving data analysis, model development, and machine learning algorithms. With a quick learning ability and strong problem-solving abilities, I am well-suited for the internship opportunities I seek. <br><br>I am dedicated to continuous learning in technology, ensuring that I stay up-to-date with the latest advancements and tools relevant to my field. However, it's important to note that I am still in the process of learning and seeking out additional certifications and experiences to further enhance my skills. 
 </p></div>
-</div>
-   
-  </section>
 
-  <section id="projects" class="main3">
-    <div data-aos="zoom-in-up" data-aos-duration="1000" ><h1 class="heading2">Active<span>Projects</span></h1>
-    <p style="color: #0afff0; font-size: 1.1rem; font-weight: 500; margin: 20px 5px; position: absolute;left: 350px; top: 50px;     color: #a0b2d0;">
-    A curated mix of automation, intelligence, and web design.
-  </p>
-    <div class="m3_div1"><ul class="m3_bar"><li>All</li>
-    <li>Python</li>
-    <li>Web dev</li>
-    <li>AI/ML</li></ul></div>
-    <div class="container">
-      <div class="item python "><h2>To Do app</h2><img src="photos/l2.png" alt="sorry to load"><p>CLI-based task manager with basic operations like add, list, mark as completed, and delete tasks.</p><div class="smilo">Python</div>
-    <div class="smilo">data Structure</div><div class="smilo"><a href="https://github.com/Omi-nox/My_PY_Projects/tree/main/Small_Projects/To_Do_app" target="_blank"><i class="fab fa-github"></i> code</a></div></div>
-
-    <div class="item python"><h2>Weather_tool App</h2><img src="photos/l3.png" alt="sorry to load"><p>A command-line interface (CLI) tool that retrieves real-time weather data using a third-party weather API.</p><div class="smilo">Python</div>
-    <div class="smilo">weather api</div><div class="smilo"><a href="https://github.com/Omi-nox/My_PY_Projects/tree/main/Small_Projects/weather_tool" target="_blank"><i class="fab fa-github"></i> code</a></div></div>
-
-    <div class="item Pythons ml"><h2>Machine Learning</h2><img src="photos/l4.png" alt="sorry to load"><p> Demonstrates a basic linear regression model built for beginner-level projects, with a <b>score/hour</b> predictions.</p><div class="smilo">Python</div><div class="smilo">Sk-learn</div><div class="smilo"><a href="https://github.com/Omi-nox/Ai_Learning_Jour/tree/main/Phase2_Machine_Learning/Lesson2_Model_Evaluation" target="_blank"><i class="fab fa-github"></i> code</a></div>
-    </div>
-    <div class="item webdev"><h2>Personal Portfolio</h2><img src="photos/l8.jpg" alt="sorry to load"><p>My own personel portfolio live and fully responsive build with pure love.</p><div class="smilo">Html-Css</div><div class="smilo">Js/Mongo-db</div><div class="smilo"><a href="https://github.com/Omi-nox/Web_dev_excercise/tree/main/P1_html_css/L1-basics/mini_project1" target="_blank"><i class="fab fa-github"></i> code</a></div>
-  </div>
-</div>
-   
-  </section>
-
-  <section id="skills" class="main4">
-    <div data-aos="zoom-in-up" data-aos-duration="800"data-aos-anchor-placement="center-bottom">
-       <h1 class="heading3"><span>My</span><span>Skills</span></h2><div class="container2">
-    <h2 class="skh">Automation Tools</h2>
-      <div class="skill-badge"><i class="fab fa-python"></i> Python (Intermediate) <div class="stars1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-      <div class="skill-badge"><i class="fas fa-cube"></i> NumPy / Pandas<div class="stars1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-    <h2 class="skh">Backend</h2>  
-      <div class="skill-badge"><i class="fab fa-node-js"></i> Node.js / Express<div class="stars5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-      <div class="skill-badge"><i class="fas fa-database"></i> SQL / MongoDB<div class="stars4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-    <h2 class="skh">Frontend</h2>
-    <div class="skill-badge"><i class="fab fa-html5"></i> HTML5 / CSS3 / JavaScript<div class="stars6"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-    <h2 class="skh">Version Control</h2>
-    <div class="skill-badge"><i class="fab fa-github"></i> Git / GitHub<div class="stars3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-
-  </div>
-</div>
-   </section>
-
-  <section class="main5">
-    <div data-aos="flip-up"
-     data-aos-duration="2000"> <h1 class="heading4">Leave a <span>like</span></h1>
-  <div class="screen"><div class="like"><span>0</span></div></div>
-  <button type="button" id="b5">give a Like</button>
-  <div class="vibe-quote">
-      <!-- <i class="fas fa-quote-left"></i>  -->
-      <p id="randomQuote">"Code is poetry written in logic."</p>
-      <!-- <i class="fas fa-quote-right"></i> -->
-      <span class="quote-author">— Umar's mind</span>
-    </div></div>
-   
-  </section>
-
-  <section id="contact" class="main6">
-    <div data-aos="fade-up"
-     data-aos-easing="linear"
-     data-aos-duration="1200"><h1 class="heading4"><span>Get in</span><span>Touch</span></h1>
-    <p class="para2">Have a project in mind or just want to say hello? Drop me a message and let's build something amazing together</p>
-    <div class="main_card3">
-      <form action="https://formspree.io/f/xnjworbg" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="enter name" required>
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" placeholder="enter email" required>
-    <label for="message">Message</label>
-    <textarea name="text-area" id="message" placeholder="Write yours thoughts here...." required></textarea>
-    <button type="submit" id="b3">Send me</button>
-  
-  </form></div><div class="para1"><h2>Let's Connect</h2><p>I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possiblities,As a <b>beginner-learner</b> I'd love to hear from you</p><div class="card"><span>Email</span><span>umarasghar508@gmail.com</span></div>
-  <div class="card"><span>Phone</span><span>031*****60</span>
-  </div>
-  <div class="card"><span>Git-Hub</span><span>Omi-Nox</span></div>
-  <div class="cardi">
-  <span>Follow me : </span>
-   <div class="icons">
-    <a href="https://github.com/Omi-Nox" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://instagram.com/umarkhan_.ysfxi_" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://twitter.com/@Umari6x9" target="_blank"><i class="fab fa-x-twitter"></i></a>
    </div>
-</div>
-</div></div>
-    
+ 
+
+   
   </section>
-  <footer>
-    <!-- <div data-aos="fade-up">Content</div> -->
-  <div class="footer-container">
+  <section id="projects" class="main3">
+ 
+    
+    <!-- Title & Subtitle Group (No overlapping) -->
+    <div class="projects-header">
+      <h1 class="heading2" data-aos="fade-down" data-aos-duration="800">Active<span>Projects</span></h1>
+      <p class="sub-heading" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">A curated mix of automation, intelligence, and web design.</p>
+    </div>
+
+    <!-- Filter Bar Component -->
+    <div class="m3_div1">
+      <ul class="m3_bar">
+        <li class="active" data-filter="all">All</li>
+        <li data-filter="python">Python</li>
+        <li data-filter="webdev">Web Dev</li>
+        <li data-filter="aiml">AI/ML</li>
+      </ul>
+    </div>
+
+    <!-- Projects Cards Grid Grid System -->
+    <div class="container">
+      
+      <!-- Card 1: Python -->
+      <div class="item python" data-aos="fade-up" data-aos-duration="800">
+        <h2>To Do App</h2>
+        <div class="img-wrapper"><img src="photos/l2.png" alt="Project Preview"></div>
+        <p>CLI-based task manager with basic operations like add, list, mark as completed, and delete tasks.</p>
+        <div class="tech-stack">
+          <span class="smilo">Python</span>
+          <span class="smilo">Data Structure</span>
+          <span class="smilo"><a href="https://github.com/Omi-nox/My_PY_Projects/tree/main/Small_Projects/To_Do_app" target="_blank"><i class="fab fa-github"></i> code</a></span>
+        </div>
+      </div>
+
+      <!-- Card 2: Python -->
+      <div class="item python" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+        <h2>Expense Tracker App</h2>
+        <div class="img-wrapper"><img src="photos/l10.png" alt="Project Preview"></div>
+        <p>A GUI APP that tracks expenses and provides insights into spending patterns and giving good visualizations.</p>
+        <div class="tech-stack">
+          <span class="smilo">Python</span>
+          <span class="smilo">Tkinter lib</span>
+          <span class="smilo"><a href="https://github.com/Omi-nox/My_PY_Projects/tree/main/Gui_Projects/Project8_tkinter" target="_blank"><i class="fab fa-github"></i> code</a></span>
+        </div>
+      </div>
+
+      <!-- Card 3: AI/ML -->
+      <div class="item aiml " data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+        <h2>Machine Learning</h2>
+        <div class="img-wrapper"><img src="photos/l4.png" alt="Project Preview"></div>
+        <p>Demonstrates a basic linear regression model built for beginner-level projects, with a <b>score/hour</b> predictions.</p>
+        <div class="tech-stack">
+          <span class="smilo">Python</span>
+          <span class="smilo">Sk-Learn</span>
+          <span class="smilo"><a href="https://github.com/Omi-nox/Ai_Learning_Jour/tree/main/Phase2_Machine_Learning/Lesson2_Model_Evaluation" target="_blank"><i class="fab fa-github"></i> code</a></span>
+        </div>
+      </div>
+
+      <!-- Card 4: Web Dev -->
+      <div class="item webdev" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+        <h2>Personal Portfolio</h2>
+        <div class="img-wrapper"><img src="photos/l8.jpg" alt="Project Preview"></div>
+        <p>My own personal portfolio live and fully responsive build with pure love.</p>
+        <div class="tech-stack">
+          <span class="smilo">HTML-CSS</span>
+          <span class="smilo">JS/MongoDB</span>
+          <span class="smilo"><a href="https://github.com/Omi-nox/Web_dev_excercise/tree/main/P1_html_css/L1-basics/mini_project1" target="_blank"><i class="fab fa-github"></i> code</a></span>
+        </div>
+      </div>
+      <!-- Card 5: Web Dev -->
+      <div class="item webdev" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+        <h2>Quiz Game</h2>
+        <div class="img-wrapper"><img src="photos/l12.png" alt="Project Preview PENDING"></div>
+        <p>too soon it gonna be deployed.</p>
+        <div class="tech-stack">
+          <span class="smilo">HTML-CSS</span>
+          <span class="smilo">Full JS</span>
+          <span class="smilo"><a href="https://github.com/Omi-nox/Web_dev_excercise/tree/main/P1_html_css/L1-basics/mini_project1" target="_blank"><i class="fab fa-github"></i> code</a></span>
+        </div>
+      </div>
+      <!-- Card 6: Web Dev -->
+      <div class="item webdev" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+        <h2>Weather Vibe</h2>
+        <div class="img-wrapper"><img src="photos/l11.png" alt="Project Preview PENDING"></div>
+        <p>too soon it gonna be deployed.</p>
+        <div class="tech-stack">
+          <span class="smilo">HTML-CSS</span>
+          <span class="smilo">JS/MongoDB</span>
+          <span class="smilo"><a href="https://github.com/Omi-nox/Web_dev_excercise/tree/main/P1_html_css/L1-basics/mini_project1" target="_blank"><i class="fab fa-github"></i> code</a></span>
+        </div>
+      </div>
+
+    </div>
+  
+</section>
+<section id="skills" class="main4">
+  <!-- Heading Par Alag Animation -->
+  <h1 class="heading3" data-aos="fade-down" data-aos-duration="800">
+    <span>My</span><span>Skills</span>
+  </h1>
+
+  <!-- Skills Box Wrapper -->
+  <div class="container2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+    
+    <!-- Category 1 -->
+    <div class="skill-group">
+      <h2 class="skh">Automation Tools</h2>
+      <div class="skill-badge">
+        <i class="fab fa-python"></i> Python (Intermediate) 
+        <div class="stars1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+      <div class="skill-badge">
+        <i class="fas fa-cube"></i> NumPy / Pandas
+        <div class="stars1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+    </div>
+
+    <!-- Category 2 -->
+    <div class="skill-group">
+      <h2 class="skh">Backend</h2>  
+      <div class="skill-badge">
+        <i class="fab fa-node-js"></i> Node.js / Express
+        <div class="stars5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+      <div class="skill-badge">
+        <i class="fas fa-database"></i> SQL / MongoDB
+        <div class="stars4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+    </div>
+
+    <!-- Category 3 -->
+    <div class="skill-group">
+      <h2 class="skh">Frontend</h2>
+      <div class="skill-badge">
+        <i class="fab fa-html5"></i> HTML5 / CSS3 / JS
+        <div class="stars6"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+      <div class="skill-badge">
+  <i class="fab fa-react"></i> React / Tailwind CSS
+  <div class="stars6">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+  </div>
+</div>
+    </div>
+
+    <!-- Category 4 -->
+    <div class="skill-group">
+      <h2 class="skh">Version Control</h2>
+      <div class="skill-badge">
+        <i class="fab fa-github"></i> Git / GitHub
+        <div class="stars3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="main5">
+  <!-- Heading Par Alag Animation -->
+  <h1 class="heading4" data-aos="fade-down" data-aos-duration="1000">
+    Leave a <span>like</span>
+  </h1>
+
+  <!-- Central Interaction Box -->
+  <div class="like-container-box" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="screen">
+      <div class="like">
+        <span>0</span>
+      </div>
+    </div>
+    
+    <button type="button" id="b5">give a Like</button>
+  </div>
+
+  <!-- Quotes Footer Section -->
+  <div class="vibe-quote" data-aos="fade-up" data-aos-duration="1000">
+    <p id="randomQuote">"Code is poetry written in logic."</p>
+    <span class="quote-author">— Umar's mind</span>
+  </div>
+</section>
+<section id="contact" class="main6">
+  <!-- Heading Section -->
+  <div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+    <h1 class="heading4"><span>Get in</span><span>Touch</span></h1>
+    <p class="para2">Have a project in mind or just want to say hello? Drop me a message and let's build something amazing together</p>
+  </div>
+
+  <!-- Content Wrapper Layout Grid/Flex -->
+  <div class="contact-content-wrapper">
+    
+    <!-- Left Component: Let's Connect Info Card -->
+    <div class="para1" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+      <h2>Let's Connect</h2>
+      <p>I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possibilities, As a <b>beginner-learner</b> I'd love to hear from you.</p>
+      
+      <div class="card"><span>Email</span><span>umarasghar508@gmail.com</span></div>
+      <div class="card"><span>Phone</span><span>031*****60</span></div>
+      <div class="card"><span>Git-Hub</span><span>Omi-Nox</span></div>
+      
+      <div class="cardi">
+        <span>Follow me : </span>
+        <div class="icons">
+          <a href="https://github.com/Omi-Nox" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/umarkhan_.ysfxi_" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/@Umari6x9" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Component: Contact Form Card -->
+    <div class="main_card3" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+      <form action="https://formspree.io/f/xnjworbg" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="enter name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="enter email" required>
+        
+        <label for="message">Message</label>
+        <textarea name="message" id="message" placeholder="Write your thoughts here...." required></textarea>
+        
+        <button type="submit" id="b3">Send me</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+<footer>
+  <div class="footer-container" data-aos="fade-up" data-aos-duration="1000">
     <!-- Column 1: Brand -->
     <div class="footer-col">
       <h3>OMi_Portfolio</h3>
-      <p>A Python Intermediate with knowledge of high performance web experience, clean code,100% statisfaction  and latest tech.</p>
+      <p>A Python Intermediate with knowledge of high performance web experience, clean code, 100% satisfaction, and latest tech.</p>
     </div>
 
     <!-- Column 2: Quick Links -->
@@ -257,8 +410,7 @@ and dedicated to continuous learning in technology. <br><br>My passion for codin
       <div class="footer-social">
         <a href="https://github.com/Omi-Nox" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://instagram.com/umarkhan_.ysfxi_" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
-       
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
       </div>
     </div>
   </div>
@@ -268,34 +420,8 @@ and dedicated to continuous learning in technology. <br><br>My passion for codin
     <p>© 2026 Umar Asghar | AI Engineer & Full Stack Warrior | Python • ML • JS • 3D | Design by Omi dev | All rights reserved.</p>
   </div>
 </footer>
-</div>
 
-  
- <!-- AOS LIBRARY SCRIPT ... --> 
- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> 
-<script>
-  
-  AOS.init();
-  // Custom Preloader: Hide when page is fully loaded
-  window.addEventListener('load', function() {
-  const preloader = document.getElementById('preloader');
-  const mainContent = document.getElementById('main-content');
-  
-  if (preloader && mainContent) {
-    setTimeout(() => {
-      preloader.style.opacity = '0';
-      preloader.style.visibility = 'hidden';
-      mainContent.style.display = 'block';
-      
-      // 🔁 Ye line AOS ko batati hai ke content change hua hai, dubara scan karo
-      if (typeof AOS !== 'undefined') {
-        AOS.refresh();
-      }
-    }, 2500);
-  }
-});
 
-</script>
-</body>
+
+  </body>
 </html>
-

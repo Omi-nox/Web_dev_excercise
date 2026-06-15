@@ -1,235 +1,141 @@
 /* ---------- UPGRADED VERSION 1 (Hero Style) ---------- */
 .hero-frame {
-      perspective: 800px;
-      position: relative;
-      left: 100px;
-      top: 10px;
-    }
-    .v1-upgraded {
-      position: relative;
-      width: min(350px, 75vw);
-      height: min(350px, 75vw);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle, rgba(10, 255, 240, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      transition: transform 0.2s ease-out;
-      transform-style: preserve-3d;
-      cursor: pointer;
-    }
+  perspective: 800px;
+  position: relative;
+  /* Fixed positioning hata kar standard flex centering apply ki */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+}
 
-    /* Rings */
-    .v1-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      box-shadow: 0 0 8px #0afff0;
-    }
-    .ring-outer {
-      width: 100%;
-      height: 100%;
-      border-top-color: #0afff0;
-      border-bottom-color: #0afff0;
-      animation: rotateClock 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .ring-mid {
-      width: 80%;
-      height: 80%;
-      border-left-color: #0afff0;
-      border-right-color: #0afff0;
-      border-width: 2px;
-      border-style: dashed;
-      animation: rotateCounter 2.5s linear infinite;
-    }
-    .ring-inner {
-      width: 60%;
-      height: 60%;
-      border-top-color: rgba(10, 255, 240, 0.7);
-      border-bottom-color: rgba(10, 255, 240, 0.7);
-      animation: rotateClock 8s linear infinite;
-    }
+.v1-upgraded {
+  position: relative;
+  /* Mobile aur desktop dono par aspect ratio match karne ke liye */
+  width: min(350px, 75vw);
+  height: min(350px, 75vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(10, 255, 240, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
 
-    /* Scan line */
-    .v1-scan {
-      position: absolute;
-      width: 80%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #0afff0, transparent);
-      box-shadow: 0 0 12px #0afff0;
-      z-index: 15;
-      animation: scanMove 3s ease-in-out infinite;
-    }
+/* Rings */
+.v1-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  box-shadow: 0 0 8px #00fffb;
+  /* Element ko physically center karne ke liye built-in flex properties */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
 
-    /* Data tags */
-    .v1-tag {
-      position: absolute;
-      font-family: 'Courier New', monospace;
-      font-size: 0.7rem;
-      color: #0afff0;
-      background: rgba(0,0,0,0.6);
-      padding: 3px 8px;
-      border-radius: 20px;
-      backdrop-filter: blur(4px);
-      z-index: 20;
-      animation: flicker 1.5s infinite;
-    }
-    .tag-top { top: 5%; left: 5%; }
-    .tag-bottom { bottom: 5%; right: 5%; }
+.ring-outer {
+  width: 100%;
+  height: 100%;
+  border-top-color: #00fffb;
+  border-bottom-color: #00fffb;
+  animation: rotateClock 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
 
-    /* Profile image */
-    .v1-image {
-      width: 65%;
-      height: 65%;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid #0afff0;
-      box-shadow: 0 0 20px rgba(10, 255, 240, 0.4);
-      z-index: 10;
-      transition: 0.3s;
-    }
-    .v1-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* transform: translateY(15px); */
-    }
+.ring-mid {
+  width: 80%;
+  height: 80%;
+  border-left-color: #00fffb;
+  border-right-color: #00fffb;
+  border-width: 2px;
+  border-style: dashed;
+  animation: rotateCounter 2.5s linear infinite;
+}
 
-    /* Hover effect on whole frame (3D tilt via JS, but also glow pulse) */
-    .v1-upgraded:hover .v1-image {
-      transform: scale(1.02);
-      box-shadow: 0 0 30px #0afff0;
-    }
-    .v1-upgraded:hover {
-      box-shadow: 0 0 30px rgba(10, 255, 240, 0.4);
-    }
+.ring-inner {
+  width: 60%;
+  height: 60%;
+  border-top-color: rgba(10, 255, 240, 0.7);
+  border-bottom-color: rgba(10, 255, 240, 0.7);
+  animation: rotateClock 8s linear infinite;
+}
 
-    /* Keyframes */
-    @keyframes rotateClock {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes rotateCounter {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
-    @keyframes scanMove {
-      0%, 100% { top: 20%; }
-      50% { top: 80%; }
-    }
-    @keyframes flicker {
-      0%, 100% { opacity: 1; text-shadow: 0 0 2px #0afff0; }
-      50% { opacity: 0.5; text-shadow: 0 0 6px #0afff0; }
-    }
+/* Scan line */
+.v1-scan {
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00fffb, transparent);
+  box-shadow: 0 0 12px #00fffb;
+  z-index: 15;
+  animation: scanMove 3s ease-in-out infinite;
+  /* Scan line center alignment fix */
+  left: 10%; 
+}
 
-     /* ---------- UPGRADED VERSION 2 (About Section) ---------- */
-    .about-wrapper {
-      perspective: 1000px;
-      position: relative;
-      left: 50px;
-      top: 30px;
-    }
-    .v2-upgraded {
-      position: relative;
-      width: min(320px, 70vw);
-      height: min(320px, 70vw);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease-out;
-    }
-    .v2-dash-ring {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 2px dashed #0afff0;
-      border-radius: 50%;
-      animation: v2RotateClock 20s linear infinite;
-      opacity: 0.6;
-    }
-    .v2-solid-ring {
-      position: absolute;
-      width: 85%;
-      height: 85%;
-      border: 4px solid transparent;
-      border-top-color: #0afff0;
-      border-bottom-color: #0afff0;
-      border-radius: 50%;
-      animation: v2RotateCounter 4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-      box-shadow: inset 0 0 15px rgba(10, 255, 240, 0.3);
-    }
-    /* Corner brackets with neon pulse */
-    .v2-bracket {
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      border: 2px solid #0afff0;
-      filter: drop-shadow(0 0 5px #0afff0);
-      transition: 0.2s;
-    }
-    .v2-upgraded:hover .v2-bracket {
-      filter: drop-shadow(0 0 12px #0afff0);
-    }
-    .bracket-tl { top: 0; left: 0; border-right: 0; border-bottom: 0; }
-    .bracket-tr { top: 0; right: 0; border-left: 0; border-bottom: 0; }
-    .bracket-bl { bottom: 0; left: 0; border-right: 0; border-top: 0; }
-    .bracket-br { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+/* Data tags */
+.v1-tag {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #00fffb;
+  background: rgba(0,0,0,0.6);
+  padding: 3px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  z-index: 20;
+  animation: flicker 1.5s infinite;
+}
+.tag-top { top: 5%; left: 5%; }
+.tag-bottom { bottom: 5%; right: 5%; }
 
-    .v2-scan {
-      position: absolute;
-      width: 80%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #0afff0, transparent);
-      box-shadow: 0 0 12px #0afff0;
-      animation: v2ScanMove 3s ease-in-out infinite;
-    }
-    .v2-text {
-      position: absolute;
-      font-family: 'Courier New', monospace;
-      font-size: 0.7rem;
-      color: #0afff0;
-      background: rgba(0,0,0,0.5);
-      padding: 3px 8px;
-      border-radius: 20px;
-      backdrop-filter: blur(3px);
-    }
-    .text-status { top: -25px; left: 50%; transform: translateX(-50%); animation: flicker 2s infinite; }
-    .text-coord { bottom: -25px; right: 10px; animation: flicker 2s infinite 0.5s; }
+/* Profile image */
+.v1-image {
+  width: 68%;
+  height: 68%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #00fffb;
+  box-shadow: 0 0 20px rgba(10, 255, 240, 0.4);
+  z-index: 10;
+  transition: 0.3s;
+  display: flex;
+}
 
-    .v2-image {
-      width: 65%;
-      height: 65%;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid rgba(10, 255, 240, 0.8);
-      box-shadow: 0 0 25px rgba(10, 255, 240, 0.3);
-      transition: 0.2s;
-    }
-    .v2-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.v1-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    @keyframes v2RotateClock {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes v2RotateCounter {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
-    @keyframes v2ScanMove {
-      0%, 100% { top: 25%; }
-      50% { top: 75%; }
-    }
+/* Hover effects */
+.v1-upgraded:hover .v1-image {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px #00fffb;
+}
+.v1-upgraded:hover {
+  box-shadow: 0 0 30px rgba(10, 255, 240, 0.4);
+}
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .v1-tag, .v2-text { font-size: 0.55rem; }
-      .tag-top { top: 0; left: 0; }
-      .tag-bottom { bottom: 0; right: 0; }
-      .text-status { top: -20px; }
-      .text-coord { bottom: -20px; }
-    }
+/* Keyframes */
+@keyframes rotateClock {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes rotateCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+@keyframes scanMove {
+  0%, 100% { top: 20%; }
+  50% { top: 80%; }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 2px #00fffb; }
+  50% { opacity: 0.5; text-shadow: 0 0 6px #00fffb; }
+}

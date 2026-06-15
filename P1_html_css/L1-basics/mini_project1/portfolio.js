@@ -54,107 +54,84 @@ function dynamic_typing(){
      setTimeout(dynamic_typing,200);    
 }
 
-let list=document.querySelectorAll('.m3_bar li')
-let optt;
-let con=document.querySelectorAll('.smilo')
-list.forEach(btn=>{
-    btn.addEventListener('click',function(e){
-        opt=this.innerText;
-        if(opt=='Python'){
-            con.forEach(function(con){
-                if(con.innerText=='Python'){
-                    console.log(con);
-                let ppr=document.querySelectorAll('.item.python')
-                ppr.forEach(function(ppr){
-                    // ppr.style.backgroundColor='red';
-                    ppr.style.display = 'block'; 
-                
-                }
-                )
-                     let ppr1=document.querySelectorAll('.item.webdev')
-                    ppr1.forEach(function(ppr){
-                    // ppr.style.background='rgba(0, 0, 0, 0.65)';
-                    // ppr.style.backdropFilter='blur(8px)';
-                    ppr.style.display = 'none'; 
-                    ppr.style.visibil = ''; 
-                    
-                })
-                 let ppr2=document.querySelectorAll('.item.Pythons.ml')
-                ppr2.forEach(function(ppr){
-                    //  ppr.style.backgroundColor='red';
-                    ppr.style.display = 'none'; 
-                })
-                 
-                }
-            })
-        }else if(opt=='Web dev'){
-             con.forEach(function(con){
-                if(con.innerText=='Html-Css'){
-                    console.log(con);
-                let ppr=document.querySelectorAll('.item.webdev')
-                ppr.forEach(function(ppr){
-                    // ppr.style.backgroundColor='purple';
-                 ppr.style.display = 'block'; 
-                }
-                      
-                )
-                     let ppr1=document.querySelectorAll('.item.python')
-                    ppr1.forEach(function(ppr){
-                    // ppr.style.background='rgba(0, 0, 0, 0.65)';
-                    // ppr.style.backdropFilter='blur(8px)';
-                       ppr.style.display = 'none'; 
-                })
-                 let ppr2=document.querySelectorAll('.item.Pythons.ml')
-                ppr2.forEach(function(ppr){
-                    // ppr.style.background='rgba(0, 0, 0, 0.65)';
-                    // ppr.style.backdropFilter='blur(8px)';
-                       ppr.style.display = 'none'; 
-                })
-                }
-                
-            })
-        }else if(opt.trim()=='AI/ML'){
-             con.forEach(function(con){
-                if(con.innerText.trim()=='Sk-learn'){
-                    console.log(con);
-                let ppr=document.querySelectorAll('.item.Pythons.ml')
-                ppr.forEach(function(ppr){
-                    // ppr.style.backgroundColor='green';
-                       ppr.style.display = 'block'; 
-                
-                })
-                     let ppr1=document.querySelectorAll('.item.webdev')
-                    ppr1.forEach(function(ppr){
-                    // ppr.style.background='rgba(0, 0, 0, 0.65)';
-                    // ppr.style.backdropFilter='blur(8px)';
-                       ppr.style.display = 'none'; 
-                })
-                 let ppr2=document.querySelectorAll('.item.python')
-                    ppr2.forEach(function(ppr){
-                    // ppr.style.background='rgba(0, 0, 0, 0.65)';
-                    // ppr.style.backdropFilter='blur(8px)';
-                       ppr.style.display = 'none'; 
-                })
-            
-                }
-            })
-        }else if(opt.trim()=='All'){
-            con.forEach(function(con){
-             
-                let ppr=document.querySelectorAll('.item')
-                ppr.forEach(function(ppr){
-                    // ppr.style.background='rgba(0, 0, 0, 0.65)';
-                    // ppr.style.backdropFilter='blur(8px)';
-                       ppr.style.display = 'block'; 
-                })
-                
-            })
+dynamic_typing()
+
+const hamburger = document.getElementById('hamburger');
+const navList = document.querySelector('.nav_list');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navList.classList.toggle('open');
+});
+
+  const heroContainer = document.getElementById('v1Tilt');
+    const heroParent = document.getElementById('heroFrame');
+    if (heroContainer && heroParent) {
+      heroParent.addEventListener('mousemove', (e) => {
+        const rect = heroParent.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateY = (x / (rect.width / 2)) * 6;
+        const rotateX = (y / (rect.height / 2)) * -6;
+        heroContainer.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+      });
+      heroParent.addEventListener('mouseleave', () => {
+        heroContainer.style.transform = `rotateY(0deg) rotateX(0deg)`;
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.m3_bar li');
+  const projectItems = document.querySelectorAll('.container .item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active state from current and add to clicked button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const filterValue = button.getAttribute('data-filter');
+
+      projectItems.forEach(item => {
+        // Add dynamic smooth fade transitions via opacity/scale
+        item.style.transition = 'all 0.4s ease';
+        
+        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+          item.style.display = 'flex';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 400); // Display none runs right after scaling animation ends
         }
-    })
-})
+      });
+    });
+  });
+});
 
+    // scroll animation for progress bar  
+  window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = scrollPercent + '%';
+});
 
-
+ if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000, // Animation ki speed (1 second)
+            once: false,     // Animation sirf ek baar chalegi scroll karne par
+            offset: 120     // Element screen par aane ke thoda baad animate hoga
+        });
+        
+        // Yeh line sabse zaroori hai taake AOS naye layout ko refresh karle
+        AOS.refresh(); 
+    }
+    
 let is = document.querySelector('.like span');
 const api = 'https://portfolio-backend-y0io.onrender.com';
 // baad mein Render ke URL se replace karna
@@ -278,56 +255,3 @@ const quotes = [
  }
  rand()
  setInterval(rand,5000)
-dynamic_typing()
-
- // 3D TILT for VERSION 1 (Hero)
-    const heroContainer = document.getElementById('v1Tilt');
-    const heroParent = document.getElementById('heroFrame');
-    if (heroContainer && heroParent) {
-      heroParent.addEventListener('mousemove', (e) => {
-        const rect = heroParent.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        const rotateY = (x / (rect.width / 2)) * 6;
-        const rotateX = (y / (rect.height / 2)) * -6;
-        heroContainer.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-      });
-      heroParent.addEventListener('mouseleave', () => {
-        heroContainer.style.transform = `rotateY(0deg) rotateX(0deg)`;
-      });
-    }
-
-    // 3D TILT for VERSION 2 (About)
-    const aboutContainer = document.getElementById('v2Tilt');
-    const aboutParent = document.getElementById('aboutWrapper');
-    if (aboutContainer && aboutParent) {
-      aboutParent.addEventListener('mousemove', (e) => {
-        const rect = aboutParent.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        const rotateY = (x / (rect.width / 2)) * 6;
-        const rotateX = (y / (rect.height / 2)) * -6;
-        aboutContainer.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-      });
-      aboutParent.addEventListener('mouseleave', () => {
-        aboutContainer.style.transform = `rotateY(0deg) rotateX(0deg)`;
-      });
-    }
-
-
-    // scroll animation for progress bar  
-  window.addEventListener('scroll', function() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-  document.getElementById('progressBar').style.width = scrollPercent + '%';
-});
-
-// humburger snippet 
-
-const hamburger = document.getElementById('hamburger');
-const navList = document.querySelector('.nav_list');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navList.classList.toggle('open');
-});
