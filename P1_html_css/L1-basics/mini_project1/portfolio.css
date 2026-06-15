@@ -428,7 +428,7 @@ header {
   position: static;        /* ❌ position: relative, bottom, aur left hata diya */
   margin: 15px 0;          /* Kudrati top-bottom spacing */
   font-size: 1.1rem;
-  color: #e2e8f0;
+  color: #cbd5e0;
   text-shadow: 0 0 2px rgba(0,0,0,0.3);
   max-width: 500px;        /* 🟢 Yeh bilkul theek hai (line lamba hone se rokega) */
   font-weight: 500;
@@ -627,7 +627,7 @@ header {
 .main_card2 .para{
   padding: 10px 10px;
   text-align: justify;
-  color: aliceblue;
+  color: #cbd5e0;
   /* border: 2px solid yellow; */
   max-width: 600px;
   width: 100%;
