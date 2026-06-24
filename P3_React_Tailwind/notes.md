@@ -277,3 +277,14 @@ npm run dev
 ```
           className="bg-[#475b5a] text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md border border-[#5c7574] hover:bg-[#3b4c4b] hover:scale-105 transition-all duration-200 cursor-pointer list-none"
 ```
+### Conditional Styling:
+```
+ <div>
+          {damage>70? (
+            <span className="inline-block bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Gun Locked 🔒</span>
+          ) : (
+            <span className="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Gun Unlocked 🔓</span>
+          )}
+        </div>   
+        
+```
