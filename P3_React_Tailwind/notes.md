@@ -351,4 +351,40 @@ but before
 for multiple
 **import { Home, Timer } from './MyComponents'**
 **NOTES**: MAIN APP KI CSS RKHNA DIV KE BACKGROUND KE LIA and routes element to me  ek parent div rkhna 
+***for Example***
+```
+export default About 
+or for multiple//
+export function...
+import {Home ,Timer} from './Home'
+import About  from './About'
+<div className="min-h-screen h-full min-w-[400px] w-full flex justify-center flex-col items-center bg-[#2d0320] text-[#99d5c9] px-10 py-10">
+      <BrowserRouter>
+      <nav className="flex gap-5 text-lg font-semibold mb-5 hover:text-[#ffda22] transition-all duration-200">
+        <Link to="/" className="hover:text-[#ffda22] transition-all duration-200">
+        Home
+        </Link>
+        <Link to="/about" className="hover:text-[#ffda22] transition-all duration-200">
+        About
+        </Link>
+        <Link to="/project">
+        Projects
+        </Link>
+      </nav>
+<Routes>
+        {/* only pass main and needed element just  Home page*/}
+        <Route path="/" element={
+          <div className="flex flex-col items-center w-full justify-center">
+              <Home name="Umar Asghar Khan"  />
+              <Timer /> </div>
+        } /> 
+        {/* about page */}
+        <Route path="/about" element={<About skills={skills} />} />
+      </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
+export default App 
+```
 
