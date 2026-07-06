@@ -288,3 +288,67 @@ npm run dev
         </div>   
         
 ```
+
+# React Conncept 6 - Router (Multiple Pages)
+### Theory
+Right now your app is one page. React Router lets you build multiple pages without reloading the browser — just like a real app.
+```
+/           → Home page
+/about      → About page
+/projects   → Projects page
+/contact    → Contact page
+```
+**First Install**
+```
+npm install react-router-dom
+```
+**How it Works**
+```
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+```
+### Three things to  Understand
+| Thing  | Purose |
+| :--- | :--- | 
+|**BrowserRouter**| Wraps everything,enables routing|
+|**Route** | Maps a URL path to a component|
+|**Link**| like <a> tag but no page reloa|
+**Task**
+```
+Install react-router-dom
+Create 3 separate files in src/pages/:
+
+Home.jsx — just an <h1>Welcome Home</h1>
+import {use} from react
+function Home(){
+  return()
+}
+export default Home or do sepearate at the start of function just write export
+
+About.jsx — just an <h1>About Me</h1>
+Projects.jsx — just an <h1>My Projects</h1>
+
+```
+In App.jsx set up routing snippet so each page loads at its own URL
+Add Link navigation between pages
+but before 
+**import Home from './Home**
+for multiple
+**import { Home, Timer } from './MyComponents'**
+**NOTES**: MAIN APP KI CSS RKHNA DIV KE BACKGROUND KE LIA and routes element to me  ek parent div rkhna 
+
