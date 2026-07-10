@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa'; // ✅ Real icons
 
-const API_URL = 'http://localhost:5000/api/likes';
+const API_URL = `${import.meta.env.VITE_API_BASE}/api/likes`;
 
 function LikeButton() {
   const [likes, setLikes] = useState(0);
