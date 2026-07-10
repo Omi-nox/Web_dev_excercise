@@ -24,7 +24,7 @@ function ScrollToTop() {
   return visible ? (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed bottom-8 left-8 z-50 bg-[#6366f1] text-white w-10 h-10 sm:w-20 sm:h-12 rounded-full flex items-center justify-center hover:bg-[#4f46e5] transition-all duration-300 shadow-lg shadow-[#6366f1]/25 text-xl"
+      className="fixed bottom-8 left-8 z-50 bg-[#6366f1] text-white w-10 h-10  rounded-full flex items-center justify-center hover:bg-[#4f46e5] transition-all duration-300 shadow-lg shadow-[#6366f1]/25 text-xl"
     >
       ↑
     </button>

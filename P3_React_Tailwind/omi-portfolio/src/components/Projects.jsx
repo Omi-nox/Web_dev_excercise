@@ -42,7 +42,7 @@ const projects = [
 function Projects() {
   return (
     <section id="projects" className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center px-6 py-20">
-      <div className="max-w-7xl w-full flex flex-col gap-15">
+      <div className="max-w-5xl w-full flex flex-col gap-15">
 
         {/* Header */}
         <div className="text-center">

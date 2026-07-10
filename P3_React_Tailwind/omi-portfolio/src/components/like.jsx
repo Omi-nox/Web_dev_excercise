@@ -83,12 +83,12 @@ function LikeButton() {
           )}
         </span>
 
-        <span className="text-[#f1f5f9] font-medium  text-xs sm:text-xl">
+        <span className="text-[#f1f5f9] font-medium  text-xs md:text-sm">
           {loading ? '...' : hasLiked ? `Liked ` : 'Leave a like'}
           
         </span>
 
-        <span className="flex flex-col text-[#64748b]  bg-[#0a0a0a] px-3 py-0.5 rounded-full   text-xs sm:text-xl">
+        <span className="flex flex-col text-[#64748b]  bg-[#0a0a0a] px-3 py-0.5 rounded-full   text-xs md:text-sm">
           {likes}
         </span>
         

@@ -35,7 +35,7 @@ const skills = [
 function Skills() {
   return (
     <section id="skills" className="min-h-screen bg-[#050505] flex flex-col items-center justify-center px-6 py-20">
-      <div className="max-w-1xl w-full flex flex-col gap-16">
+      <div className="max-w-6xl w-full flex flex-col gap-16">
 
         {/* Header */}
         <div className="text-center">
@@ -50,8 +50,8 @@ function Skills() {
           {services.map((service, index) => (
             <div key={index} className="bg-[#111827] border border-[#1f2937] rounded-xl p-6 flex flex-col gap-4 hover:border-[#6366f1] transition-all duration-300 hover:shadow-lg hover:shadow-[#6366f1]/10">
               {service.icon}
-              <h3 className="text-[#f1f5f9] font-bold text-lg md:text-xl">{service.title}</h3>
-              <p className="text-[#64748b] text-sm leading-relaxed md:text-lg">{service.desc}</p>
+              <h3 className="text-[#f1f5f9] font-bold text-sm md:text-lg">{service.title}</h3>
+              <p className="text-[#64748b] text-xs leading-relaxed md:text-md">{service.desc}</p>
             </div>
           ))}
         </div>
@@ -61,7 +61,7 @@ function Skills() {
           {skills.map((skill) => (
             <div key={skill.name} className="bg-[#111827] border border-[#1f2937] rounded-xl p-5 flex flex-col items-center gap-3 hover:border-[#6366f1] transition-all duration-300 hover:shadow-md hover:shadow-[#6366f1]/5">
                {skill.icon}
-              <span className="text-[#f1f5f9] font-medium text-sm md:text-lg">{skill.name}</span>
+              <span className="text-[#f1f5f9] font-medium text-sm ">{skill.name}</span>
               
               {/* Stars Container */}
               <div className="flex gap-0.5">

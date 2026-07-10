@@ -12,11 +12,11 @@ function Contact() {
 
   return (
     <section id="contact" className="min-h-screen bg-[#050505] flex items-center justify-center px-6 py-20">
-      <div className="max-w-7xl w-full flex flex-col gap-12">
+      <div className="max-w-4xl w-full flex flex-col gap-12">
 
         {/* Header */}
         <div className="text-center">
-          <p className="text-[#06b6d4] text-sm sm:text-lg tracking-widest uppercase mb-2">Get In Touch</p>
+          <p className="text-[#06b6d4] text-sm  tracking-widest uppercase mb-2">Get In Touch</p>
           <h2 className="text-4xl font-bold text-[#f1f5f9]">
             Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#06b6d4]">Me</span>
           </h2>
@@ -33,10 +33,10 @@ function Contact() {
               { icon: <MdOutlineWorkOutline className="text-[#8b5cf6]" />, label: 'Status', value: 'Open to Internships' },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-4">
-                <span className="text-2xl md:text-3xl">{item.icon}</span>
+                <span className="text-2xl ">{item.icon}</span>
                 <div>
-                  <p className="text-[#64748b] text-xs md:text-lg font-bold uppercase tracking-wider">{item.label}</p>
-                  <p className="text-[#f1f5f9] text-sm md:text-lg">{item.value}</p>
+                  <p className="text-[#64748b] text-xs md:text-sm font-bold uppercase tracking-wider">{item.label}</p>
+                  <p className="text-[#f1f5f9] text-xs">{item.value}</p>
                 </div>
               </div>
             ))}

@@ -6,15 +6,15 @@ function Navbar() {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#1f2937]">
-      <div className="max-w-7xl mx-auto px-2 py-6 flex justify-around items-center gap-2 relative sm:justify-between md:justify-between">
+      <div className="max-w-4xl mx-auto px-2 py-6 flex justify-around items-center gap-2 relative sm:justify-between md:justify-between">
         
         {/* Logo */}
-        <span className="text-xl md:text-3xl font-bold text-[#6366f1] flex-shrink-0">
+        <span className="text-xl md:text-2xl font-bold text-[#6366f1] flex-shrink-0">
           Omi<span className="text-[#06b6d4]">-Nox</span>
         </span>
 
         {/* Desktop links */}
-        <ul className="hidden md:flex gap-8 text-[#f1f5f9] text-sm sm:text-lg">
+        <ul className="hidden md:flex gap-8 text-[#f1f5f9] text-sm ">
           {link_names.map((name, index) => (
             <li key={index}>
               <a href={`#${name.toLowerCase()}`} className="hover:text-[#6366f1] transition-colors duration-300">

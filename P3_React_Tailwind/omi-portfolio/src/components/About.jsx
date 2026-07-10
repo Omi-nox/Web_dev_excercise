@@ -1,7 +1,7 @@
 function About() {
   return (
     <section id="about" className="min-h-screen bg-[#0a0a0a] flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20">
-      <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-20 lg:gap-25">
+      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-20 lg:gap-25">
         
         {/* ===== PHOTO ===== */}
         <div className="relative flex-shrink-0 w-44 h-44 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-64 lg:h-64">
