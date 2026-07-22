@@ -653,3 +653,57 @@ VS Code mein apne project ka public/favicon.svg file kholein (jo aapki image mei
 Use code with caution.
 
 
+// ===== SIZE CLASSES =====
+text-xs   → 12px   (smallest)
+text-sm   → 14px   (small)
+text-base → 16px   (normal)
+text-lg   → 18px   (large)
+text-xl   → 20px   (extra large)
+text-2xl  → 24px
+text-3xl  → 30px
+text-4xl  → 36px
+text-5xl  → 48px
+text-6xl  → 60px
+text-7xl  → 72px
+
+// ===== SPACING CLASSES =====
+p-1  → 4px   (padding)
+p-2  → 8px
+p-3  → 12px
+p-4  → 16px
+p-6  → 24px
+p-8  → 32px
+
+m-1  → 4px   (margin)
+m-2  → 8px
+m-3  → 12px
+m-4  → 16px
+m-6  → 24px
+m-8  → 32px
+
+// ===== SIDE-SPECIFIC =====
+pt-4  → padding-top: 16px
+pb-4  → padding-bottom: 16px
+pl-4  → padding-left: 16px
+pr-4  → padding-right: 16px
+px-4  → padding-left + right: 16px
+py-4  → padding-top + bottom: 16px
+
+mt-4  → margin-top: 16px
+mb-4  → margin-bottom: 16px
+ml-4  → margin-left: 16px
+mr-4  → margin-right: 16px
+mx-4  → margin-left + right: 16px
+my-4  → margin-top + bottom: 16px
+
+// ===== RESPONSIVE CLASSES =====
+// Format: {breakpoint}:{class}
+sm:   → 640px se upar
+md:   → 768px se upar
+lg:   → 1024px se upar
+xl:   → 1280px se upar
+2xl:  → 1536px se upar
+
+// Example:
+text-sm md:text-lg lg:text-2xl
+// Mobile: small, Tablet: large, Desktop: 2xl
