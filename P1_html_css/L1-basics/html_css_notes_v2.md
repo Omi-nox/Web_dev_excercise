@@ -136,6 +136,29 @@ all: Har cheez (color, size, position) smooth hogi.
 
 ease-in-out: Shuru aur khatam naram (smooth) hoga.
 ## ANIMATION
+simple animation of ay object like react icons
+```
+.animate-bounceIcon{
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+  z-index: 50;
+  animation: liner 1.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+
+}
+.animate-bounceIcon:hover{
+  animation-play-state: paused;
+}
+
+
+@keyframes liner{
+  
+ 0%   { transform: translateY(0); }
+  50%  { transform: translateY(-50px); } /* Upar gaya */
+  100% { transform: translateY(0); } 
+}
+
+```
 
 **HOVER UNDERLINE ANIMATION**
 ```
