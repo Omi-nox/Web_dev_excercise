@@ -733,7 +733,94 @@ className="relative h-56 md:h-64 bg-gray-100 overflow-hidden"
         backgroundPosition: 'center',
     }}
 ``` 
-### Image et js component 
+### Image code snippet in cards form 
+```
+ <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {products.map((product) => (
+                        <div 
+                            key={product.id} 
+                            className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden group"
+                        >
+                            {/* ===== IMAGE ===== */}
+                            <div className="relative h-56 md:h-64 bg-gray-100 overflow-hidden">
+                                <Image
+                                    src={product.image}
+                                    alt={product.name}
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    width={500}
+                                    height={300}
+
+/>
+                                {/* Badge */}
+                                <span className="absolute top-3 left-3 bg-[#C9973A] text-white text-xs font-bold px-3 py-1 rounded-full">
+                                    {product.brand}
+                                </span>
+                                {/* Wishlist Button */}
+                                <button className="absolute top-3 right-3 bg-white/90 hover:bg-white p-2 rounded-full shadow-md transition-all duration-300 hover:scale-110">
+                                    <svg className="w-5 h-5 text-gray-400 hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            {/* ===== PRODUCT INFO ===== */}
+                            <div className="p-4 md:p-5">
+                                {/* Category */}
+                                <p className="text-xs text-[#C9973A] font-semibold uppercase tracking-wider mb-1">
+                                    {product.category}
+                                </p>
+
+                                {/* Name */}
+                                <h3 className="text-base md:text-lg font-bold text-[#1B3A6B] mb-1 line-clamp-1">
+                                    {product.name}
+                                </h3>
+
+                                {/* Rating */}
+                                <div className="flex items-center gap-2 mb-2">
+                                    <div className="flex items-center text-yellow-400 text-sm">
+                                        {[...Array(5)].map((_, i) => (
+                                            <FaStar 
+                                                key={i} 
+                                                className={i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}
+                                            />
+                                        ))}
+                                    </div>
+                                    <span className="text-xs text-gray-500">
+                                        ({product.reviews})
+                                    </span>
+                                </div>
+
+                                {/* Sizes */}
+                                <div className="flex flex-wrap gap-1 mb-3">
+                                    {product.sizes.map((size, idx) => (
+                                        <span 
+                                            key={idx} 
+                                            className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full"
+                                        >
+                                            {size}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Price & Button */}
+                                <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+                                    <span className="text-lg font-bold text-[#1B3A6B]">
+                                        {product.price}
+                                    </span>
+                                    <button className="bg-[#C9973A] hover:text-[#1B3A6B] text-[#C9973A] p-2.5 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg">
+                                        <FaShoppingCart className="text-sm" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+```
+* 1. [...Array(5)] 5 items ki ek khaali list (array) bana do.
+* 2. .map((_, i) => ( ... )) Ye ek loop hai jo 5 dafa chalega (har star ke liye ek baar).
+* 3. Asli Logic: i < Math.floor(product.rating) (Yahan Faisla Hota Hai)product.rating product ki rating hai (maan lo rating 4.5 hai).Math.floor() point ke baad wali value ko hata deta hai. To 4.5 ban jayega 4.Ab loop har star ke liye check karta hai:Star 1 (i=0): Kya 0 chota hai 4 se? Haan -> Yellow Star dikhao.Star 2 (i=1): Kya 1 chota hai 4 se? Haan -> Yellow Star dikhao.Star 3 (i=2): Kya 2 chota hai 4 se? Haan -> Yellow Star dikhao.Star 4 (i=3): Kya 3 chota hai 4 se? Haan -> Yellow Star dikhao.Star 5 (i=4): Kya 4 chota hai 4 se? Nahi -> Grey Star dikhao.
+
+### Image in  js component 
 you can use  width={500}  // Optimized file size ke liye bada number
     height={350} // Optimized file size ke liye bada number
 or **fill Property**
