@@ -3,20 +3,20 @@ import { SiTailwindcss, SiMongodb, SiJavascript } from 'react-icons/si'
 
 // 1. Services Data (Real Icons ke sath)
 const services = [
-  { 
-    icon: <FaBrain className="text-4xl text-[#6366f1]" />, 
-    title: "AI & Machine Learning", 
-    desc: "Building ML models and AI-powered applications that solve real problems." 
+  {
+    icon: <FaBrain className="text-4xl text-[#6366f1]" />,
+    title: "AI & Machine Learning",
+    desc: "Building ML models and AI-powered applications that solve real problems."
   },
-  { 
-    icon: <FaGlobe className="text-4xl text-[#06b6d4]" />, 
-    title: "Full Stack Web Dev", 
-    desc: "From React frontends to Node.js backends with real databases." 
+  {
+    icon: <FaGlobe className="text-4xl text-[#06b6d4]" />,
+    title: "MERN Stack  Dev",
+    desc: "From React frontends to Node.js backends with real databases."
   },
-  { 
-    icon: <FaTerminal className="text-4xl text-green-400" />, 
-    title: "Python Automation", 
-    desc: "Scripts, data analysis, and automation tools using Python." 
+  {
+    icon: <FaTerminal className="text-4xl text-green-400" />,
+    title: "Python Automation",
+    desc: "Scripts, data analysis, and automation tools using Python."
   },
 ]
 
@@ -60,15 +60,15 @@ function Skills() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {skills.map((skill) => (
             <div key={skill.name} className="bg-[#111827] border border-[#1f2937] rounded-xl p-5 flex flex-col items-center gap-3 hover:border-[#6366f1] transition-all duration-300 hover:shadow-md hover:shadow-[#6366f1]/5">
-               {skill.icon}
+              {skill.icon}
               <span className="text-[#f1f5f9] font-medium text-sm ">{skill.name}</span>
-              
+
               {/* Stars Container */}
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <FaStar 
-                    key={i} 
-                    className={`text-xs md:text-lg ${i < skill.rating ? 'text-yellow-400' : 'text-[#374151]'}`} 
+                  <FaStar
+                    key={i}
+                    className={`text-xs md:text-lg ${i < skill.rating ? 'text-yellow-400' : 'text-[#374151]'}`}
                   />
                 ))}
               </div>

@@ -53,11 +53,11 @@ function LikeButton() {
   };
 
   return (
-    <div className="relative inline-block  ">
+    <div className="relative inline-block  max-h-[40px] ">
       {/* Flash Message */}
       {showMessage && (
         <div className="absolute -top-14 left-1/2 -translate-x-1/2 bg-[#10b981] text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg shadow-[#10b981]/30 animate-bounce whitespace-nowrap z-10">
-           Thanks for liking!
+          Thanks for liking!
         </div>
       )}
 
@@ -85,26 +85,26 @@ function LikeButton() {
 
         <span className="text-[#f1f5f9] font-medium  text-xs md:text-sm">
           {loading ? '...' : hasLiked ? `Liked ` : 'Leave a like'}
-          
+
         </span>
 
         <span className="flex flex-col text-[#64748b]  bg-[#0a0a0a] px-3 py-0.5 rounded-full   text-xs md:text-sm">
           {likes}
         </span>
-        
+
       </button>
-           {/* ✅ "people like this" – Button ke neeche */}
-    {likes > 0 && (
-      <div className="text-center ">
-        <span className="text-[#64748b] text-xs sm:text-sm">
-          {likes} {likes === 1 ? 'person' : 'people'} like this
-        </span>
-      </div>
-    )}
+      {/* ✅ "people like this" – Button ke neeche */}
+      {likes > 0 && (
+        <div className="text-center ">
+          <span className="text-[#64748b] text-xs sm:text-sm">
+            {likes} {likes === 1 ? 'person' : 'people'} like this
+          </span>
+        </div>
+      )}
       {/* Already liked label */}
       {hasLiked && !showMessage && (
-        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[#10b981] text-xs sm:text-sm font-medium whitespace-nowrap ">
-          You already liked this! 
+        <div className="absolute -bottom-15 left-1/2 -translate-x-1/2 text-[#10b981] text-xs sm:text-sm font-medium whitespace-nowrap z-10">
+          You already liked this!
         </div>
       )}
     </div>

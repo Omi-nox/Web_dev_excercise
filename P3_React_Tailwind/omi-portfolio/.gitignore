@@ -25,3 +25,7 @@ dist-ssr
 /package-lock.json
 /backend/.env
 /backend/package-lock.json
+
+# Documentation Guide
+AI_ANIMATION_GUIDE.md
+

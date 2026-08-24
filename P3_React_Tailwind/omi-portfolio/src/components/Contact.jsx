@@ -4,7 +4,7 @@ import { FiMapPin } from 'react-icons/fi';      // Location Icon
 import { MdOutlineWorkOutline } from 'react-icons/md'; // Internship/Status Icon
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import {BsCloudCheck} from 'react-icons/bs'
+import { BsCloudCheck } from 'react-icons/bs'
 
 function Contact() {
   // Formspree setup bilkul sahi hai aapki ID ke sath
@@ -40,22 +40,22 @@ function Contact() {
                 </div>
               </div>
             ))}
-             {/* Additional Info / Status indicator */}
+            {/* Additional Info / Status indicator */}
             <div className="p-5 rounded-xl border border-dashed border-[#1e293b] flex items-center gap-3 text-xs text-[#64748b]">
               <span className="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></span>
               <span>Typically responds within 24 hours</span>
             </div>
-            
+
           </div>
 
           {/* Right - Form (Uncommented and Integrated with Formspree) */}
           <div className="relative">
             {state.succeeded ? (
               <div className="bg-[#111827] border border-[#1f2937] p-8 rounded-lg text-center flex flex-col items-center justify-center min-h-[300px]">
-                 {/* Green Glowing Premium Icon */}
-    <div className="w-16 h-16 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 flex items-center justify-center mb-4 shadow-lg shadow-[#10b981]/10">
-      <BsCloudCheck className="w-8 h-8 text-[#10b981] animate-bounce" />
-    </div>
+                {/* Green Glowing Premium Icon */}
+                <div className="w-16 h-16 rounded-full bg-[#10b981]/10 border border-[#10b981]/30 flex items-center justify-center mb-4 shadow-lg shadow-[#10b981]/10">
+                  <BsCloudCheck className="w-8 h-8 text-[#10b981] animate-bounce" />
+                </div>
                 <h3 className="text-xl font-bold text-white">Message Sent!</h3>
                 <p className="text-[#64748b] text-sm mt-2">Thank you,Your message has been routed directly to my inbox</p>
               </div>
